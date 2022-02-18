@@ -1,0 +1,46 @@
+<div class="assets-form select-util">
+
+  <ng-container *ngIf="multiple; else single">
+    <mat-select cdkConnectedOverlayBackdropClass="cdk-overlay-backdrop"
+                multiple #select [formControl]="control" disableOptionCentering
+                panelClass="hasMultiple custom-mat-select-panel2">
+      <div class="select-util-panel">
+        <ng-template [ngIf]="control?.value?.length > 0">
+          <div class="pt-3 pb-1 pl-4 pr-4 select-util-panel__header">
+            <span>{{selected.length > 2 ? selected.slice(0, 2) + "+" + (selected.length - 2) : selected}}</span>
+            <button mat-icon-button class="ml-auto icon-btn-sm" (click)="control?.reset(null)">
+              <mat-icon>clear</mat-icon>
+            </button>
+          </div>
+        </ng-template>
+        <mat-option *ngFor="let option of options;let i = index" [value]="option?.value ?? option?.id">
+          {{option.name}}
+        </mat-option>
+      </div>
+    </mat-select>
+  </ng-container>
+
+  <ng-template #single>
+    <mat-select cdkConnectedOverlayBackdropClass="cdk-overlay-backdrop" #select [formControl]="control"
+                disableOptionCentering
+                panelClass="custom-mat-select-panel2">
+      <div class="select-util-panel">
+        <ng-template [ngIf]="control?.value?.length || control.value!==null">
+          <div class="pt-3 pb-1 pl-4 pr-4 select-util-panel__header">
+            <span>{{selected}}</span>
+            <button mat-icon-button class="ml-auto icon-btn-sm" (click)="control?.reset(null)">
+              <mat-icon>clear</mat-icon>
+            </button>
+          </div>
+        </ng-template>
+        <mat-option *ngFor="let option of options;let i = index" [value]="option?.value ?? option?.id">
+          {{option.name}}
+        </mat-option>
+      </div>
+    </mat-select>
+
+  </ng-template>
+
+</div>
+
+

@@ -1,0 +1,86 @@
+@import "../abstracts/variables";
+.assets-chip.mat-standard-chip{
+  margin:0 !important;
+  padding:0 2.5rem !important;
+}
+mat-chip{
+  font-size: 1rem !important;
+}
+.mat-chip-success{
+  background-color: $active-accent  !important;
+  color:$active !important;
+  padding:.17rem .33rem;
+}
+.mat-chip-danger{
+  background-color: $inactive-accent !important;;
+  color:$inactive !important;;
+}
+.chip-circle{
+  padding: .17rem .5rem !important;
+  padding-top:.25rem !important;
+  font-size: .92rem !important;
+  min-height: .83rem !important;
+  height:auto !important;
+  border-radius:1.33rem;
+  pointer-events: none;
+}
+
+.component-wrapper-temp{
+border:.17rem dashed #b57af9;
+padding:3.33rem;
+display:grid;
+grid-template-columns: 1fr 1fr 1fr;
+width:fit-content;
+gap:1.25rem;
+background-color: #f1f1f1;
+}
+//DOM manipulations
+.pointer-no-actions{
+pointer-events: none;
+}
+.progress-bar-bottom{
+position: absolute !important;
+left:0;
+bottom:0;
+}
+.progress-bar-top{
+position: absolute !important;
+left:0;
+top:0;
+}
+
+.assets-menu .mat-badge-small.mat-badge-overlap.mat-badge-after .mat-badge-content {
+right:-.25rem !important;
+top:-.25rem;
+}
+.cursor-pointer{
+cursor:pointer;
+}
+.text-underline{
+&:hover{
+text-decoration: underline;
+}
+}
+.disabled{
+opacity:0.5;
+color:#ccc;
+pointer-events: none;
+}
+.locate-between{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  color: rgba(35, 49, 60, 1);
+}
+
+.module-active {
+  color: $main;
+  //border: 1px solid #007CD9;
+  background-color: #c7e7f9;
+}
+
+//backdrop
+.cdk-overlay-backdrop{
+  background: rgba(43, 43, 43, 0.4) !important;
+  opacity:1 !important;
+}

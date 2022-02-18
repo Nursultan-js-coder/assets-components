@@ -1,0 +1,19 @@
+<div class="locate-between p-1">
+  <div class="d-flex" [ngStyle]="{'color':'rgba(54, 76, 93, 1)'}">
+    <div class="mt-2 ml-2 mr-2">
+      <span [ngStyle]="{'font-weight':'700'}">Lukmanov Nursultan</span>
+      <p class="roleName">Developer</p>
+    </div>
+  </div>
+  <button mat-icon-button class="icon-btn-md" [matMenuTriggerFor]="menu"
+          aria-label="Example icon button with a vertical three dot icon">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+</div>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item class="logout">
+    <mat-icon>logout</mat-icon>
+    <span>exit</span>
+  </button>
+</mat-menu>
+

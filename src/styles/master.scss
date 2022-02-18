@@ -1,0 +1,65 @@
+@use '@angular/material' as mat;
+@include mat.core();
+@import 'theming/light-theme';
+@import 'theming/black-theme';
+ //layout
+@import "layout/page";
+@import "layout/wrapper";
+//abstract
+//@import "abstracts/pallets";
+// components
+@import "components/tab";
+@import "components/table";
+@import "components/cards";
+@import "components/button";
+@import "components/common";
+@import "components/dialog";
+//form
+@import "components/forms/input";
+@import "components/forms/dropdown";
+@import "components/forms/select_util";
+@import "components/forms/datepicker";
+//filter
+@import "components/filters/input";
+@import "components/filters/select";
+@import "components/filters/date-picker";
+// typography
+@import "abstracts/typography";
+// sidebar
+@import "components/scrollbar";
+//base
+@import "components/toggle";
+// responsive
+//@import "responsive/headers";
+//@import "responsive/media_queries";
+
+
+@mixin assets-app-component-theme($theme){
+  $primary:map-get($theme,primary);
+  $accent:map-get($theme,accent);
+  $warn:map-get($theme,warn);
+  //button{
+  //  background-color: mat.get-color-from-palette($primary, default-contrast);
+  //}
+}
+
+@mixin custom-component-theme($theme){
+  //@include assets-app-component-theme($theme);
+}
+
+.light-theme {
+  @include mat.all-component-themes($assets-light-theme);
+  //@include assets-app-component-theme($assets-light-theme);
+}
+
+.dark-theme{
+  @include mat.all-component-themes($assets-black-theme);
+  //@include assets-app-component-theme($assets-black-theme);
+
+}
+
+
+
+
+
+

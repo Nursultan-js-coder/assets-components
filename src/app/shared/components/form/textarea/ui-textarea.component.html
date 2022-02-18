@@ -1,0 +1,33 @@
+<div class="assets-form">
+<mat-form-field appearance="fill">
+<!--<mat-form-field appearance="fill" [class]="(control.touched && control.hasError('required') ? 'outline-danger':(control.touched ? 'outline-success':''))">-->
+  <mat-label>{{label}}
+    <ng-template [ngIf]="hasRequiredField(control)">
+    </ng-template>
+  </mat-label>
+  <textarea  matInput [formControl]="control"
+            [ngStyle]="{'height':'100px'}"
+            [placeholder]="placeholder+' ...'"></textarea>
+
+      <mat-spinner *ngIf="hasLoader && control.status==='PENDING'" matSuffix  #spinner  [diameter]="18"></mat-spinner>
+
+      <mat-icon *ngIf="hasLoader && control.status!=='PENDING' && control.value" matSuffix class="d-inline"  [ngStyle]="{'color':!control.hasError('usernameExists')? 'green':'red','height':'1rem','font-size':'1.33rem','width':'.83rem'}">
+        {{ control.hasError('usernameExists') ? 'clear' : 'check' }}
+      </mat-icon>
+
+  <mat-error *ngIf="control.hasError('email') && !control.hasError('required')">
+    Please enter a valid email address
+  </mat-error>
+
+  <mat-error *ngIf="control.hasError('required')">
+    Email is <strong>required</strong>
+  </mat-error>
+
+  <mat-error *ngIf="control.hasError('usernameExists')">
+    Login is <strong>already taken</strong>
+  </mat-error>
+
+
+</mat-form-field>
+</div>
+

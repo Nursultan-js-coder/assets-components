@@ -1,0 +1,76 @@
+@import "src/styles/abstracts/variables";
+
+mat-dialog-container {
+  padding: 0 !important;
+  border-radius: .83rem !important;
+}
+
+.error-dialog {
+  padding: 2.5rem;
+}
+
+
+.dialog {
+  max-height: 100%;
+  overflow-y: hidden;
+  display: grid;
+  grid-template-rows: 2fr 14fr 2fr;
+
+  &-title {
+    position: relative;
+    font-weight: bold;
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.67rem 4.17rem .83rem 4.17rem;
+    }
+
+    mat-divider {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100% !important;
+    }
+  }
+
+  &-content {
+    max-height: 100%;
+    overflow-y: scroll;
+    padding: 1.67rem 4.17rem;
+  }
+
+  &-actions {
+    padding: 1.67rem 4.17rem !important;
+  }
+}
+
+.error-snackbar {
+  background-color: $inactive;
+
+  &  span {
+    color: white;
+    font-weight: bold;
+  }
+}
+
+.warn-snackbar {
+  background-color: #eaea15;
+
+  &  span {
+    color: white;
+    font-weight: bold;
+  }
+}
+
+.success-snackbar {
+  background-color: $active;
+
+  &  span {
+    color: white;
+    font-weight: bold;
+  }
+}
+
+

@@ -1,0 +1,19 @@
+.select-util-panel{
+  min-width:11.42rem;
+  border-radius: .83rem;
+   border:red !important;
+   //border:rgba(246, 246, 246, 1);
+  &__header{
+    position: sticky;
+    left:0;
+    top:0;
+    max-width: 100%;
+    overflow-y: scroll;
+    display: flex;
+    padding:0 .83rem;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    z-index:1000;
+  }
+}

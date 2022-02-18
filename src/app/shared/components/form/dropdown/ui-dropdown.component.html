@@ -1,0 +1,33 @@
+<div class="assets-form">
+  <mat-form-field appearance="fill">
+    <mat-label>{{label}}
+      <ng-template [ngIf]="hasRequiredField(control)">
+      </ng-template>
+    </mat-label>
+
+    <ng-container *ngIf="multiple;else single">
+      <mat-select multiple [formControl]="control" disableOptionCentering
+                  panelClass="hasMultiple custom-mat-select-panel">
+        <ng-container *ngIf="options|selectOptions as SELECT_OPTIONS">
+        <mat-option *ngFor="let option of SELECT_OPTIONS" [value]="option?.id ?? option?.value">
+          {{option.name}}
+        </mat-option>
+        </ng-container>
+      </mat-select>
+    </ng-container>
+
+    <ng-template #single>
+      <mat-select [formControl]="control" disableOptionCentering panelClass="custom-mat-select-panel">
+        <ng-container *ngIf="options|selectOptions as SELECT_OPTIONS">
+        <mat-option *ngFor="let option of SELECT_OPTIONS" [value]="option?.id ?? option?.value">
+          {{option.name}}
+        </mat-option>
+        </ng-container>
+      </mat-select>
+    </ng-template>
+    <mat-icon matSuffix>expand_more</mat-icon>
+    <mat-error *ngIf="control.hasError('required')">
+      this field is required
+    </mat-error>
+  </mat-form-field>
+</div>

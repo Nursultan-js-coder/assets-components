@@ -1,0 +1,20 @@
+<div  class="assets filter w-100">
+<mat-form-field [class]="options?.length > 0 ? '':'control-disabled form-component'" appearance="none">
+  <mat-button-toggle-group class="filter-btn filter-btn-light">
+    <mat-button-toggle class="label-btn" [ngStyle]="{'border-radius':'1.33rem 0 0 1.33rem'}">
+      <ng-container *ngIf="control.value;else initialValue">
+        {{control.value}}
+      </ng-container>
+      <ng-template #initialValue>
+        <ng-content></ng-content>
+      </ng-template>
+    </mat-button-toggle>
+    <mat-button-toggle class="filter-select" [ngStyle]="{'border-radius':' 0 1.33rem 1.33rem 0'}" >
+      <mat-icon>expand_more</mat-icon>
+      <mat-select  [formControl]="control"  (selectionChange)="changeHandler($event)">
+        <mat-option *ngFor="let o of options" [value]="o">{{o}}</mat-option>
+      </mat-select>
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+</mat-form-field>
+</div>

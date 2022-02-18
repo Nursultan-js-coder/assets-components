@@ -1,0 +1,26 @@
+* {
+  &:active,
+  :focus {
+    outline: none !important;
+  }
+}
+
+code {
+  white-space: nowrap;
+  border-radius: .83rem;
+  padding: 0 .67rem .08rem .67rem;
+}
+
+//.mat-menu-content {
+//  fa-icon {
+//    position: relative;
+//    top: .17rem;
+//    left: .33rem;
+//  }
+//}
+
+p {
+  a {
+    border-bottom: .25rem solid;
+  }
+}

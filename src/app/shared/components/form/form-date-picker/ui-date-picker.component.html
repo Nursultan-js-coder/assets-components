@@ -1,0 +1,14 @@
+<div class="assets-form">
+  <mat-form-field appearance="fill">
+    <mat-label>{{label}}
+      <ng-template [ngIf]="hasRequiredField(control)">
+      </ng-template>
+    </mat-label>
+    <input matInput [matDatepicker]="picker" [formControl]="control" [max]="today" (dateChange)="handleChange($event)">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <mat-error *ngIf="control.hasError('required')">
+      has error
+    </mat-error>
+  </mat-form-field>
+</div>

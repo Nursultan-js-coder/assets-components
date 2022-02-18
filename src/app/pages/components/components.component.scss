@@ -1,0 +1,18 @@
+.component-container {
+  display: grid;
+  gap: 20px;
+  border: 1px dashed #8025ed;
+  padding: 10px;
+}
+
+.component-row {
+  display: grid;
+  grid-template-columns:1fr 1fr;
+}
+
+.component-column {
+  & > * {
+    display: inline-block;
+    margin: 10px;
+  }
+}

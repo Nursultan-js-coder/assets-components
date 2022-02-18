@@ -1,0 +1,50 @@
+/**
+color variables
+ */
+$main:rgba(0, 124, 217, 1);
+$main-accent: rgba(0, 124, 217, 0.16);
+$main-deep-1:rgba(0, 96, 168, 1);
+$main-deep-2:rgba(0, 67, 117, 1);
+$bg:rgba(247, 247, 247, 1);
+$bg-main:#FAFAFA;
+$main-text:rgba(35, 49, 60, 1);
+$text-dark:rgba(54, 76, 93, 1);
+$text-light:rgba(84, 101, 115, 1);
+$text-gray:rgba(117, 126, 132, 1);
+$active:rgba(57, 148, 114, 1);
+$inactive:rgba(169, 57, 57, 1);
+$active-accent:rgba(239, 251, 246, 1);
+$inactive-accent:rgba(255, 238, 238, 1);
+$table-border: rgba(246, 246, 246, 1);
+//cards
+$card-bg:#fff;
+//forms
+$input-bg: #f6f6f6;
+//btns
+$btn-disabled:rgba(171, 174, 176, 1);
+
+// borders
+$border-rd-sm:8px;
+$border-rd-md:.67rem;
+$border-rd-lg:.83rem;
+$border-rd-xl:1rem;
+//button height
+$button-xs:2.89rem;
+$button-sm:3.3333rem;
+$button-md:4rem;
+
+// font size;
+$text-xs:10px;
+$text-sm:12px;
+$text-md:14px;
+$text-lg:1.333rem;
+$text-xl:1.5rem;
+//icons
+$icon-sm-size: 1.17rem;
+$icon-sm-size-width: 1.17rem;
+$icon-md-size: 1.67rem;
+$icon-md-size-width: 1.67rem;
+//button icons
+$icon-btn-size:1rem;
+$icon-btn-sm-size:1rem;
+//$icon-btn:1rem;

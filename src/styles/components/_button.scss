@@ -1,0 +1,416 @@
+@import "../abstracts/variables";
+@import "src/styles/components/common";
+// base btn
+
+$small-size-button: 19px;
+$small-size-icon: 15px;
+$md-size-button: 23px;
+$md-size-icon: 21px;
+$large-size-button: 26px;
+$large-size-icon: 23px;
+
+.assets-btn {
+  border-radius: $border-rd-sm !important;
+  font-size: $text-md;
+  padding: 0 2.32rem !important;
+  height: $button-md !important;
+  font-weight: 700;
+
+  mat-icon {
+    font-size: $text-md !important;
+    height: $text-md;
+    width: $text-md;
+    margin-top: -3px;
+  }
+
+  //btn  sizes
+  &-sm {
+    @extend .assets-btn;
+    font-size: $text-sm;
+    height: $button-sm !important;
+    padding: 0 2rem !important;
+  }
+
+}
+
+// btn with icon
+button.icon-left > span mat-icon {
+  margin-right: 9px;
+}
+
+button.icon-right > span mat-icon {
+  margin-left: 9px;
+}
+
+
+// btn modifiers
+.primary-btn {
+  background-color: $main !important;
+  color: #fff !important;
+
+  &:hover {
+    @extend .primary-btn-deep-1;
+  }
+
+  &-deep-1 {
+    background-color: $main-deep-1 !important;
+    color: #fff !important;
+  }
+
+  &-deep-2 {
+    background-color: $main-deep-2 !important;
+    color: #fff !important;
+
+  }
+
+  &-gray {
+    background-color: $text-gray !important;
+    color: #fff !important;
+
+  }
+
+  &-outline {
+    color: $main !important;
+    outline: .17rem solid $main !important;
+    outline-offset: -.25rem;
+    background-color: #fff !important;
+
+    &-gray {
+      color: $text-gray !important;
+      //border:.08rem solid $text-gray !important;
+    }
+
+    &-focus {
+      box-shadow: 0 0 .17rem rgba(0, 124, 217, 0.62) !important;
+      color: $main !important;
+      border: .08rem solid $main !important;
+      background-color: #fff !important;
+    }
+  }
+
+  &-disabled {
+    opacity: 0.7;
+    background-color: $text-gray !important;
+    color: #fff !important;
+  }
+
+}
+
+.secondary-btn {
+
+  &-deep-1 {
+
+  }
+
+  &-deep-2 {
+
+  }
+}
+
+.danger-btn {
+  background-color: $inactive !important;
+  color: #fff !important;
+
+  &-deep-1 {
+    background-color: $main-deep-1 !important;
+    color: #fff !important;
+  }
+
+  &-deep-2 {
+    background-color: $main-deep-2 !important;
+    color: #fff !important;
+
+  }
+
+  &-gray {
+    background-color: $text-gray !important;
+    color: #fff !important;
+
+  }
+
+  &-outline {
+    color: $inactive !important;
+    outline: .17rem solid $inactive !important;
+    outline-offset: -.25rem;
+    background-color: #fff !important;
+
+    &-gray {
+      color: $text-gray !important;
+      //border:.08rem solid $text-gray !important;
+    }
+
+    &-focus {
+      box-shadow: 0 0 .17rem rgba(0, 124, 217, 0.62) !important;
+      color: $main !important;
+      border: .08rem solid $main !important;
+      background-color: #fff !important;
+    }
+  }
+
+  &-disabled {
+    opacity: 0.7;
+    background-color: $text-gray !important;
+    color: #fff !important;
+  }
+}
+
+.ghost-btn {
+  color: $main !important;
+  background-color: transparent !important;
+
+  &:hover {
+    @extend .ghost-btn-deep-1;
+  }
+
+  &-deep-1 {
+    @extend .ghost-btn;
+    background-color: rgba(0, 124, 217, 0.04) !important;
+  ;
+  }
+
+  &-deep-2 {
+    @extend .ghost-btn;
+    background: rgba(0, 124, 217, 0.12) !important;
+  }
+
+}
+
+.icon-only-btn {
+  padding: 0 !important;
+  min-width: 56px !important;
+
+  mat-icon {
+    font-size: 1.7rem !important;
+    height: 1.7rem;
+    width: 1.7rem;
+    margin-top: -3px;
+  }
+
+  &-sm {
+    @extend .icon-only-btn;
+    min-width: 4rem !important;
+    height: 3.33rem;
+
+    mat-icon {
+      font-size: 1.5rem !important;
+      height: 1.5rem;
+      width: 1.5rem;
+      //margin-top: -3px;
+    }
+  }
+}
+
+.icon {
+  $sm-size: 1.17rem;
+  $sm-size-width: 1.17rem;
+  $md-size: 1.67rem;
+  $md-size-width: 1.67rem;
+
+  &-sm {
+    font-size: $sm-size !important;
+    width: $sm-size-width !important;
+    height: $sm-size-width !important;
+  }
+
+  &-md {
+
+    font-size: $md-size !important;
+    width: $md-size-width !important;
+    height: $md-size-width !important;
+  }
+}
+
+
+.mat-menu-item .mat-icon {
+  margin-right: .42rem !important;
+  vertical-align: middle;
+}
+
+
+.icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-lg {
+    width: $large-size-button !important;
+    height: $large-size-button !important;
+    line-height: $large-size-button !important;
+
+    .mat-icon {
+      font-size: $large-size-icon !important;
+      width: $large-size-icon !important;
+      height: $large-size-icon !important;
+      line-height: $large-size-icon !important;
+    }
+
+    .mat-button-ripple {
+      font-size: inherit !important;
+      width: inherit !important;
+      height: inherit !important;
+      line-height: inherit !important;
+    }
+  }
+
+
+  &-sm {
+    width: $small-size-button !important;
+    height: $small-size-button !important;
+    line-height: $small-size-button !important;
+
+    .mat-icon {
+      font-size: $small-size-icon !important;
+      width: $small-size-icon !important;
+      height: 1.33rem !important; //TODO set it back to 14 if there is a problem with margin etc.
+      line-height: $small-size-icon !important;
+    }
+
+    .mat-button-ripple {
+      font-size: inherit !important;
+      width: inherit !important;
+      height: inherit !important;
+      line-height: inherit !important;
+    }
+  }
+
+
+
+  &-md {
+    width: $md-size-button !important;
+    height: $md-size-button !important;
+    line-height: $md-size-button !important;
+
+    .mat-icon {
+      font-size: $md-size-icon !important;
+      width: $md-size-icon !important;
+      height: $md-size-icon !important;
+      line-height: $md-size-icon !important;
+    }
+
+    .mat-button-ripple {
+      font-size: inherit !important;
+      width: inherit !important;
+      height: inherit !important;
+      line-height: inherit !important;
+    }
+  }
+}
+
+
+button.assets-btn.mat-button-disabled {
+  pointer-events: none;
+  background-color: $btn-disabled !important;
+  color: #fff !important;
+}
+
+button.assets-btn.ghost-btn.mat-button-disabled, ,button.assets-btn-sm.ghost-btn.mat-button-disabled{
+  pointer-events: none;
+  background-color: transparent !important;
+  color: $text-gray !important;
+  opacity: 0.5;
+}
+
+
+@media screen and(max-width:1350px) {
+  .assets-btn {
+    border-radius: $border-rd-sm !important;
+    font-size: $text-sm;
+    padding: 0 2.32rem !important;
+    height: 40px !important;
+    //width: 4rem !important;
+
+    mat-icon {
+      font-size: $text-sm !important;
+      height: $text-sm;
+      width: $text-sm;
+      margin-top: -3px;
+    }
+
+    //btn  sizes
+    &-sm {
+      @extend .assets-btn;
+      font-size: $text-xs;
+      height: 35px !important;
+      padding: 0 2rem !important;
+    }
+  }
+  .icon-only-btn {
+    padding: 0 !important;
+    min-width: 48px !important;
+    height: 41px !important;
+    //width: 4rem !important;
+
+    mat-icon {
+      font-size: 1.7rem !important;
+      height: 1.7rem;
+      width: 1.7rem;
+      margin-top: -3px;
+    }
+
+    &-sm {
+      @extend .icon-only-btn;
+      min-width: 41px !important;
+      height: 34px !important;
+      mat-icon {
+        font-size: 1.5rem !important;
+        height: 1.5rem;
+        width: 1.5rem;
+        //margin-top: -3px;
+      }
+    }
+  }
+  $small-size-button: 16px;
+  $small-size-icon: 12px;
+  $md-size-button: 20px;
+  $md-size-icon: 18px;
+  $large-size-button: 23px;
+  $large-size-icon: 20px;
+  .icon-btn {
+
+    &-lg {
+      width: $large-size-button !important;
+      height: $large-size-button !important;
+      line-height: $large-size-button !important;
+
+      .mat-icon {
+        font-size: $large-size-icon !important;
+        width: $large-size-icon !important;
+        height: $large-size-icon !important;
+        line-height: $large-size-icon !important;
+      }
+
+    }
+
+
+    &-sm {
+      width: $small-size-button !important;
+      height: $small-size-button !important;
+      line-height: $small-size-button !important;
+
+      .mat-icon {
+        font-size: $small-size-icon !important;
+        width: $small-size-icon !important;
+        height: 1.33rem !important; //TODO set it back to 14 if there is a problem with margin etc.
+        line-height: $small-size-icon !important;
+      }
+
+    }
+
+
+
+    &-md {
+      width: $md-size-button !important;
+      height: $md-size-button !important;
+      line-height: $md-size-button !important;
+
+      .mat-icon {
+        font-size: $md-size-icon !important;
+        width: $md-size-icon !important;
+        height: $md-size-icon !important;
+        line-height: $md-size-icon !important;
+      }
+
+    }
+  }
+
+}

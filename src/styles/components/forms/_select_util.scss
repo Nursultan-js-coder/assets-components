@@ -1,0 +1,44 @@
+@import "../../abstracts/variables";
+
+.custom-mat-select-panel {
+  position: absolute;
+  top: 2.67rem;
+  left: .33rem;
+  min-width: calc(100% + 3.92rem) !important;
+  box-shadow: none !important;
+  border-top-style: none;
+}
+
+.custom-mat-select-panel2 {
+  position: absolute;
+  top: 2.67rem;
+  left: .33rem;
+  //min-width: calc(100% + 3.92rem) !important;
+  box-shadow: none !important;
+  //border-top-style: none;
+}
+
+.hasMultiple {
+  left: 2.5rem;
+  //right:0;
+}
+
+.select-util div.mat-select-arrow-wrapper {
+  display: none;
+}
+
+.select-util {
+  mat-select {
+    height: 0 !important;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+  }
+}
+
+.mat-select-panel {
+  border: rgba(246, 246, 246, 1) !important;
+}

@@ -1,0 +1,43 @@
+<section class="d-flex flex-column h-100">
+<div #TABLE class="table-wrapper">
+    <mat-table matSort class="table-white" [dataSource]="dataSource">
+
+      <!-- Select Definition -->
+      <ng-container matColumnDef="select">
+        <mat-header-cell *matHeaderCellDef>
+          <mat-checkbox (change)="$event ? masterToggle() : null"
+                        [checked]="selection.hasValue() && isAllSelected()"
+                        [indeterminate]="selection.hasValue() && !isAllSelected()">
+          </mat-checkbox>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <mat-checkbox (click)="$event.stopPropagation()"
+                        (change)="$event ? selection.toggle(row) : null; rowSelect()"
+                        [checked]="selection.isSelected(row)">
+          </mat-checkbox>
+        </mat-cell>
+      </ng-container>
+
+      <!-- Columns Definition -->
+      <ng-container [cdkColumnDef]="column.key" *ngFor="let column of columnKeyValuePair">
+        <mat-header-cell *matHeaderCellDef> {{column.value}}
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          {{row[column.key]}}
+        </mat-cell>
+      </ng-container>
+
+
+      <!-- Header and Row Declarations -->
+      <mat-header-row *matHeaderRowDef="keys;sticky:true"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: keys"></mat-row>
+    </mat-table>
+    <ng-container *ngIf="hasPaginator">
+      <div class="table__pagination">
+        <mat-paginator [length]="tablePaginator.totalCount" [pageSize]="tablePaginator.pageSize"
+                       [pageSizeOptions]="tablePaginator.pageSizeOptions"
+                       showFirstLastButtons></mat-paginator>
+      </div>
+    </ng-container>
+  </div>
+</section>

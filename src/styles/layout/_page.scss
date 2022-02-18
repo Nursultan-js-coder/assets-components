@@ -1,0 +1,19 @@
+@import "src/styles/abstracts/variables";
+
+.page{
+  height:calc(100vh - 4rem);
+  overflow-y: hidden;
+  min-height: 100vh;
+  font-size:$text-sm;
+  padding-top:.58rem;
+  .content-scrollable{
+    height:calc(100vh - 4rem);
+    overflow-y: scroll;
+  }
+  .content{
+    height:calc(100vh - 4rem);
+    overflow: hidden;
+    padding:0 10px;
+  }
+}
+

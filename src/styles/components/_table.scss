@@ -1,0 +1,243 @@
+@import "src/styles/abstracts/_variables.scss";
+
+$br-color: rgb(235, 235, 235);
+
+.table {
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    font-size: $text-sm;
+    height: 100%;
+    position: relative;
+    overflow-y: auto;
+    flex: 1 1 100%;
+
+    .mat-column-select {
+      flex: 0 0 4%;
+    }
+
+    mat-table {
+      background-color: inherit !important;
+      width: 100%;
+
+      mat-header-row {
+        border-bottom: 0 !important;
+        background-color: $bg-main;
+        z-index: 99999;
+        min-height: 40px !important;
+        height: 40px !important;
+
+        mat-header-cell {
+          max-height: 40px;
+          font-weight: 700;
+          color: $text-gray;
+
+          & * {
+            max-height: 40px;
+          }
+        }
+      }
+
+      mat-row {
+        background-color: #fff;
+        border: 1px solid #F6F6F6;
+
+        mat-cell {
+          height: 56px !important;
+          font-weight: 400;
+          font-size: $text-sm;
+          color: $text-dark !important;
+        }
+      }
+
+      mat-row:nth-child(odd) {
+        background-color: rgba(242, 242, 242, 1);
+        border: 1px solid #F2F2F2;
+      }
+
+      mat-row:hover {
+        background-color: rgba(0, 124, 217, 0.1);
+        border-color: rgba(0, 124, 217, 0.1);
+      }
+    }
+  }
+
+  &__pagination {
+    margin-top: 10px;
+    position: sticky;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: inherit;
+
+    mat-paginator {
+      font-size: $text-sm !important;
+      background-color: inherit !important;
+      max-height: 2.92rem !important;
+
+      .mat-paginator-outer-container {
+        max-height: 2.92rem !important;
+
+        .mat-paginator-container {
+          max-height: 2.92rem !important;
+          min-height: 2.92rem !important;
+
+          & > * {
+            max-height: 2.92rem !important;
+          }
+
+          .mat-paginator-page-size {
+            margin-right: auto;
+            align-items: center !important;
+
+            .mat-form-field-underline {
+              display: none;
+            }
+          }
+
+          .mat-paginator-range-actions {
+            align-items: center !important;
+
+            .mat-paginator-range-label {
+              margin-top: .42rem;
+            }
+
+          }
+        }
+      }
+
+      .mat-paginator-icon {
+        width: 1.67rem !important;
+        height: 1.67rem !important;
+      }
+    }
+
+  }
+
+}
+
+.employees-container {
+  .mat-column-select{
+    flex: 0 0 4%;
+  }
+  .mat-column-name {
+    flex: 1 0 10%;
+    display: grid;
+
+    div {
+      height: 44px;
+      vertical-align: middle;
+
+      & > * {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      h5 {
+        font-size: $text-md;
+      }
+    }
+  }
+
+  .mat-column-level {
+    flex: 1 0 6%;
+  }
+
+  .mat-column-actions {
+    flex: 0 0 4%;
+  }
+
+  .mat-column-positions {
+    flex: 1 0 6%;
+  }
+
+}
+
+/**
+*Custom table flex adjustment
+*/
+.equipments-container {
+  .mat-column-owner {
+    padding-left: 5px;
+  }
+
+  .mat-column-description {
+    flex: 1 0 35%;
+    display: grid;
+  }
+}
+
+.permissions-container {
+  .mat-column-action {
+    flex: 1 1 80%;
+    display: grid;
+  }
+}
+
+.users-container {
+  .mat-column-employee {
+    flex: 1 0 14%;
+  }
+
+  .mat-column-userName {
+    flex: 1 0 14%;
+  }
+
+  .mat-column-actions {
+    flex: 0 0 5%;
+  }
+}
+
+.table-white {
+  mat-header-row {
+    background-color: #fff !important;
+  }
+}
+
+.table-gray {
+  mat-header-row {
+    background-color: $bg-main !important;
+  }
+}
+
+
+@media screen and (max-width: 1400px) {
+  .table {
+    &-wrapper {
+      mat-table {
+        mat-row {
+          background-color: #fff;
+          border: 1px solid #F6F6F6;
+
+          mat-cell {
+            height: 48px !important;
+          }
+        }
+        .mat-column-select {
+          flex: 0 0 6%;
+        }
+      }
+    }
+  }
+  .employees-container {
+    .mat-column-name {
+      //flex: 1 0 10%;
+      //display: grid;
+
+      div {
+        height: 40px;
+        vertical-align: middle;
+
+        //& > * {
+        //  margin: 0 !important;
+        //  padding: 0 !important;
+        //}
+
+        h5 {
+          font-size: $text-sm;
+        }
+      }
+    }
+  }
+}
+

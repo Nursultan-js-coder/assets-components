@@ -1,0 +1,32 @@
+@import "src/styles/abstracts/variables";
+
+.app-card {
+  padding:.37rem .52rem;
+  border-radius: $border-rd-sm;
+  background-color: $card-bg;
+
+  &-outline {
+    background-color: transparent;
+    border: .08rem solid rgba(246, 246, 246, 1);
+    width: 100%;
+    padding: .42rem .83rem;
+    border-radius:$border-rd-sm;
+    &-2{
+      @extend .app-card-outline;
+      border:.08rem solid #f1f1f1;
+    }
+  }
+
+  &-primary {
+    @extend .app-card;
+    border: .17rem solid #F6F6F6;
+  }
+
+  &-secondary {
+    background-color: $main;
+    font-weight: bold;
+    color:#fff;
+    //border:.17rem solid $main;
+  }
+}
+

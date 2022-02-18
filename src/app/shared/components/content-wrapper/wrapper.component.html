@@ -1,0 +1,89 @@
+<div [class]="'light-theme h-100 w-100'">
+  <mat-drawer-container [hasBackdrop]="hasBackdrop" autosize>
+    <mat-drawer [class]="panelOpenState ? 'opened':'collapsed'" mode="side" opened="true" position="start">
+      <div [@inOutAnimation]="animationState" class="sidenav">
+        <header class="pt-4">
+          <ng-container *ngIf="panelOpenState;else logoOnCollapse">
+            <div class="ml-3 d-flex align-items-center" (click)="router.navigate([''])" role="button">
+              <img alt="logo" src="assets/images/logo.svg" [ngStyle]="{'height':'2.3rem'}">
+              <div class="ml-2 d-inline-block mt-2">
+                <p [ngStyle]="{'font-size':'1.5rem'}" class="m-0">Assets</p>
+                <p
+                  class="m-0 text-gray text-sm">Admin Dashboard</p>
+              </div>
+            </div>
+          </ng-container>
+          <ng-template #logoOnCollapse>
+            <img alt="logo" src="assets/images/logo.svg"/>
+          </ng-template>
+        </header>
+        <main>
+          <mat-list class="nav-list">
+            <ng-container *ngFor="let route of routes">
+
+              <ng-container *ngIf="!route.children; else hasChildren ">
+                <mat-list-item class="mb-2"
+                               matRipple [routerLink]="route.path"
+                               routerLinkActive="mat-list-item-active"
+                               [class]="(route.disabled ? 'disabled':'')+' cursor-pointer'">
+                  <div class="nav-item">
+                    <mat-icon class="material-icons-round icon-md">
+                      {{route.icon}}
+                    </mat-icon>
+                    <p *ngIf="panelOpenState">{{route.name}}</p>
+                  </div>
+                  <span class="position-absolute" [ngStyle]="{'right':'0'}"></span>
+                </mat-list-item>
+              </ng-container>
+
+              <ng-template #hasChildren>
+                <mat-accordion
+                  class="mat-elevation-z0 nav-item-expansion-panel">
+                  <mat-expansion-panel disableRipple hideToggle>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        <mat-list-item matRipple [class]="(route.disabled ? 'disabled':'')+' cursor-pointer'">
+                          <div class="nav-item">
+                            <mat-icon class="material-icons-round icon-md">
+                              {{route.icon}}
+                            </mat-icon>
+                            <p *ngIf="panelOpenState">{{route.name}}</p>
+                          </div>
+                          <span class="position-absolute" [ngStyle]="{'right':'0'}"></span>
+                        </mat-list-item>
+                      </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <ng-container *ngFor="let submenu of route.children">
+                      <mat-list-item matRipple [routerLink]="route.path+'/'+submenu.path"
+                                     routerLinkActive="mat-list-item-active"
+                                     [class]="(route.disabled ? 'disabled':'')+' cursor-pointer'">
+                        <div class="nav-item">
+                          <mat-icon class="material-icons-round icon-md">
+                            {{submenu.icon}}
+                          </mat-icon>
+                          <p *ngIf="panelOpenState">{{submenu.name}}</p>
+                        </div>
+                        <span class="position-absolute" [ngStyle]="{'right':'0'}"></span>
+                      </mat-list-item>
+                    </ng-container>
+                  </mat-expansion-panel>
+                </mat-accordion>
+
+              </ng-template>
+
+            </ng-container>
+
+          </mat-list>
+        </main>
+        <footer class="m-2">
+          <app-avatar-bar></app-avatar-bar>
+        </footer>
+      </div>
+
+    </mat-drawer>
+    <div class="page">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-container>
+</div>
+<!---->

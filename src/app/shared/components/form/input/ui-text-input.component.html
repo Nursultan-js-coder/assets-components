@@ -1,0 +1,39 @@
+<div class="assets-form">
+  <mat-form-field appearance="fill">
+    <mat-label>{{label}}
+      <ng-template [ngIf]="hasRequiredField(control)">
+      <span [ngStyle]="{'color':'rgba(169, 57, 57, 1)','font-weight':'thin'}">*</span>
+      </ng-template>
+    </mat-label>
+    <input [type]="type" matInput [formControl]="control">
+
+    <mat-icon *ngIf="suffix" matSuffix>{{iconName}}</mat-icon>
+
+    <mat-icon *ngIf="prefix" matPrefix>{{iconName}}</mat-icon>
+
+    <mat-error *ngIf="control.hasError('required')">
+      this field is required
+    </mat-error>
+
+    <mat-error *ngIf="control.hasError('pattern')">
+      this field is required
+    </mat-error>
+
+    <mat-error *ngIf="control.hasError('email') && !control.hasError('required')">
+      this field is required
+    </mat-error>
+
+
+    <mat-error *ngFor="let validation of validationKeys">
+      <p *ngIf="control.hasError(validation.key)">
+        {{validation.label}}
+      </p>
+    </mat-error>
+
+
+
+
+
+  </mat-form-field>
+</div>
+

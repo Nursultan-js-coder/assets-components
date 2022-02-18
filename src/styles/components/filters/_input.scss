@@ -1,0 +1,123 @@
+@import "../../abstracts/variables";
+
+.assets-filter {
+  .mat-form-field-wrapper {
+    padding-bottom: 0 !important;
+  }
+
+  &-datepicker {
+    .mat-form-field-flex {
+      color: $text-gray;
+      background-color: transparent !important;
+      outline-color: transparent !important;
+    }
+  }
+
+  .mat-form-field-flex {
+    max-height: 4rem;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0.7rem 1.33rem 0.6rem 1.33rem !important;
+
+    .mat-form-field-infix {
+      padding: 0.20em 0 0.75em 0 !important;
+
+      .mat-form-field-label-wrapper {
+        display: none !important;
+      }
+
+      input.mat-input-element {
+        //margin-top: -0.5rem !important;
+        height: 20px !important;
+        font-size: 1rem;
+        margin-top: -1.2rem !important;
+        //display: none !important;
+        font-weight: 500;
+      }
+    }
+
+    .mat-form-field-prefix .mat-datepicker-toggle {
+      button {
+        top: 2px !important;
+      }
+    }
+
+
+  }
+}
+
+@media screen and(max-width: 1360px) {
+  .assets-filter {
+    .mat-form-field {
+      &-flex {
+        max-height: 41.6667px !important;
+        padding: 0.3em 16px 0 16px !important;
+
+        .mat-form-field-infix {
+          padding: 0.15em 0 0.60em 0 !important;
+
+          .mat-form-field-label-wrapper {
+          }
+
+          input.mat-input-element {
+            font-size: 1rem;
+            margin-top: -.9rem !important;
+          }
+        }
+      }
+    }
+  }
+
+  //.mat-icon {
+  //  color: rgba(174, 174, 174, 1);
+  //  height: 1.42rem;
+  //  width: 1.42rem;
+  //}
+}
+
+
+//@import "../../abstracts/variables";
+//
+//.assets-filter {
+//  .mat-form-field-wrapper {
+//    padding-bottom: 0 !important;
+//  }
+//
+//  &-datepicker {
+//    .mat-form-field-flex {
+//      color: $text-gray;
+//      background-color: transparent !important;
+//      outline-color: transparent !important;;
+//    }
+//  }
+//
+//  .mat-form-field-flex {
+//    display: flex;
+//    align-items: center;
+//    .mat-form-field-infix {
+//      padding: 0 .42rem 0 .33rem !important;
+//      padding-top: 0.42rem !important;
+//      border: .08rem solid transparent;
+//      max-width: 100% !important;
+//
+//      .mat-form-field-label-wrapper {
+//        display: none !important;
+//      }
+//    }
+//
+//    .mat-form-field-prefix .mat-datepicker-toggle {
+//      button {
+//        top: 2px !important;
+//      }
+//    }
+//
+//  }
+//
+//  .mat-icon {
+//    color: rgba(174, 174, 174, 1);
+//    height: 1.42rem;
+//    width: 1.42rem;
+//  }
+//}
+//

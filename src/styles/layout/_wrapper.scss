@@ -1,0 +1,165 @@
+@import "src/styles/abstracts/_variables.scss";
+
+mat-drawer-container {
+  background-color: $bg-main !important;
+  max-height: 100vh;
+  min-height: 100vh;
+
+  mat-drawer {
+    background-color: $bg-main !important;
+    width: 268px;
+    padding: 16px 0 16px 16px;
+    border-right: 0 !important;
+    height: 100%;
+
+    .sidenav {
+      overflow: hidden;
+      background-color: #fff !important;
+      height: 100%;
+      width: 100%;
+      border-radius: .67rem;
+      border: .17rem solid rgba(246, 246, 246, 1);
+      display: grid;
+      color: rgba(73, 103, 126, 0.8);
+      grid-template-rows: 2fr 16fr 2fr;
+
+      & > * {
+        padding: .83rem 0;
+      }
+
+      header {
+        color: $main;
+        font-weight: bold;
+      }
+
+      main {
+        overflow-y: scroll;
+        max-width: 100%;
+
+        .nav-list {
+          padding: 0;
+          margin: 0;
+
+          .mat-list-item {
+            height: 48px;
+            color: rgba(73, 103, 126, 0.8);
+            font-size: $text-md;
+            font-weight: 600;
+            padding-bottom: 4px;
+
+            &-active {
+              color: $main;
+              font-weight: bold;
+
+              span {
+                width: .25rem;
+                background: $main;
+                height: 100%;
+                border-radius: .83rem 0 0 .83rem;
+                transition: all 1s ease;
+                position: absolute;
+                right: .83rem;
+
+              }
+            }
+          }
+
+          .mat-list-item-content {
+            padding-right: 0;
+          }
+
+          .nav-item {
+            height: 100%;
+            position: relative;
+            display: flex;
+            margin-bottom: .4rem;
+            width: 100%;
+            align-items: center;
+            justify-content: flex-start;
+
+            p {
+              margin-bottom: 0;
+              margin-left: .83rem;
+            }
+
+            &-expansion-panel {
+              padding: 0;
+              box-shadow: none !important;
+
+              .mat-expansion-panel-header {
+                padding: 0 !important;
+                //background-color: #ebebeb;
+                color: #fff;
+
+                .mat-expansion-panel-header-title {
+                  margin-right: 0 !important;
+                }
+              }
+
+              .mat-expansion-panel-header.mat-expanded {
+                height: 4rem !important;
+              }
+
+              .mat-expansion-panel-body {
+                padding: 0 !important;
+              }
+
+              mat-expansion-panel:not([class*=mat-elevation-z]) {
+                box-shadow: none !important;
+                border: .08rem solid #ededed;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  mat-drawer-container {
+
+    mat-drawer {
+      width: 227px;
+      padding: 16px 0 16px 16px;
+    }
+
+    mat-drawer > .sidenav > header {
+      font-size: $text-sm;
+    }
+
+    .nav-item {
+      font-size: $text-sm;
+    }
+  }
+
+  main .mat-list .mat-list-item {
+    height: 40px !important;
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  mat-drawer-container {
+
+    mat-drawer {
+      width: 360px;
+      padding: 16px 0 16px 16px;
+    }
+
+    mat-drawer > .sidenav > header {
+      font-size: $text-lg;
+    }
+
+    .nav-item {
+      font-size: $text-lg;
+    }
+  }
+  main .mat-list .mat-list-item {
+    height: 50px !important;
+  }
+}
+
+
+
+
+

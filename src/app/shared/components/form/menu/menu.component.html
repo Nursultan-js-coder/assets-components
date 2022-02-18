@@ -1,0 +1,39 @@
+<div class="position-relative d-inline assets-menu" (click)="$event.stopPropagation()"
+>
+  <ng-container *ngIf="options;else overlay">
+    <!--  <button mat-icon-button matBadge="3"  matBadgeSize="small"matBadgePosition="after" matBadgeColor="accent" (click)="selectUtil.select.open()" class="icon-btn-sm">-->
+    <ng-container *ngIf="control?.value; else clean">
+      <ng-container *ngIf="control.value?.length > 0 || control.value!== null;else noBadge">
+<!--        <button mat-icon-button [matBadge]="control?.value?.length" matBadgeSize="small" matBadgePosition="after"-->
+<!--                matBadgeColor="accent" (click)="selectUtil.select.open()" [class]="'icon-btn'+size">-->
+        <button mat-icon-button [matBadge]="control?.value?.length"   matBadgeColor="accent"   matBadgeSize="small" matBadgePosition="after" (click)="selectUtil.select.open()" [class]="'icon-btn-'+size">
+          <mat-icon class="table-header-icon">{{icon}}</mat-icon>
+        </button>
+      </ng-container>
+      <ng-template #noBadge>
+        <button mat-icon-button (click)="selectUtil.select.open()" [class]="'icon-btn-'+size">
+          <mat-icon>{{icon}}</mat-icon>
+        </button>
+      </ng-template>
+    </ng-container>
+
+    <ng-template #clean>
+      <button mat-icon-button (click)="selectUtil.select.open()" [class]="'icon-btn-'+size">
+        <mat-icon>{{icon}}</mat-icon>
+      </button>
+    </ng-template>
+
+    <app-select-util [options]="options" #selectUtil [multiple]="multiple" [control]="control">
+    </app-select-util>
+  </ng-container>
+
+  <ng-template #overlay>
+    <button mat-icon-button (click)="showOverlay=!showOverlay" [class]="'icon-btn-'+size">
+      <mat-icon>{{icon}}</mat-icon>
+    </button>
+    <ng-template [ngIf]="showOverlay">
+      <ng-content></ng-content>
+    </ng-template>
+  </ng-template>
+</div>
+

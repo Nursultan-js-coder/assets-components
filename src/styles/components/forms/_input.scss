@@ -1,0 +1,126 @@
+@import "../../abstracts/variables";
+
+.assets-form {
+  font-size: 1rem;
+
+  .mat-form-field.mat-focused {
+    .mat-form-field-label {
+      //font-size: 14px !important;
+      //font-weight: 400 !important;
+      color: rgba(174, 174, 174, 1) !important;
+      font-size: $text-sm !important;
+      //&-wrapper{
+      //  top: -1.075em !important;
+      //}
+    }
+
+  }
+
+  mat-form-field.mat-form-field-invalid .mat-form-field-label {
+    color: $inactive !important;
+  }
+
+  .mat-form-field {
+    width: 100%;
+    min-width: 25rem;
+    //line-height: 1rem !important;
+
+    &-underline {
+      display: none !important;
+    }
+
+    &-flex {
+      background-color: $input-bg !important;
+      outline: .17rem solid $input-bg;
+      outline-offset: -.17rem;
+      border-radius: .5rem !important;
+      height: 48px !important;
+      padding-left: 16px !important;
+      padding-right: 16px !important;
+    }
+
+    &-infix {
+      //padding: 0 !important;
+    }
+
+    &-suffix {
+      color: $text-gray;
+    }
+
+    &-prefix {
+      color: $text-gray;
+    }
+
+    &-disabled {
+      & > * {
+        opacity: 0.5 !important;
+      }
+    }
+
+    &-label {
+      font-size: 14px !important;
+      font-weight: 400 !important;
+      color: rgba(174, 174, 174, 1);
+
+      &-wrapper {
+        //top: -1rem !important;
+      }
+    }
+  }
+
+  .mat-focused {
+    .mat-form-field-flex {
+      outline: .083rem solid $main;
+      outline-offset: -.083rem;
+
+      label {
+        color: $main;
+      }
+    }
+  }
+
+  .mat-form-field-invalid {
+    .mat-form-field-flex {
+      outline: .083rem solid $inactive;
+      outline-offset: -.083rem;
+    }
+  }
+
+  //.ng-valid{
+  //  .mat-form-field-flex {
+  //    outline: .17rem solid $active;
+  //    outline-offset: -.17rem;
+  //
+  //    label{
+  //      color:$active;
+  //    }
+  //  }
+  //}
+}
+
+mat-error {
+  color: $inactive !important;
+}
+
+//.auth-form {
+//  .mat-form-field-wrapper {
+//    padding-bottom: 2rem;
+//
+//    .mat-form-field-flex {
+//      padding-top: 1.35rem !important;
+//      padding-bottom: 1.35rem !important;
+//    }
+//  }
+//}
+
+
+@media screen and(max-width: 1360px) {
+  .assets-form {
+    .mat-form-field {
+      &-flex {
+        height: 41.6667px !important;
+        padding: 0.4em 16px 0 16px !important;;
+      }
+    }
+  }
+}

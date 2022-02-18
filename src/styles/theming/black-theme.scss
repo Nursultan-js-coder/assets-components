@@ -1,0 +1,11 @@
+@use '../../../node_modules/@angular/material/index' as mat;
+
+$assets-black-primary: mat.define-palette(mat.$grey-palette, 700, 300, 900);
+$assets-black-accent: mat.define-palette(mat.$blue-grey-palette, 400);
+$assets-black-warn: mat.define-palette(mat.$red-palette, 500);
+
+$assets-black-theme: mat.define-dark-theme(
+  $assets-black-primary,
+  $assets-black-accent,
+  $assets-black-warn
+);
