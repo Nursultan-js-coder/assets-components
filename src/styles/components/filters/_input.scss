@@ -1,6 +1,10 @@
 @import "../../abstracts/variables";
 
 .assets-filter {
+  .mat-form-field {
+    max-height: 40px !important;
+  }
+
   .mat-form-field-wrapper {
     padding-bottom: 0 !important;
   }
@@ -17,23 +21,21 @@
     max-height: 4rem;
     display: flex;
     align-items: center;
-    height: 100%;
-    padding: 0.7rem 1.33rem 0.6rem 1.33rem !important;
+    height: 40px !important;
+    padding: 5px 1rem 5px 1rem !important;
 
     .mat-form-field-infix {
-      padding: 0.20em 0 0.75em 0 !important;
 
       .mat-form-field-label-wrapper {
         display: none !important;
       }
 
       input.mat-input-element {
-        //margin-top: -0.5rem !important;
         height: 20px !important;
-        font-size: 1rem;
-        margin-top: -1.2rem !important;
-        //display: none !important;
+        font-size: $text-sm !important;
+        vertical-align: center;
         font-weight: 500;
+        margin-top: -7px;
       }
     }
 
