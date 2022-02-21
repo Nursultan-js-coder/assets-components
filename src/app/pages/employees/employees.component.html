@@ -1,1 +1,29 @@
-<p>employees works!</p>
+<div class="content">
+  <!-- 1 -->
+  <div class="d-flex locate-between mb-2">
+    <h2 class="m-0 ml-1">Employees</h2>
+    <button mat-flat-button
+            class="assets-btn primary-btn btn-with-icon">
+      <mat-icon>add</mat-icon>
+      Add Employee
+    </button>
+  </div>
+  <!--  -->
+
+  <!-- 2 -->
+  <div class="app-card-primary mb-1 locate-between">
+    <app-filter-input placeholder="Search by name..."
+                      [control]="nameControl"></app-filter-input>
+    <button mat-flat-button
+            class="assets-btn-sm ghost-btn">
+      <mat-icon>download</mat-icon>
+      Export
+    </button>
+  </div>
+  <!--  -->
+
+  <!-- 3 -->
+  <app-employee-table #table>
+  </app-employee-table>
+  <!--  -->
+</div>
