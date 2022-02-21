@@ -20,8 +20,8 @@ import {DateAdapter} from "@angular/material/core";
       </ng-container>
       <ng-template #single>
         <mat-form-field appearance="fill">
-          <input matInput [matDatepicker]="picker" [formControl]="control" (dateChange)="handleChange($event)">
-          <mat-datepicker-toggle disableRipple matPrefix [for]="picker"></mat-datepicker-toggle>
+          <input matInput [matDatepicker]="picker" placeholder="Select date" [formControl]="control" (dateChange)="handleChange($event)">
+          <mat-datepicker-toggle  matPrefix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
       </ng-template>

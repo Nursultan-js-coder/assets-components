@@ -427,6 +427,30 @@
               </div>
             </div>
           </div>
+          <div class="component-column-wrapper">
+            <h2>Single DatePicker</h2>
+            <div class="component-column">
+              <div [ngStyle]="{'max-width':'300px'}">
+                <app-filter-date-picker [control]="datepickerControl" label="Simple Datepicker"></app-filter-date-picker>
+              </div>
+            </div>
+          </div>
+          <div class="component-column-wrapper">
+            <h2>Range DatePicker</h2>
+            <div class="component-column">
+              <div [ngStyle]="{'max-width':'300px'}">
+                <app-filter-date-picker [range]="true" [control]="datepickerControl" label="Range Datepicker"></app-filter-date-picker>
+              </div>
+            </div>
+          </div>
+          <div class="component-column-wrapper">
+            <h2>Textarea</h2>
+            <div class="component-column">
+              <div [ngStyle]="{'max-width':'300px'}">
+                <ui-textarea [control]="control1" label="Name" placeholder="Enter name"></ui-textarea>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 

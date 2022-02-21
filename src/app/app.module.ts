@@ -12,6 +12,7 @@ import {FilterInputModule} from "@app/shared/components/filters/filter-input/fil
 import {WrapperComponent} from "@app/shared/components/content-wrapper/wrapper.component";
 import {AvatarBarComponent} from "@app/shared/components/avatar-bar/avatar-bar.component";
 import {TableModule} from "@app/shared/components/table/table.module";
+import {FilterDatePickerModule} from "@app/shared/components/filters/filter-date-picker/filter-date-picker.module";
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import {TableModule} from "@app/shared/components/table/table.module";
         FormModule,
         FilterInputModule,
         TableModule,
+        FilterDatePickerModule,
     ],
   providers: [],
   bootstrap: [AppComponent]
