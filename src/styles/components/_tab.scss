@@ -103,12 +103,12 @@ mat-tab-group {
 .tab-secondary {
   .mat-tab-labels {
     background-color: rgba(250, 250, 250, 1) !important;
+
   }
 
-  .mat-tab-label-active {
+  .mat-tab-label-content {
     color: $text-dark !important;
   }
-
 }
 
 
@@ -154,9 +154,6 @@ mat-tab-group {
             }
 
             .mat-tab-label-active {
-              color: $text-dark !important;
-              opacity: 1 !important;
-              font-weight: 700 !important;
 
               .mat-tab-label-content {
                 padding: 0.333rem 1rem !important;

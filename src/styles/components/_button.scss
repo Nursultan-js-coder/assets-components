@@ -304,11 +304,11 @@ button.assets-btn.mat-button-disabled {
 }
 
 button.assets-btn.ghost-btn.mat-button-disabled, ,button.assets-btn-sm.ghost-btn.mat-button-disabled{
-  pointer-events: none;
-  background-color: transparent !important;
-  color: $text-gray !important;
-  opacity: 0.5;
-}
+                                                    pointer-events: none;
+                                                    background-color: transparent !important;
+                                                    color: $text-gray !important;
+                                                    opacity: 0.5;
+                                                  }
 
 
 @media screen and(max-width:1350px) {
