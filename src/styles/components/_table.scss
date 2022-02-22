@@ -123,9 +123,9 @@ $br-color: rgb(235, 235, 235);
 
   .mat-column-name {
     flex: 1 0 10%;
-    display: grid;
+    //display: grid;
 
-    div {
+    .employee-name{
       height: 44px;
       vertical-align: middle;
 
@@ -229,7 +229,7 @@ $br-color: rgb(235, 235, 235);
   }
   .employees-container {
     .mat-column-name {
-      div {
+      .employee-name {
         height: 40px;
         vertical-align: middle;
 
