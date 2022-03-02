@@ -1,19 +1,26 @@
 @import "src/styles/abstracts/variables";
 
-.page{
-  height:calc(100vh - 4rem);
+* {
+  box-sizing: border-box;
+}
+
+.page {
   overflow-y: hidden;
-  min-height: 100vh;
-  font-size:$text-sm;
-  padding:10px .58rem 0 10px;
-  .content-scrollable{
-    height:calc(100vh - 4rem);
-    overflow-y: scroll;
+  height: 100vh;
+  font-size: $text-sm;
+  padding: 15px .58rem 10px 20px;
+
+  .content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &-scrollable {
+      @extend .content;
+      overflow-y: scroll;
+    }
   }
-  .content{
-    height:calc(100vh - 4rem);
-    overflow: hidden;
-    //padding:0 10px;
-  }
+
 }
 

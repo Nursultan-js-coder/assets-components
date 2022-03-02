@@ -1,0 +1,315 @@
+<!--<section>-->
+<div class="employee-form">
+  <main>
+    <!--  <div>-->
+    <!--    <mat-progress-bar mode="determinate" [value]="processPercentage"-->
+    <!--                      color="primary"></mat-progress-bar>-->
+    <!--    <p class="text-gray text-right mt-2">{{selectedIndex + 1}}/{{totalTabCount}} шагов для создания сотрудника</p>-->
+    <!--  </div>-->
+    <mat-tab-group class="progress-tab-group" [selectedIndex]="selectedIndex"
+                   (selectedTabChange)="onSelectedTabChange($event)">
+      <mat-tab label="Личная информация">
+        <div class="p-3 mt-3">
+          <div class="block-group">
+            <div>
+              <h4>1. Личные данные</h4>
+              <p>
+                Укажите полную информацию о сотруднике: ФИО, пол, дату рождения и т.д</p>
+            </div>
+            <div>
+              <div class="block-control">
+                <form-ui-text-input placeholder="Фамилия..." label="Фамилия"
+                                    [control]="form.lastName"></form-ui-text-input>
+                <form-ui-text-input placeholder="Имя..." label="Имя"
+                                    [control]="form.firstName"></form-ui-text-input>
+              </div>
+              <form-ui-text-input placeholder="Отчество..." label="Отчество"
+                                  [control]="form.middleName"></form-ui-text-input>
+              <div class="block-control">
+                <form-ui-dropdown [options]="['Male','Female']" label="Выберите пол"
+                                  [control]="form.genderId"></form-ui-dropdown>
+                <form-ui-date-picker [control]="form.dateOfBirth" label="Дата рождения"></form-ui-date-picker>
+              </div>
+            </div>
+          </div>
+          <!--          <app-filter-input placeholder="Last Name" label="Last Name"></app-filter-input>-->
+          <mat-divider></mat-divider>
+        </div>
+        <div class="p-3">
+          <div class="block-group">
+            <div>
+              <h4>2. Паспортные данные </h4>
+              <p>
+                Паспортные данные необходимы для
+                оформления сотрудника в компании </p>
+            </div>
+            <div>
+              <form-ui-text-input placeholder="Гражданство..." label="Гражданство"
+                                  [control]="control"></form-ui-text-input>
+              <div class="block-control">
+                <form-ui-text-input placeholder="ИНН..." label="ИНН"
+                                    [control]="form.iNN"></form-ui-text-input>
+                <form-ui-text-input placeholder="Номер паспорта..." label="Номер паспорта"
+                                    [control]="form.passportNumber"></form-ui-text-input>
+              </div>
+              <div class="block-control">
+                <form-ui-text-input placeholder="Орган выдачи..." label="Орган выдачи"
+                                    [control]="control"></form-ui-text-input>
+                <form-ui-text-input placeholder="Дата выдачи..." label="Дата выдачи"
+                                    [control]="control"></form-ui-text-input>
+              </div>
+
+            </div>
+
+          </div>
+          <!--          <app-filter-input placeholder="Last Name" label="Last Name"></app-filter-input>-->
+          <mat-divider></mat-divider>
+        </div>
+        <div class="p-3">
+          <div class="block-group">
+            <div>
+              <h4>3. Контактные данные </h4>
+              <p>
+                Желательно добавить несколько номеров сотрудника.</p>
+            </div>
+            <div>
+              <form-ui-text-input placeholder="Адрес проживания..." label="Адрес проживания"
+                                  [control]="form.address"></form-ui-text-input>
+              <!--           -->
+              <ng-container *ngFor="let emailControl of form.emails.controls ;let i = index;">
+                <ng-container *ngIf="i === 0;else withRemoveBtn">
+                  <form-ui-text-input placeholder="Личная почта..." label="Личная почта" [prefix]="true"
+                                      iconName="mail"
+                                      [control]="$any(emailControl.get('name'))"></form-ui-text-input>
+                </ng-container>
+
+                <ng-template #withRemoveBtn>
+                  <div class="block-control">
+                    <form-ui-text-input placeholder="Личная почта..." label="Личная почта" [prefix]="true"
+                                        iconName="mail"
+                                        [control]="$any(emailControl.get('name'))"></form-ui-text-input>
+
+                    <button mat-flat-button class="w-auto assets-btn ghost-btn-deep-1 icon-only-btn ml-1"
+                            (click)="form.remove(i,form.emails)">
+                      <mat-icon>clear</mat-icon>
+                    </button>
+
+                  </div>
+                </ng-template>
+
+
+              </ng-container>
+              <button mat-flat-button class="assets-btn ghost-btn-deep-1 w-100 mb-3" (click)="this.form.addEmail()">
+                Добавить дополнительную почту
+              </button>
+              <ng-container *ngFor="let phoneControl of form.employeePhoneNumbers.controls ;let i = index;">
+                <ng-container *ngIf="i === 0;else withRemoveBtn">
+                  <form-ui-text-input placeholder="Личный телефон..." label="Личный телефон" [prefix]="true"
+                                      iconName="phone"
+                                      [control]="$any(phoneControl.get('name'))">
+                  </form-ui-text-input>
+                </ng-container>
+
+                <ng-template #withRemoveBtn>
+                  <div class="block-control">
+                    <form-ui-text-input placeholder="Личный телефон..." label="Личный телефон" [prefix]="true"
+                                        iconName="phone"
+                                        [control]="$any(phoneControl.get('name'))">
+                    </form-ui-text-input>
+
+                    <button mat-flat-button class="w-auto assets-btn ghost-btn-deep-1 icon-only-btn ml-1"
+                            (click)="form.remove(i,form.employeePhoneNumbers)">
+                      <mat-icon>clear</mat-icon>
+                    </button>
+
+                  </div>
+                </ng-template>
+
+
+              </ng-container>
+
+              <button mat-flat-button class="assets-btn ghost-btn-deep-1 w-100 mb-3"
+                      (click)="this.form.addPhoneNumber()">
+                Добавить дополнительную телефон
+              </button>
+
+            </div>
+          </div>
+          <mat-divider></mat-divider>
+        </div>
+
+        <div class="p-3">
+          <div class="block-group">
+            <div>
+              <h4>3. Образование </h4>
+              <p>
+                Здесь указывается информация об образовании сотрудника : университеты, колледжи, курсы.</p>
+            </div>
+            <div>
+              <form-ui-text-input placeholder="Университет..." label="Университет"
+                                  [control]="control"></form-ui-text-input>
+              <form-ui-text-input placeholder="Специальность..." label="Специальность"
+                                  [control]="control"></form-ui-text-input>
+              <form-ui-date-picker [control]="control" label="Дата окончания"></form-ui-date-picker>
+              <button mat-flat-button class="assets-btn ghost-btn-deep-1 w-100">Добавить учреждение</button>
+
+            </div>
+          </div>
+          <!--          <app-filter-input placeholder="Last Name" label="Last Name"></app-filter-input>-->
+          <mat-divider></mat-divider>
+        </div>
+
+      </mat-tab>
+      <mat-tab label="Рабочая информация">
+        <div class="p-3 mt-3">
+          <div class="block-group">
+            <div>
+              <h4>1. Карьера</h4>
+              <p>
+                В данной секции указывается история должностей сотрудника</p>
+            </div>
+            <div>
+              <form-ui-dropdown label="Должность" [control]="control"></form-ui-dropdown>
+              <div class="block-control">
+                <form-ui-date-picker [control]="control1" label="Дата принятия на дол-ть"></form-ui-date-picker>
+                <form-ui-date-picker [control]="control1" label="Дата завершения"></form-ui-date-picker>
+              </div>
+              <form-ui-dropdown label="Специальность"
+                                [control]="control"></form-ui-dropdown>
+              <div class="block-control">
+                <form-ui-dropdown [options]="['Male','Female']" label="Уровень специальности"
+                                  [control]="control"></form-ui-dropdown>
+                <form-ui-date-picker [control]="control1" label="Дата аттестации"></form-ui-date-picker>
+              </div>
+
+              <div class="block-control">
+                <button mat-stroked-button class="assets-btn outline-btn">Добавить запись с должностью
+                </button>
+                <button mat-flat-button class="assets-btn ghost-btn-deep-1 text-sm">Добавить запись о специальности
+                </button>
+              </div>
+            </div>
+          </div>
+          <!--          <app-filter-input placeholder="Last Name" label="Last Name"></app-filter-input>-->
+          <mat-divider></mat-divider>
+        </div>
+        <div class="p-3 mt-3">
+          <div class="block-group">
+            <div>
+              <h4>1. Статус</h4>
+              <p>
+                Сотрудник может быть активен- доступен к работе, в отпуске
+                или не активен - не доступен к работе, например, взял академический
+                или бессрочный отпуск</p>
+            </div>
+            <div>
+              <app-button-group></app-button-group>
+            </div>
+          </div>
+          <mat-divider></mat-divider>
+        </div>
+        <div class="p-3 mt-3">
+          <div class="block-group">
+            <div>
+              <h4>1. Контактные данные</h4>
+              <p>
+                Укажите рабочие контактные данные </p>
+            </div>
+            <div>
+              <div class="block-control">
+                <form-ui-text-input placeholder="Рабочая почта..." label="Рабочая почта" [prefix]="true" iconName="mail"
+                                    [control]="control"></form-ui-text-input>
+                <form-ui-text-input placeholder="Рабочий телефон..." label="Рабочий телефон" [prefix]="true"
+                                    iconName="phone"
+                                    [control]="control"></form-ui-text-input>
+              </div>
+            </div>
+          </div>
+          <mat-divider></mat-divider>
+        </div>
+      </mat-tab>
+      <mat-tab label="Дополнительная информация">
+        <div class="p-3 mt-3">
+          <div class="block-group">
+            <div>
+              <h4>1. Сведения о близких родственниках</h4>
+              <p>
+                Степень родства - муж, жена, брат, сестра или брат сотрудника. Вы можете добавить от одного до
+                нескольких родственников</p>
+            </div>
+            <div>
+              <form-ui-text-input label="Степень родства" placeholder="Степень родства..."
+                                  [control]="control"></form-ui-text-input>
+              <form-ui-date-picker label="Дата рождения" [control]="control"></form-ui-date-picker>
+              <div class="block-control">
+                <form-ui-text-input label="Имя" placeholder="Имя..."
+                                    [control]="control"></form-ui-text-input>
+                <form-ui-text-input label="Фамилия" placeholder="Фамилия..."
+                                    [control]="control"></form-ui-text-input>
+              </div>
+              <form-ui-text-input label="Отчество" placeholder="Отчество..."
+                                  [control]="control"></form-ui-text-input>
+              <form-ui-text-input label="Телефон" placeholder="Телефон..." [prefix]="true" iconName="phone"
+                                  [control]="control"></form-ui-text-input>
+              <button mat-flat-button class="assets-btn ghost-btn-deep-1 w-100">Добавить родственника</button>
+            </div>
+          </div>
+          <mat-divider></mat-divider>
+        </div>
+        <div class="p-3 mt-3">
+          <div class="block-group">
+            <div>
+              <h4>1. Интересы</h4>
+              <p>
+                Добавьте информацию о хобби, интересах сотрудника. Хэштеги категоризируют сотрудников по интересам.</p>
+            </div>
+            <div>
+              <ui-textarea label="Впишите информацию о сотруднике" placeholder="Впишите информацию о сотруднике"
+                           [control]="control"></ui-textarea>
+              <form-ui-dropdown label="Выберите хэштеги" [options]="['#лыжи','#футбол','#волейбол','#баскетбол']"
+                                [multiple]="true"
+                                [control]="control"></form-ui-dropdown>
+              <!--              <mat-chip color="primary" class="mat-chip-gray">-->
+              <!--                #настольные игры-->
+              <!--              </mat-chip>-->
+              <mat-chip-list>
+                <mat-chip color="primary">
+                  #настольные игры
+                  <button matChipRemove>
+                    <mat-icon>cancel</mat-icon>
+                  </button>
+                </mat-chip>
+                <mat-chip color="primary">
+                  #настольные игры
+                  <button matChipRemove>
+                    <mat-icon>cancel</mat-icon>
+                  </button>
+                </mat-chip>
+              </mat-chip-list>
+            </div>
+          </div>
+        </div>
+        <mat-divider></mat-divider>
+      </mat-tab>
+    </mat-tab-group>
+  </main>
+  <footer>
+    <button mat-stroked-button class="assets-btn outline-btn"
+            *ngIf="selectedIndex>0"
+            (click)="selectedIndex=selectedIndex-1">
+      <mat-icon>arrow_back</mat-icon>
+      Назад
+    </button>
+    <button mat-flat-button class="assets-btn primary-btn ml-2"
+            *ngIf="selectedIndex<totalTabCount-1;else submit"
+            (click)="selectedIndex=selectedIndex+1">Далее
+    </button>
+    <ng-template #submit>
+      <button mat-flat-button class="assets-btn primary-btn ml-2 mt-auto"
+      >
+        Создать сотрудника
+      </button>
+    </ng-template>
+  </footer>
+</div>
+<!--</section>-->

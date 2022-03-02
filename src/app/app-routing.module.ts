@@ -1,7 +1,8 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {EmployeesComponent} from "./pages/employees/employees.component";
 import {ComponentsComponent} from "./pages/components/components.component";
+import {AddEmployeeComponent} from "@app/pages/add-employee/add-employee.component";
 
 const routes: Routes = [
   {
@@ -13,6 +14,10 @@ const routes: Routes = [
     path: "employees",
     component: EmployeesComponent,
   },
+  {
+    path: "add-employee",
+    component: AddEmployeeComponent,
+  },
 
 ];
 
@@ -20,4 +25,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

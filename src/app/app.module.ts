@@ -13,6 +13,10 @@ import {WrapperComponent} from "@app/shared/components/content-wrapper/wrapper.c
 import {AvatarBarComponent} from "@app/shared/components/avatar-bar/avatar-bar.component";
 import {TableModule} from "@app/shared/components/table/table.module";
 import {FilterDatePickerModule} from "@app/shared/components/filters/filter-date-picker/filter-date-picker.module";
+import { ProgressBarComponent } from './shared/components/progress-bar/progress-bar.component';
+import { AddEmployeeComponent } from './pages/add-employee/add-employee.component';
+import {SelectModule} from "@app/shared/components/filters/form-filter-select/select.module";
+import {ButtonGroupModule} from "@app/shared/components/buttons/button-group/button-group.module";
 
 @NgModule({
   declarations: [
@@ -20,7 +24,9 @@ import {FilterDatePickerModule} from "@app/shared/components/filters/filter-date
     ComponentsComponent,
     EmployeesComponent,
     WrapperComponent,
-    AvatarBarComponent
+    AvatarBarComponent,
+    ProgressBarComponent,
+    AddEmployeeComponent
   ],
     imports: [
         BrowserModule,
@@ -31,6 +37,8 @@ import {FilterDatePickerModule} from "@app/shared/components/filters/filter-date
         FilterInputModule,
         TableModule,
         FilterDatePickerModule,
+        SelectModule,
+        ButtonGroupModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

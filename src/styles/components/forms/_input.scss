@@ -2,11 +2,13 @@
 
 .assets-form {
   font-size: 1rem;
+  width:100%;
 
   .mat-form-field.mat-focused {
     .mat-form-field-label {
-      color: rgba(174, 174, 174, 1) !important;
+      //color: rgba(174, 174, 174, 1) !important;
       font-size: $text-sm !important;
+      color: $text-light !important;
     }
 
   }
@@ -17,7 +19,8 @@
 
   .mat-form-field {
     width: 100%;
-    min-width: 25rem;
+    min-width: 240px;
+    //min-width: 25rem;
 
     &-underline {
       display: none !important;
@@ -54,7 +57,7 @@
     &-label {
       font-size: 14px !important;
       font-weight: 400 !important;
-      color: rgba(174, 174, 174, 1);
+      color: $text-light !important;
 
       &-wrapper {
       }
@@ -80,7 +83,7 @@
   }
 }
 
-.assets-textarea{
+.assets-textarea {
   .mat-form-field {
     &-flex {
       height: 120px !important;
@@ -113,7 +116,7 @@ mat-error {
       }
     }
   }
-  .assets-textarea{
+  .assets-textarea {
     .mat-form-field {
       &-flex {
         height: auto !important;

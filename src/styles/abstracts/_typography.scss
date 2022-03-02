@@ -1,26 +1,31 @@
 @import "../abstracts/variables";
 
-.text-body-dark{
-  color:$text-dark;
+.text-body-dark {
+  color: $text-dark;
 }
 
-.text{
-  &-xs{
-    font-size:0.85rem;
+.text {
+  &-xs {
+    font-size: 10px;
   }
-  &-sm{
-    font-size:0.90rem;
+
+  &-sm {
+    font-size: 12px;
   }
-  &-md{
-    font-size:1.2rem;
+
+  &-md {
+    font-size: 14px;
   }
-  &-lg{
-    font-size: 1.5rem;
+
+  &-lg {
+    font-size: 16px;
   }
-  &-xl{
+
+  &-xl {
     font-size: 1.8rem;
   }
-  &-xxl{
+
+  &-xxl {
     font-size: 2rem;
   }
 }

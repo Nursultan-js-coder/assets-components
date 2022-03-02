@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-components',
   templateUrl: './components.component.html',
-  styleUrls:['components.component.scss']
+  styleUrls: ['components.component.scss']
 })
 export class ComponentsComponent implements OnInit {
   control1 = new FormControl();
@@ -12,7 +12,8 @@ export class ComponentsComponent implements OnInit {
   control3 = new FormControl();
   control4 = new FormControl();
   datepickerControl = new FormControl();
-  selectedTabIndex=4;
+  selectedTabIndex = 8;
+
   constructor() {
     this.control1.addValidators(Validators.required);
     this.control2.addValidators(Validators.required);

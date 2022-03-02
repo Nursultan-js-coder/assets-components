@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl} from "@angular/forms";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-employees',
@@ -7,7 +8,7 @@ import {FormControl} from "@angular/forms";
 })
 export class EmployeesComponent implements OnInit {
   nameControl = new FormControl();
-  constructor() { }
+  constructor(public router:Router) { }
 
   ngOnInit(): void {
   }

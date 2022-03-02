@@ -164,8 +164,7 @@ button.icon-right > span mat-icon {
 
   &-deep-1 {
     @extend .ghost-btn;
-    background-color: rgba(0, 124, 217, 0.04) !important;
-  ;
+    background-color: rgba(0, 124, 217, 0.04) !important;;
   }
 
   &-deep-2 {
@@ -274,7 +273,6 @@ button.icon-right > span mat-icon {
   }
 
 
-
   &-md {
     width: $md-size-button !important;
     height: $md-size-button !important;
@@ -303,15 +301,54 @@ button.assets-btn.mat-button-disabled {
   color: #fff !important;
 }
 
-button.assets-btn.ghost-btn.mat-button-disabled, ,button.assets-btn-sm.ghost-btn.mat-button-disabled{
-                                                    pointer-events: none;
-                                                    background-color: transparent !important;
-                                                    color: $text-gray !important;
-                                                    opacity: 0.5;
-                                                  }
+button.assets-btn.ghost-btn.mat-button-disabled,
 
+,
+button.assets-btn-sm.ghost-btn.mat-button-disabled {
+  pointer-events: none;
+  background-color: transparent !important;
+  color: $text-gray !important;
+  opacity: 0.5;
+}
 
-@media screen and(max-width:1350px) {
+.outline-btn{
+  color:$text-gray !important;
+}
+
+mat-button-toggle-group {
+  display: inline-flex !important;
+}
+
+mat-button-toggle-group.primary {
+  border-radius: 8px;
+  max-height: 40px;
+  border: 0 !important;
+
+  .mat-button-toggle-checked {
+    background-color: rgba(0, 124, 217, 1);
+    color: white !important;
+  }
+
+  mat-button-toggle {
+    max-height: 100%;
+    padding: 0 17px;
+    font-size: 14px;
+
+    button {
+      max-height: 100%;
+
+      span {
+        line-height: 40px !important;
+      }
+    }
+  }
+}
+
+mat-button-toggle-group.primary * {
+  border: 0 !important;
+}
+
+@media screen and(max-width: 1350px) {
   .assets-btn {
     border-radius: $border-rd-sm !important;
     font-size: $text-sm;
@@ -351,6 +388,7 @@ button.assets-btn.ghost-btn.mat-button-disabled, ,button.assets-btn-sm.ghost-btn
       @extend .icon-only-btn;
       min-width: 41px !important;
       height: 34px !important;
+
       mat-icon {
         font-size: 1.5rem !important;
         height: 1.5rem;
@@ -395,7 +433,6 @@ button.assets-btn.ghost-btn.mat-button-disabled, ,button.assets-btn-sm.ghost-btn
       }
 
     }
-
 
 
     &-md {

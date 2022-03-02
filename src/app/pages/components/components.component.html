@@ -1,463 +1,699 @@
 <div class="content-scrollable">
-<div class="p-3 m-3">
-  <mat-tab-group (selectedTabChange)="selectedTabIndex=$event.index" [selectedIndex]="selectedTabIndex">
-    <mat-tab label="Buttons">
-      <h2>Buttons</h2>
-      <div class="component-container">
-        <div class="component-row">
+  <div class="p-3 m-3 h-100">
+    <mat-tab-group class="h-100" (selectedTabChange)="selectedTabIndex=$event.index" [selectedIndex]="selectedTabIndex">
+      <mat-tab label="Buttons">
+        <h2>Buttons</h2>
+        <div class="component-container">
+          <div class="component-row">
 
-          <div class="component-column-wrapper">
-            <h2>Primary large</h2>
-            <div class="component-column">
-              <button mat-flat-button class="assets-btn primary-btn">Button</button>
-              <button mat-flat-button class="assets-btn primary-btn-deep-1">Button</button>
-              <button mat-flat-button class="assets-btn primary-btn-deep-2">Button</button>
-              <button mat-flat-button disabled class="assets-btn primary-btn">Button</button>
+            <div class="component-column-wrapper">
+              <h2>Primary large</h2>
+              <div class="component-column">
+                <button mat-flat-button class="assets-btn primary-btn">Button</button>
+                <button mat-flat-button class="assets-btn primary-btn-deep-1">Button</button>
+                <button mat-flat-button class="assets-btn primary-btn-deep-2">Button</button>
+                <button mat-flat-button disabled class="assets-btn primary-btn">Button</button>
+              </div>
+              <div class="component-column">
+                <button mat-flat-button class="assets-btn primary-btn">Button</button>
+                <button mat-flat-button class="assets-btn primary-btn-deep-1">Button</button>
+                <button mat-flat-button class="assets-btn primary-btn-deep-2">Button</button>
+                <button mat-flat-button disabled class="assets-btn primary-btn">Button</button>
+              </div>
+              <div class="component-column">
+                <button mat-flat-button class="assets-btn primary-btn icon-left">
+                  <mat-icon>add</mat-icon>
+                  Button
+                </button>
+                <button mat-flat-button class="assets-btn primary-btn-deep-1 icon-left">
+                  <mat-icon>edit</mat-icon>
+                  Button
+                </button>
+                <button mat-flat-button class="assets-btn primary-btn-deep-2 icon-left">
+                  <mat-icon>edit</mat-icon>
+                  Button
+                </button>
+                <button mat-flat-button disabled class="assets-btn primary-btn icon-left">
+                  <mat-icon>edit</mat-icon>
+                  Button
+                </button>
+              </div>
+              <div class="component-column">
+                <button mat-flat-button class="assets-btn primary-btn icon-only-btn">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-flat-button class="assets-btn primary-btn-deep-1 icon-only-btn">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-flat-button class="assets-btn primary-btn-deep-2 icon-only-btn">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-flat-button disabled class="assets-btn icon-only-btn">
+                  <mat-icon>edit</mat-icon>
+                </button>
+              </div>
             </div>
-            <div class="component-column">
-              <button mat-flat-button class="assets-btn primary-btn">Button</button>
-              <button mat-flat-button class="assets-btn primary-btn-deep-1">Button</button>
-              <button mat-flat-button class="assets-btn primary-btn-deep-2">Button</button>
-              <button mat-flat-button disabled class="assets-btn primary-btn">Button</button>
-            </div>
-            <div class="component-column">
-              <button mat-flat-button class="assets-btn primary-btn icon-left">
-                <mat-icon>add</mat-icon>
-                Button
-              </button>
-              <button mat-flat-button class="assets-btn primary-btn-deep-1 icon-left">
-                <mat-icon>edit</mat-icon>
-                Button
-              </button>
-              <button mat-flat-button class="assets-btn primary-btn-deep-2 icon-left">
-                <mat-icon>edit</mat-icon>
-                Button
-              </button>
-              <button mat-flat-button disabled class="assets-btn primary-btn icon-left">
-                <mat-icon>edit</mat-icon>
-                Button
-              </button>
-            </div>
-            <div class="component-column">
-              <button mat-flat-button class="assets-btn primary-btn icon-only-btn">
-                <mat-icon>edit</mat-icon>
-              </button>
-              <button mat-flat-button class="assets-btn primary-btn-deep-1 icon-only-btn">
-                <mat-icon>edit</mat-icon>
-              </button>
-              <button mat-flat-button class="assets-btn primary-btn-deep-2 icon-only-btn">
-                <mat-icon>edit</mat-icon>
-              </button>
-              <button mat-flat-button disabled class="assets-btn icon-only-btn">
-                <mat-icon>edit</mat-icon>
-              </button>
+
+            <div class="component-column-wrapper">
+              <h2>Primary small</h2>
+              <div class="component-column">
+                <!--      <div class="p-5">-->
+                <button mat-flat-button class="assets-btn-sm primary-btn">Button</button>
+                <button mat-flat-button class="assets-btn-sm primary-btn-deep-1">Button</button>
+                <button mat-flat-button class="assets-btn-sm primary-btn-deep-2">Button</button>
+                <button mat-flat-button disabled class="assets-btn-sm primary-btn">Button</button>
+              </div>
+              <div class="component-column">
+                <!--      <div class="p-5">-->
+                <button mat-flat-button class="assets-btn-sm primary-btn">Button</button>
+                <button mat-flat-button class="assets-btn-sm primary-btn-deep-1">Button</button>
+                <button mat-flat-button class="assets-btn-sm primary-btn-deep-2">Button</button>
+                <button mat-flat-button disabled class="assets-btn-sm primary-btn">Button</button>
+              </div>
+              <div class="component-column">
+                <button mat-flat-button class="assets-btn-sm primary-btn icon-left">
+                  <mat-icon>edit</mat-icon>
+                  Button
+                </button>
+                <button mat-flat-button class="assets-btn-sm primary-btn-deep-1 icon-left">
+                  <mat-icon>edit</mat-icon>
+                  Button
+                </button>
+                <button mat-flat-button class="assets-btn-sm primary-btn-deep-2 icon-left">
+                  <mat-icon>edit</mat-icon>
+                  Button
+                </button>
+                <button mat-flat-button disabled class="assets-btn-sm primary-btn icon-left">
+                  <mat-icon>edit</mat-icon>
+                  Button
+                </button>
+              </div>
+              <div class="component-column">
+                <button mat-flat-button class="assets-btn-sm primary-btn icon-only-btn-sm">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-flat-button class="assets-btn-sm primary-btn-deep-1 icon-only-btn-sm">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-flat-button class="assets-btn-sm primary-btn-deep-2 icon-only-btn-sm">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-flat-button disabled class="assets-btn-sm icon-only-btn-sm">
+                  <mat-icon>edit</mat-icon>
+                </button>
+              </div>
             </div>
           </div>
 
-          <div class="component-column-wrapper">
-            <h2>Primary small</h2>
-            <div class="component-column">
-              <!--      <div class="p-5">-->
-              <button mat-flat-button class="assets-btn-sm primary-btn">Button</button>
-              <button mat-flat-button class="assets-btn-sm primary-btn-deep-1">Button</button>
-              <button mat-flat-button class="assets-btn-sm primary-btn-deep-2">Button</button>
-              <button mat-flat-button disabled class="assets-btn-sm primary-btn">Button</button>
+          <div class="component-row">
+
+            <div class="component-column-wrapper">
+              <h2>Ghost large</h2>
+              <div class="component-column">
+                <button mat-flat-button class="assets-btn ghost-btn">Button</button>
+                <button mat-flat-button class="assets-btn ghost-btn-deep-1">Button</button>
+                <button mat-flat-button class="assets-btn ghost-btn-deep-2">Button</button>
+                <button mat-flat-button disabled class="assets-btn ghost-btn">Button</button>
+              </div>
+              <div class="component-column">
+                <button mat-flat-button class="assets-btn ghost-btn icon-left">
+                  <mat-icon>add</mat-icon>
+                  Button
+                </button>
+                <button mat-flat-button class="assets-btn ghost-btn-deep-1 icon-left">
+                  <mat-icon>edit</mat-icon>
+                  Button
+                </button>
+                <button mat-flat-button class="assets-btn ghost-btn-deep-2 icon-left">
+                  <mat-icon>edit</mat-icon>
+                  Button
+                </button>
+                <button mat-flat-button disabled class="assets-btn ghost-btn icon-left">
+                  <mat-icon>edit</mat-icon>
+                  Button
+                </button>
+              </div>
+              <div class="component-column">
+                <button mat-flat-button class="assets-btn ghost-btn icon-right">
+                  Button
+                  <mat-icon>add</mat-icon>
+                </button>
+                <button mat-flat-button class="assets-btn ghost-btn-deep-1 icon-right">
+                  Button
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-flat-button class="assets-btn ghost-btn-deep-2 icon-right">
+                  Button
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-flat-button disabled class="assets-btn ghost-btn icon-right">
+                  Button
+                  <mat-icon>edit</mat-icon>
+                </button>
+              </div>
+              <div class="component-column">
+                <button mat-flat-button class="assets-btn ghost-btn icon-only-btn">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-flat-button class="assets-btn ghost-btn-deep-1 icon-only-btn">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-flat-button class="assets-btn ghost-btn-deep-2 icon-only-btn">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-flat-button disabled class="assets-btn icon-only-btn">
+                  <mat-icon>edit</mat-icon>
+                </button>
+              </div>
             </div>
-            <div class="component-column">
-              <!--      <div class="p-5">-->
-              <button mat-flat-button class="assets-btn-sm primary-btn">Button</button>
-              <button mat-flat-button class="assets-btn-sm primary-btn-deep-1">Button</button>
-              <button mat-flat-button class="assets-btn-sm primary-btn-deep-2">Button</button>
-              <button mat-flat-button disabled class="assets-btn-sm primary-btn">Button</button>
+
+            <div class="component-column-wrapper">
+              <h2>Ghost small</h2>
+              <div class="component-column">
+                <button mat-flat-button class="assets-btn-sm ghost-btn">Button</button>
+                <button mat-flat-button class="assets-btn-sm ghost-btn-deep-1">Button</button>
+                <button mat-flat-button class="assets-btn-sm ghost-btn-deep-2">Button</button>
+                <button mat-flat-button disabled class="assets-btn-sm ghost-btn">Button</button>
+              </div>
+              <div class="component-column">
+                <button mat-flat-button class="assets-btn-sm ghost-btn icon-left">
+                  <mat-icon>add</mat-icon>
+                  Button
+                </button>
+                <button mat-flat-button class="assets-btn-sm ghost-btn-deep-1 icon-left">
+                  <mat-icon>edit</mat-icon>
+                  Button
+                </button>
+                <button mat-flat-button class="assets-btn-sm ghost-btn-deep-2 icon-left">
+                  <mat-icon>edit</mat-icon>
+                  Button
+                </button>
+                <button mat-flat-button disabled class="assets-btn-sm ghost-btn icon-left">
+                  <mat-icon>edit</mat-icon>
+                  Button
+                </button>
+              </div>
+              <div class="component-column">
+                <button mat-flat-button class="assets-btn-sm ghost-btn icon-right">
+                  Button
+                  <mat-icon>add</mat-icon>
+                </button>
+                <button mat-flat-button class="assets-btn-sm ghost-btn-deep-1 icon-right">
+                  Button
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-flat-button class="assets-btn-sm ghost-btn-deep-2 icon-right">
+                  Button
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-flat-button disabled class="assets-btn-sm ghost-btn icon-right">
+                  Button
+                  <mat-icon>edit</mat-icon>
+                </button>
+              </div>
+              <div class="component-column">
+                <button mat-flat-button class="assets-btn-sm ghost-btn icon-only-btn-sm">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-flat-button class="assets-btn-sm ghost-btn-deep-1 icon-only-btn-sm">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-flat-button class="assets-btn-sm ghost-btn-deep-2 icon-only-btn-sm">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-flat-button disabled class="assets-btn-sm icon-only-btn-sm">
+                  <mat-icon>edit</mat-icon>
+                </button>
+              </div>
             </div>
-            <div class="component-column">
-              <button mat-flat-button class="assets-btn-sm primary-btn icon-left">
-                <mat-icon>edit</mat-icon>
-                Button
-              </button>
-              <button mat-flat-button class="assets-btn-sm primary-btn-deep-1 icon-left">
-                <mat-icon>edit</mat-icon>
-                Button
-              </button>
-              <button mat-flat-button class="assets-btn-sm primary-btn-deep-2 icon-left">
-                <mat-icon>edit</mat-icon>
-                Button
-              </button>
-              <button mat-flat-button disabled class="assets-btn-sm primary-btn icon-left">
-                <mat-icon>edit</mat-icon>
-                Button
-              </button>
+          </div>
+
+          <div class="component-row">
+            <div class="component-column-wrapper">
+              <h2>Secondary large</h2>
+              <div class="component-column">
+                <button mat-flat-button class="assets-btn-sm secondary-btn">Button</button>
+                <button mat-flat-button class="assets-btn-sm secondary-btn-deep-1">Button</button>
+                <button mat-flat-button class="assets-btn-sm secondary-btn-deep-2">Button</button>
+                <button mat-flat-button disabled class="assets-btn-sm">Button</button>
+              </div>
+
             </div>
-            <div class="component-column">
-              <button mat-flat-button class="assets-btn-sm primary-btn icon-only-btn-sm">
-                <mat-icon>edit</mat-icon>
-              </button>
-              <button mat-flat-button class="assets-btn-sm primary-btn-deep-1 icon-only-btn-sm">
-                <mat-icon>edit</mat-icon>
-              </button>
-              <button mat-flat-button class="assets-btn-sm primary-btn-deep-2 icon-only-btn-sm">
-                <mat-icon>edit</mat-icon>
-              </button>
-              <button mat-flat-button disabled class="assets-btn-sm icon-only-btn-sm">
-                <mat-icon>edit</mat-icon>
-              </button>
+            <div class="component-column-wrapper">
+              <h2>Secondary small</h2>
             </div>
+          </div>
+          <div class="component-row">
+            <div class="component-column-wrapper">
+              <h2>Select menu trigger large button</h2>
+              <div class="component-column">
+                <app-menu size="lg" class="ml-2" icon="filter_alt" [options]="['Junior','Middle','Senior']"
+                          [multiple]="true"
+                          [control]="control1"></app-menu>
+                <app-menu size="lg" class="ml-2" icon="filter_alt" [options]="['Junior','Middle','Senior']"
+                          [multiple]="true"
+                          [control]="control1"></app-menu>
+                <app-menu size="lg" class="ml-2" icon="filter_alt" [options]="['Junior','Middle','Senior']"
+                          [multiple]="true"
+                          [control]="control1"></app-menu>
+
+              </div>
+            </div>
+            <div class="component-column-wrapper">
+              <h2>Select menu trigger medium button</h2>
+              <div class="component-column">
+                <app-menu size="md" class="ml-2" icon="filter_alt" [options]="['Junior','Middle','Senior']"
+                          [multiple]="true"
+                          [control]="control1"></app-menu>
+                <app-menu size="md" class="ml-2" icon="filter_alt" [options]="['Junior','Middle','Senior']"
+                          [multiple]="true"
+                          [control]="control1"></app-menu>
+                <app-menu size="md" class="ml-2" icon="filter_alt" [options]="['Junior','Middle','Senior']"
+                          [multiple]="true"
+                          [control]="control1"></app-menu>
+
+              </div>
+            </div>
+            <div class="component-column-wrapper">
+              <h2>Select menu trigger small button</h2>
+              <div class="component-column">
+                <app-menu size="sm" class="ml-2" icon="filter_alt" [options]="['Junior','Middle','Senior']"
+                          [multiple]="true"
+                          [control]="control1"></app-menu>
+                <app-menu size="sm" class="ml-2" icon="filter_alt" [options]="['Junior','Middle','Senior']"
+                          [multiple]="true"
+                          [control]="control1"></app-menu>
+                <app-menu size="sm" class="ml-2" icon="filter_alt" [options]="['Junior','Middle','Senior']"
+                          [multiple]="true"
+                          [control]="control1"></app-menu>
+
+              </div>
+            </div>
+
+          </div>
+          <div class="component-row">
+
+            <div class="component-column-wrapper">
+              <h2>Button group large</h2>
+              <div class="component-column">
+                <mat-button-toggle-group class="primary" name="favoriteColor" aria-label="Favorite Color">
+                  <mat-button-toggle value="red">Red</mat-button-toggle>
+                  <mat-button-toggle value="green">Green</mat-button-toggle>
+                  <mat-button-toggle value="blue">Blue</mat-button-toggle>
+                </mat-button-toggle-group>
+              </div>
+              <div class="component-column">
+                <button mat-flat-button class="assets-btn ghost-btn icon-left">
+                  <mat-icon>add</mat-icon>
+                  Button
+                </button>
+              </div>
+            </div>
+            <div class="component-column-wrapper">
+              <h2>Button group small</h2>
+              <div class="component-column">
+                <button mat-flat-button class="assets-btn ghost-btn">Button</button>
+              </div>
+              <div class="component-column">
+                <button mat-flat-button class="assets-btn ghost-btn icon-left">
+                  <mat-icon>add</mat-icon>
+                  Button
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="component-row">
+            <div class="component-column-wrapper">
+              <h2>Outline button large</h2>
+              <div class="component-column">
+                <button mat-stroked-button class="assets-btn outline-btn">Button</button>
+              </div>
+              <div class="component-column">
+                <button mat-flat-button class="assets-btn ghost-btn icon-left">
+                  <mat-icon>add</mat-icon>
+                  Button
+                </button>
+              </div>
+            </div>
+            <div class="component-column-wrapper">
+              <h2>Outline button small</h2>
+              <div class="component-column">
+                <button mat-flat-button class="assets-btn ghost-btn">Button</button>
+              </div>
+              <div class="component-column">
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </mat-tab>
+      <mat-tab label="Inputs">
+        <h2>Inputs</h2>
+        <div class="component-container">
+          <div class="component-row">
+            <div class="component-column-wrapper">
+              <h2>Simple Input</h2>
+              <div class="component-column">
+                <div [ngStyle]="{'max-width':'300px'}">
+                  <form-ui-text-input
+                    [control]="control1"
+                    label="First Name"
+                    placeholder="First Name ...">
+                  </form-ui-text-input>
+                </div>
+              </div>
+            </div>
+            <div class="component-column-wrapper">
+              <h2>Input with suffix</h2>
+              <div class="component-column">
+                <div [ngStyle]="{'max-width':'300px'}">
+                  <form-ui-text-input
+                    [control]="control2"
+                    [suffix]="true"
+                    iconName="edit"
+                    label="Last Name">
+                  </form-ui-text-input>
+                </div>
+              </div>
+            </div>
+            <div class="component-column-wrapper">
+              <h2>Input with prefix</h2>
+              <div class="component-column">
+                <div [ngStyle]="{'max-width':'300px'}">
+                  <form-ui-text-input
+                    [control]="control3"
+                    [prefix]="true"
+                    iconName="edit"
+                    label="Middle Name">
+                  </form-ui-text-input>
+                </div>
+              </div>
+            </div>
+
+            <div class="component-column-wrapper">
+              <h2>Disabled Input</h2>
+              <div class="component-column">
+                <div [ngStyle]="{'max-width':'300px'}">
+                  <form-ui-text-input
+                    [control]="control4"
+                    [suffix]="true"
+                    iconName="edit"
+                    label="Middle Name">
+                  </form-ui-text-input>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
-
-        <div class="component-row">
-
-          <div class="component-column-wrapper">
-            <h2>Ghost large</h2>
-            <div class="component-column">
-              <button mat-flat-button class="assets-btn ghost-btn">Button</button>
-              <button mat-flat-button class="assets-btn ghost-btn-deep-1">Button</button>
-              <button mat-flat-button class="assets-btn ghost-btn-deep-2">Button</button>
-              <button mat-flat-button disabled class="assets-btn ghost-btn">Button</button>
-            </div>
-            <div class="component-column">
-              <button mat-flat-button class="assets-btn ghost-btn icon-left">
-                <mat-icon>add</mat-icon>
-                Button
-              </button>
-              <button mat-flat-button class="assets-btn ghost-btn-deep-1 icon-left">
-                <mat-icon>edit</mat-icon>
-                Button
-              </button>
-              <button mat-flat-button class="assets-btn ghost-btn-deep-2 icon-left">
-                <mat-icon>edit</mat-icon>
-                Button
-              </button>
-              <button mat-flat-button disabled class="assets-btn ghost-btn icon-left">
-                <mat-icon>edit</mat-icon>
-                Button
-              </button>
-            </div>
-            <div class="component-column">
-              <button mat-flat-button class="assets-btn ghost-btn icon-right">
-                Button
-                <mat-icon>add</mat-icon>
-              </button>
-              <button mat-flat-button class="assets-btn ghost-btn-deep-1 icon-right">
-                Button
-                <mat-icon>edit</mat-icon>
-              </button>
-              <button mat-flat-button class="assets-btn ghost-btn-deep-2 icon-right">
-                Button
-                <mat-icon>edit</mat-icon>
-              </button>
-              <button mat-flat-button disabled class="assets-btn ghost-btn icon-right">
-                Button
-                <mat-icon>edit</mat-icon>
-              </button>
-            </div>
-            <div class="component-column">
-              <button mat-flat-button class="assets-btn ghost-btn icon-only-btn">
-                <mat-icon>edit</mat-icon>
-              </button>
-              <button mat-flat-button class="assets-btn ghost-btn-deep-1 icon-only-btn">
-                <mat-icon>edit</mat-icon>
-              </button>
-              <button mat-flat-button class="assets-btn ghost-btn-deep-2 icon-only-btn">
-                <mat-icon>edit</mat-icon>
-              </button>
-              <button mat-flat-button disabled class="assets-btn icon-only-btn">
-                <mat-icon>edit</mat-icon>
-              </button>
-            </div>
-          </div>
-
-          <div class="component-column-wrapper">
-            <h2>Ghost small</h2>
-            <div class="component-column">
-              <button mat-flat-button class="assets-btn-sm ghost-btn">Button</button>
-              <button mat-flat-button class="assets-btn-sm ghost-btn-deep-1">Button</button>
-              <button mat-flat-button class="assets-btn-sm ghost-btn-deep-2">Button</button>
-              <button mat-flat-button disabled class="assets-btn-sm ghost-btn">Button</button>
-            </div>
-            <div class="component-column">
-              <button mat-flat-button class="assets-btn-sm ghost-btn icon-left">
-                <mat-icon>add</mat-icon>
-                Button
-              </button>
-              <button mat-flat-button class="assets-btn-sm ghost-btn-deep-1 icon-left">
-                <mat-icon>edit</mat-icon>
-                Button
-              </button>
-              <button mat-flat-button class="assets-btn-sm ghost-btn-deep-2 icon-left">
-                <mat-icon>edit</mat-icon>
-                Button
-              </button>
-              <button mat-flat-button disabled class="assets-btn-sm ghost-btn icon-left">
-                <mat-icon>edit</mat-icon>
-                Button
-              </button>
-            </div>
-            <div class="component-column">
-              <button mat-flat-button class="assets-btn-sm ghost-btn icon-right">
-                Button
-                <mat-icon>add</mat-icon>
-              </button>
-              <button mat-flat-button class="assets-btn-sm ghost-btn-deep-1 icon-right">
-                Button
-                <mat-icon>edit</mat-icon>
-              </button>
-              <button mat-flat-button class="assets-btn-sm ghost-btn-deep-2 icon-right">
-                Button
-                <mat-icon>edit</mat-icon>
-              </button>
-              <button mat-flat-button disabled class="assets-btn-sm ghost-btn icon-right">
-                Button
-                <mat-icon>edit</mat-icon>
-              </button>
-            </div>
-            <div class="component-column">
-              <button mat-flat-button class="assets-btn-sm ghost-btn icon-only-btn-sm">
-                <mat-icon>edit</mat-icon>
-              </button>
-              <button mat-flat-button class="assets-btn-sm ghost-btn-deep-1 icon-only-btn-sm">
-                <mat-icon>edit</mat-icon>
-              </button>
-              <button mat-flat-button class="assets-btn-sm ghost-btn-deep-2 icon-only-btn-sm">
-                <mat-icon>edit</mat-icon>
-              </button>
-              <button mat-flat-button disabled class="assets-btn-sm icon-only-btn-sm">
-                <mat-icon>edit</mat-icon>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="component-row">
-          <div class="component-column-wrapper">
-            <h2>Secondary large</h2>
-            <div class="component-column">
-              <button mat-flat-button class="assets-btn-sm secondary-btn">Button</button>
-              <button mat-flat-button class="assets-btn-sm secondary-btn-deep-1">Button</button>
-              <button mat-flat-button class="assets-btn-sm secondary-btn-deep-2">Button</button>
-              <button mat-flat-button disabled class="assets-btn-sm">Button</button>
-            </div>
-
-          </div>
-          <div class="component-column-wrapper">
-            <h2>Secondary small</h2>
-          </div>
-        </div>
-        <div class="component-row">
-          <div class="component-column-wrapper">
-            <h2>Select menu trigger large button</h2>
-            <div class="component-column">
-              <app-menu size="lg" class="ml-2" icon="filter_alt" [options]="['Junior','Middle','Senior']" [multiple]="true"
-                        [control]="control1"></app-menu>
-              <app-menu size="lg" class="ml-2" icon="filter_alt" [options]="['Junior','Middle','Senior']" [multiple]="true"
-                        [control]="control1"></app-menu>
-              <app-menu size="lg" class="ml-2" icon="filter_alt" [options]="['Junior','Middle','Senior']" [multiple]="true"
-                        [control]="control1"></app-menu>
-
-            </div>
-          </div>
-          <div class="component-column-wrapper">
-            <h2>Select menu trigger medium button</h2>
-            <div class="component-column">
-              <app-menu size="md" class="ml-2" icon="filter_alt" [options]="['Junior','Middle','Senior']" [multiple]="true"
-                        [control]="control1"></app-menu>
-              <app-menu size="md" class="ml-2" icon="filter_alt" [options]="['Junior','Middle','Senior']" [multiple]="true"
-                        [control]="control1"></app-menu>
-              <app-menu size="md" class="ml-2" icon="filter_alt" [options]="['Junior','Middle','Senior']" [multiple]="true"
-                        [control]="control1"></app-menu>
-
-            </div>
-          </div>
-          <div class="component-column-wrapper">
-            <h2>Select menu trigger small button</h2>
-            <div class="component-column">
-              <app-menu size="sm" class="ml-2" icon="filter_alt" [options]="['Junior','Middle','Senior']" [multiple]="true"
-                        [control]="control1"></app-menu>
-              <app-menu size="sm" class="ml-2" icon="filter_alt" [options]="['Junior','Middle','Senior']" [multiple]="true"
-                        [control]="control1"></app-menu>
-              <app-menu size="sm" class="ml-2" icon="filter_alt" [options]="['Junior','Middle','Senior']" [multiple]="true"
-                        [control]="control1"></app-menu>
-
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </mat-tab>
-    <mat-tab label="Inputs">
-      <h2>Inputs</h2>
-      <div class="component-container">
-        <div class="component-row">
-          <div class="component-column-wrapper">
-            <h2>Simple Input</h2>
-            <div class="component-column">
-              <div [ngStyle]="{'max-width':'300px'}">
-                <form-ui-text-input
-                  [control]="control1"
-                  label="First Name"
-                  placeholder="First Name ...">
-                </form-ui-text-input>
+        <h2>Dropdowns</h2>
+        <div class="component-container">
+          <div class="component-row">
+            <div class="component-column-wrapper">
+              <h2>Single choice dropdown</h2>
+              <div class="component-column">
+                <div [ngStyle]="{'max-width':'300px'}">
+                  <form-ui-dropdown [control]="control3"
+                                    label="University"
+                                    [options]="[{name:'Manas',value:1},{name:'AUCA',value:2}]"
+                                    [hasTranslations]="true">
+                    University
+                  </form-ui-dropdown>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="component-column-wrapper">
-            <h2>Input with suffix</h2>
-            <div class="component-column">
-              <div [ngStyle]="{'max-width':'300px'}">
-                <form-ui-text-input
-                  [control]="control2"
-                  [suffix]="true"
-                  iconName="edit"
-                  label="Last Name">
-                </form-ui-text-input>
-              </div>
-            </div>
-          </div>
-          <div class="component-column-wrapper">
-            <h2>Input with prefix</h2>
-            <div class="component-column">
-              <div [ngStyle]="{'max-width':'300px'}">
-                <form-ui-text-input
-                  [control]="control3"
-                  [prefix]="true"
-                  iconName="edit"
-                  label="Middle Name">
-                </form-ui-text-input>
-              </div>
-            </div>
-          </div>
-
-          <div class="component-column-wrapper">
-            <h2>Disabled Input</h2>
-            <div class="component-column">
-              <div [ngStyle]="{'max-width':'300px'}">
-                <form-ui-text-input
-                  [control]="control4"
-                  [suffix]="true"
-                  iconName="edit"
-                  label="Middle Name">
-                </form-ui-text-input>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      <h2>Dropdowns</h2>
-      <div class="component-container">
-        <div class="component-row">
-          <div class="component-column-wrapper">
-            <h2>Single choice dropdown</h2>
-            <div class="component-column">
-              <div [ngStyle]="{'max-width':'300px'}">
-                <form-ui-dropdown [control]="control3"
-                                  label="University"
-                                  [options]="[{name:'Manas',value:1},{name:'AUCA',value:2}]"
-                                  [hasTranslations]="true">
-                  University
-                </form-ui-dropdown>
-              </div>
-            </div>
-          </div>
-          <div class="component-column-wrapper">
-            <h2>Multiple choice dropdown</h2>
-            <div class="component-column">
-              <div [ngStyle]="{'max-width':'300px'}">
-                <form-ui-dropdown [control]="control3"
-                                  label="University"
-                                  [multiple]="true"
-                                  [options]="[{name:'Manas',value:1},{name:'AUCA',value:2}]"
-                                  [hasTranslations]="true">
-                  University
-                </form-ui-dropdown>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </mat-tab>
-    <mat-tab label="Tabs">
-      <h2>Tabs</h2>
-      <div>
-        <h2>Primary Tab</h2>
-        <mat-tab-group class="tab-primary">
-          <mat-tab label="Tab #1">
-            Tab #1 content
-          </mat-tab>
-          <mat-tab label="Tab #2">
-            Tab #2 content
-          </mat-tab>
-        </mat-tab-group>
-      </div>
-
-      <div>
-        <h2>Ordinary tab with darker background</h2>
-        <mat-tab-group>
-          <mat-tab label="Tab #1">
-            Tab #1 content
-          </mat-tab>
-          <mat-tab label="Tab #2">
-            Tab #2 content
-          </mat-tab>
-        </mat-tab-group>
-      </div>
-
-      <div>
-        <h2>Secondary Tab with light background</h2>
-        <mat-tab-group class="tab-secondary">
-          <mat-tab label="Tab #1">
-            Tab #1 content
-          </mat-tab>
-          <mat-tab label="Tab #2">
-            Tab #2 content
-          </mat-tab>
-        </mat-tab-group>
-      </div>
-
-    </mat-tab>
-    <mat-tab label="Filters">
-      <h2>Filters</h2>
-      <div class="component-container">
-        <div class="component-row">
-          <div class="component-column-wrapper">
-            <h2>Simple Input</h2>
-            <div class="component-column">
-              <div [ngStyle]="{'max-width':'300px'}">
-                   <app-filter-input [control]="control1" placeholder="Enter employee name..."></app-filter-input>
-              </div>
-            </div>
-          </div>
-          <div class="component-column-wrapper">
-            <h2>Single DatePicker</h2>
-            <div class="component-column">
-              <div [ngStyle]="{'max-width':'300px'}">
-                <app-filter-date-picker [control]="datepickerControl" label="Simple Datepicker"></app-filter-date-picker>
-              </div>
-            </div>
-          </div>
-          <div class="component-column-wrapper">
-            <h2>Range DatePicker</h2>
-            <div class="component-column">
-              <div [ngStyle]="{'max-width':'300px'}">
-                <app-filter-date-picker [range]="true" [control]="datepickerControl" label="Range Datepicker"></app-filter-date-picker>
-              </div>
-            </div>
-          </div>
-          <div class="component-column-wrapper">
-            <h2>Textarea</h2>
-            <div class="component-column">
-              <div [ngStyle]="{'max-width':'300px'}">
-                <ui-textarea [control]="control1" label="Name" placeholder="Enter name"></ui-textarea>
+            <div class="component-column-wrapper">
+              <h2>Multiple choice dropdown</h2>
+              <div class="component-column">
+                <div [ngStyle]="{'max-width':'300px'}">
+                  <form-ui-dropdown [control]="control3"
+                                    label="University"
+                                    [multiple]="true"
+                                    [options]="[{name:'Manas',value:1},{name:'AUCA',value:2}]"
+                                    [hasTranslations]="true">
+                    University
+                  </form-ui-dropdown>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </mat-tab>
+      <mat-tab label="Tabs">
+        <h2>Tabs</h2>
+        <div>
+          <h2>Primary Tab</h2>
+          <mat-tab-group class="tab-primary">
+            <mat-tab label="Tab #1">
+              Tab #1 content
+            </mat-tab>
+            <mat-tab label="Tab #2">
+              Tab #2 content
+            </mat-tab>
+          </mat-tab-group>
+        </div>
 
-    </mat-tab>
-    <mat-tab label="Tables">
-      <app-employee-table></app-employee-table>
-    </mat-tab>
-  </mat-tab-group>
-</div>
+        <div>
+          <h2>Ordinary tab with darker background</h2>
+          <mat-tab-group>
+            <mat-tab label="Tab #1">
+              Tab #1 content
+            </mat-tab>
+            <mat-tab label="Tab #2">
+              Tab #2 content
+            </mat-tab>
+          </mat-tab-group>
+        </div>
+
+        <div>
+          <h2>Secondary Tab with light background</h2>
+          <mat-tab-group class="tab-secondary">
+            <mat-tab label="Tab #1">
+              Tab #1 content
+            </mat-tab>
+            <mat-tab label="Tab #2">
+              Tab #2 content
+            </mat-tab>
+          </mat-tab-group>
+        </div>
+
+      </mat-tab>
+      <mat-tab label="Filters">
+        <h2>Filters</h2>
+        <div class="component-container">
+          <div class="component-row">
+            <div class="component-column-wrapper">
+              <h2>Simple Input</h2>
+              <div class="component-column">
+                <div [ngStyle]="{'max-width':'300px'}">
+                  <app-filter-input [control]="control1" placeholder="Enter employee name..."></app-filter-input>
+                </div>
+              </div>
+            </div>
+            <div class="component-column-wrapper">
+              <h2>Single DatePicker</h2>
+              <div class="component-column">
+                <div [ngStyle]="{'max-width':'300px'}">
+                  <app-filter-date-picker [control]="datepickerControl"
+                                          label="Simple Datepicker"></app-filter-date-picker>
+                </div>
+              </div>
+            </div>
+            <div class="component-column-wrapper">
+              <h2>Range DatePicker</h2>
+              <div class="component-column">
+                <div [ngStyle]="{'max-width':'300px'}">
+                  <app-filter-date-picker [range]="true" [control]="datepickerControl"
+                                          label="Range Datepicker"></app-filter-date-picker>
+                </div>
+              </div>
+            </div>
+            <div class="component-column-wrapper">
+              <h2>Textarea</h2>
+              <div class="component-column">
+                <div [ngStyle]="{'max-width':'300px'}">
+                  <ui-textarea [control]="control1" label="Name" placeholder="Enter name"></ui-textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </mat-tab>
+      <mat-tab label="Tables">
+        <app-employee-table></app-employee-table>
+      </mat-tab>
+      <mat-tab label="Elements">
+        <div class="component-container mt-3">
+          <div class="component-row">
+
+            <div class="component-column-wrapper">
+              <h2>Chips</h2>
+              <mat-chip-list>
+                <mat-chip color="primary" class="mat-chip-success">
+                  Активен
+                </mat-chip>
+                <mat-chip color="primary" class="mat-chip-danger">
+                  Не активен
+                </mat-chip>
+                <mat-chip color="primary" class="mat-chip-danger">
+                  Не активен
+                </mat-chip>
+                <mat-chip color="primary">
+                  #настольные игры
+                  <button matChipRemove>
+                    <mat-icon>cancel</mat-icon>
+                  </button>
+                </mat-chip>
+              </mat-chip-list>
+
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Dialogs">
+        <!--        <div class="component-container mt-3">-->
+        <!--          <div class="component-row">-->
+        <!--            <div class="component-column-wrapper">-->
+
+        <!--            </div>-->
+        <!--          </div>-->
+        <!--        </div>-->
+        <h2 mat-dialog-title>Install Angular</h2>
+        <mat-dialog-content class="mat-typography">
+          <h3>Develop across all platforms</h3>
+          <p>Learn one way to build applications with Angular and reuse your code and abilities to build
+            apps for any deployment target. For web, mobile web, native mobile and native desktop.</p>
+
+          <h3>Speed &amp; Performance</h3>
+          <p>Achieve the maximum speed possible on the Web Platform today, and take it further, via Web
+            Workers and server-side rendering. Angular puts you in control over scalability. Meet huge
+            data requirements by building data models on RxJS, Immutable.js or another push-model.</p>
+
+          <h3>Incredible tooling</h3>
+          <p>Build features quickly with simple, declarative templates. Extend the template language with
+            your own components and use a wide array of existing components. Get immediate Angular-specific
+            help and feedback with nearly every IDE and editor. All this comes together so you can focus
+            on building amazing apps rather than trying to make the code work.</p>
+
+          <h3>Loved by millions</h3>
+          <p>From prototype through global deployment, Angular delivers the productivity and scalable
+            infrastructure that supports Google's largest applications.</p>
+
+          <h3>What is Angular?</h3>
+
+          <p>Angular is a platform that makes it easy to build applications with the web. Angular
+            combines declarative templates, dependency injection, end to end tooling, and integrated
+            best practices to solve development challenges. Angular empowers developers to build
+            applications that live on the web, mobile, or the desktop</p>
+
+          <h3>Architecture overview</h3>
+
+          <p>Angular is a platform and framework for building client applications in HTML and TypeScript.
+            Angular is itself written in TypeScript. It implements core and optional functionality as a
+            set of TypeScript libraries that you import into your apps.</p>
+
+          <p>The basic building blocks of an Angular application are NgModules, which provide a compilation
+            context for components. NgModules collect related code into functional sets; an Angular app is
+            defined by a set of NgModules. An app always has at least a root module that enables
+            bootstrapping, and typically has many more feature modules.</p>
+
+          <p>Components define views, which are sets of screen elements that Angular can choose among and
+            modify according to your program logic and data. Every app has at least a root component.</p>
+
+          <p>Components use services, which provide specific functionality not directly related to views.
+            Service providers can be injected into components as dependencies, making your code modular,
+            reusable, and efficient.</p>
+
+          <p>Both components and services are simply classes, with decorators that mark their type and
+            provide metadata that tells Angular how to use them.</p>
+
+          <p>The metadata for a component class associates it with a template that defines a view. A
+            template combines ordinary HTML with Angular directives and binding markup that allow Angular
+            to modify the HTML before rendering it for display.</p>
+
+          <p>The metadata for a service class provides the information Angular needs to make it available
+            to components through Dependency Injection (DI).</p>
+
+          <p>An app's components typically define many views, arranged hierarchically. Angular provides
+            the Router service to help you define navigation paths among views. The router provides
+            sophisticated in-browser navigational capabilities.</p>
+        </mat-dialog-content>
+        <mat-dialog-actions align="end">
+          <button mat-button mat-dialog-close>Cancel</button>
+          <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+        </mat-dialog-actions>
+      </mat-tab>
+      <mat-tab label="Cards">
+        <div class="h-100">
+          <mat-card class="example-card h-100">
+            <!--          <mat-card-header>-->
+            <!--            <div mat-card-avatar class="example-header-image"></div>-->
+            <!--            <mat-card-title>Shiba Inu</mat-card-title>-->
+            <!--            <mat-card-subtitle>Dog Breed</mat-card-subtitle>-->
+            <!--          </mat-card-header>-->
+
+            <mat-card-content class="pre-scrollable">
+              <p>
+                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                bred for hunting.
+              </p>
+              <p>
+                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                bred for hunting.
+              </p>
+              <p>
+                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                bred for hunting.
+              </p>
+              <p>
+                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                bred for hunting.
+              </p>
+              <p>
+                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                bred for hunting.
+              </p>
+              <p>
+                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                bred for hunting.
+              </p>
+              <p>
+                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                bred for hunting.
+              </p>
+              <p>
+                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                bred for hunting.
+              </p>
+              <p>
+                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                bred for hunting.
+              </p>
+              <p>
+                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                bred for hunting.
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button>LIKE</button>
+              <button mat-button>SHARE</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
 </div>
