@@ -217,9 +217,25 @@ mat-tab-group.progress-tab-group {
   }
 }
 
-mat-tab-group.progress-tab-group .mat-tab-body-content {
-  //margin-top: 15px;
-  padding-top:20px;
-  //overflow-y: scroll !important;
+//test
+mat-tab-group.progress-tab-group {
+  //border: 2px solid yellowgreen !important;
+  //padding: 10px;
+}
+
+
+mat-tab-group.progress-tab-group .mat-tab-body-wrapper {
+  padding-top: 20px;
+}
+
+mat-tab-group.progress-tab-group mat-tab-header {
+  padding-bottom: 10px;
+  position: sticky !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99999;
+  background-color: #fff !important;
+
 }
 

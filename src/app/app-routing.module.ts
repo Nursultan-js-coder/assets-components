@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {EmployeesComponent} from "./pages/employees/employees.component";
 import {ComponentsComponent} from "./pages/components/components.component";
-import {AddEmployeeComponent} from "@app/pages/add-employee/add-employee.component";
+import {ProgressBarComponent} from "@app/shared/components/progress-bar/progress-bar.component";
 
 const routes: Routes = [
   {
@@ -16,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: "add-employee",
-    component: AddEmployeeComponent,
+    component: ProgressBarComponent,
   },
 
 ];

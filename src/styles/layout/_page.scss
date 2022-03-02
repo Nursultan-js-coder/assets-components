@@ -8,13 +8,16 @@
   overflow-y: hidden;
   height: 100vh;
   font-size: $text-sm;
-  padding: 15px .58rem 10px 20px;
+  padding: 15px .58rem 10px 10px !important;
 
   .content {
-    height: 100%;
+    height: 99.8%;
     width: 100%;
     display: flex;
     flex-direction: column;
+    //test
+    border: 1px solid red;
+    //margin-bottom:20px;
 
     &-scrollable {
       @extend .content;
