@@ -5,12 +5,14 @@ import {FormControl} from "@angular/forms";
 @Component({
   selector: 'app-employee-table',
   templateUrl: './employee-table.component.html',
+  styleUrls: ['employees-table.component.scss']
 })
 export class EmployeeTableComponent implements OnInit {
 
   constructor() {
   }
-  levelControl=new FormControl();
+
+  levelControl = new FormControl();
   displayedColumns = ["select", "name", "level", "positions", "dateOfBirth", "projects", "isActive", "actions"];
   dataSource = new MatTableDataSource([
     {

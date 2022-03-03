@@ -15,9 +15,6 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    //test
-    border: 1px solid red;
-    //margin-bottom:20px;
 
     &-scrollable {
       @extend .content;
@@ -26,4 +23,13 @@
   }
 
 }
+
+.extendable {
+  flex: 1 1 100%;
+  overflow-y: hidden;
+  flex-direction: column;
+  display: grid;
+  max-height: 100%;
+}
+
 

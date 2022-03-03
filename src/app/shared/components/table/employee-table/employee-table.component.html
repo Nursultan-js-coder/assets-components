@@ -1,4 +1,4 @@
-<section class="d-flex flex-column h-100 mt-3">
+<section class="extendable">
   <div #TABLE class="table-wrapper employees-container">
     <mat-table matSort [dataSource]="dataSource"
                class="m-0 cursor-pointer table-gray">
@@ -23,9 +23,9 @@
         </mat-header-cell>
         <mat-cell *matCellDef="let row" class="pl-2">
           <div class="employee-name">
-          <h5 class="m-0"
-              [ngStyle]="{'font-weight':'600'}">{{row.firstName}}  {{row.lastName}}</h5>
-          <p>{{row?.userLogin ?? 'N/A'}}</p>
+            <h5 class="m-0"
+                [ngStyle]="{'font-weight':'600'}">{{row.firstName}}  {{row.lastName}}</h5>
+            <p>{{row?.userLogin ?? 'N/A'}}</p>
           </div>
         </mat-cell>
       </ng-container>
@@ -34,8 +34,9 @@
       <ng-container matColumnDef="level">
         <mat-header-cell *matHeaderCellDef>
           Level
-                    <app-menu size="md" class="ml-2 mt-n1" icon="filter_alt" [options]="['Junior','Middle','Senior']" [multiple]="true"
-                              [control]="levelControl"></app-menu>
+          <app-menu size="md" class="ml-2 mt-n1" icon="filter_alt" [options]="['Junior','Middle','Senior']"
+                    [multiple]="true"
+                    [control]="levelControl"></app-menu>
         </mat-header-cell>
         <mat-cell *matCellDef="let row">
           <ng-container *ngIf="row.competencesList.length > 1;else lessCompetence">
@@ -123,14 +124,14 @@
         <mat-cell *matCellDef="let row"
         >
           <ng-container *ngIf="row?.positionsList?.length < 3;else morePosition">
-          <span *ngFor="let position of row.positionsList">
-           Frontend
-          </span>
+            <span *ngFor="let position of row.positionsList">
+             Frontend
+            </span>
           </ng-container>
           <ng-template #morePosition>
-             <span *ngFor="let position of row.positionsList.slice(0,2)">
-               Frontend
-          </span>
+               <span *ngFor="let position of row.positionsList.slice(0,2)">
+                 Frontend
+            </span>
             <span> +2</span>
           </ng-template>
         </mat-cell>
@@ -172,7 +173,7 @@
   </div>
   <div class="table__pagination">
     <mat-paginator [length]="10" [pageSize]="10"
-                   [pageSizeOptions]="[25,50,100,200]">
+                   [pageSizeOptions]="[25,50,100,200]" showFirstLastButtons>
       <button mat-icon-button [ngStyle]="{'display':'block !important','position':'absolute'}">next</button>
     </mat-paginator>
   </div>

@@ -9,8 +9,11 @@ $br-color: rgb(235, 235, 235);
     font-size: $text-sm;
     height: 100%;
     position: relative;
-    overflow-y: auto;
+    //overflow-y: auto;
     flex: 1 1 100%;
+    //test
+    overflow-y: hidden !important;
+    //test end
 
     .mat-column-select {
       flex: 0 0 4.5%;
@@ -19,6 +22,10 @@ $br-color: rgb(235, 235, 235);
     mat-table {
       background-color: inherit !important;
       width: 100%;
+      //test
+      flex: 1 1 100%;
+      overflow-y: scroll;
+      //test end
 
       mat-header-row {
         border-bottom: 0 !important;
@@ -63,14 +70,12 @@ $br-color: rgb(235, 235, 235);
   }
 
   &__pagination {
-    margin-top: 10px;
-    position: sticky;
-    width: 100%;
-    bottom: 0;
-    left: 0;
+    display: flex;
     background-color: inherit;
+      flex-direction: column;
 
     mat-paginator {
+      margin-top: auto;
       font-size: $text-sm !important;
       background-color: inherit !important;
       max-height: 2.92rem !important;

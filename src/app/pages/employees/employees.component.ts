@@ -1,14 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl} from "@angular/forms";
 import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-employees',
   templateUrl: './employees.component.html',
+  styleUrls: ['employees.component.scss']
 })
 export class EmployeesComponent implements OnInit {
   nameControl = new FormControl();
-  constructor(public router:Router) { }
+
+  constructor(public router: Router) {
+  }
 
   ngOnInit(): void {
   }
