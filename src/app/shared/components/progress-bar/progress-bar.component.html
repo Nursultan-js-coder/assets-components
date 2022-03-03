@@ -1,13 +1,11 @@
-<!--<section>-->
 <div class="content">
   <h2>Создать сотрудника</h2>
   <section class="employee-form app-card">
     <main>
-      <!--  <div>-->
-      <!--    <mat-progress-bar mode="determinate" [value]="processPercentage"-->
-      <!--                      color="primary"></mat-progress-bar>-->
-      <!--    <p class="text-gray text-right mt-2">{{selectedIndex + 1}}/{{totalTabCount}} шагов для создания сотрудника</p>-->
-      <!--  </div>-->
+      <div class="assets-progress">
+        <mat-progress-bar mode="determinate" [value]="processPercentage"></mat-progress-bar>
+        <p class="text-gray text-right mt-2">{{selectedIndex + 1}}/{{totalTabCount}} шагов для создания сотрудника</p>
+      </div>
       <mat-tab-group class="progress-tab-group" [selectedIndex]="selectedIndex"
                      (selectedTabChange)="onSelectedTabChange($event)">
         <mat-tab label="Личная информация">
@@ -150,8 +148,12 @@
               <div>
                 <form-ui-text-input placeholder="Университет..." label="Университет"
                                     [control]="control"></form-ui-text-input>
-                <form-ui-text-input placeholder="Специальность..." label="Специальность"
-                                    [control]="control"></form-ui-text-input>
+                <div class="w-100 locate-between">
+                  <form-ui-text-input class="w-75 mr-3" placeholder="Специальность..." label="Специальность"
+                                      [control]="control"></form-ui-text-input>
+                  <form-ui-text-input class="w-25" placeholder="Степень..." label="Степень"
+                                      [control]="control"></form-ui-text-input>
+                </div>
                 <form-ui-date-picker [control]="control" label="Дата окончания"></form-ui-date-picker>
                 <button mat-flat-button class="assets-btn ghost-btn-deep-1 w-100">Добавить учреждение</button>
 

@@ -1,175 +1,175 @@
 <section class="extendable">
   <div #TABLE class="table-wrapper employees-container">
-    <mat-table matSort [dataSource]="dataSource"
-               class="m-0 cursor-pointer table-gray">
-      <!-- User name Definition -->
-      <ng-container matColumnDef="select">
-        <mat-header-cell *matHeaderCellDef>
-          <mat-checkbox class="mt-1"
-                        [checked]="false"
-                        [indeterminate]="false">
-          </mat-checkbox>
-        </mat-header-cell>
-        <mat-cell *matCellDef="let row">
-          <mat-checkbox
-            [checked]="false">
-          </mat-checkbox>
-        </mat-cell>
-      </ng-container>
+<!--    <mat-table matSort [dataSource]="dataSource"-->
+<!--               class="m-0 cursor-pointer table-gray">-->
+<!--      &lt;!&ndash; User name Definition &ndash;&gt;-->
+<!--      <ng-container matColumnDef="select">-->
+<!--        <mat-header-cell *matHeaderCellDef>-->
+<!--          <mat-checkbox class="mt-1"-->
+<!--                        [checked]="false"-->
+<!--                        [indeterminate]="false">-->
+<!--          </mat-checkbox>-->
+<!--        </mat-header-cell>-->
+<!--        <mat-cell *matCellDef="let row">-->
+<!--          <mat-checkbox-->
+<!--            [checked]="false">-->
+<!--          </mat-checkbox>-->
+<!--        </mat-cell>-->
+<!--      </ng-container>-->
 
-      <ng-container matColumnDef="name">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>
-          <span class="ml-2">Name</span>
-        </mat-header-cell>
-        <mat-cell *matCellDef="let row" class="pl-2">
-          <div class="employee-name">
-            <h5 class="m-0"
-                [ngStyle]="{'font-weight':'600'}">{{row.firstName}}  {{row.lastName}}</h5>
-            <p>{{row?.userLogin ?? 'N/A'}}</p>
-          </div>
-        </mat-cell>
-      </ng-container>
+<!--      <ng-container matColumnDef="name">-->
+<!--        <mat-header-cell *matHeaderCellDef mat-sort-header>-->
+<!--          <span class="ml-2">Name</span>-->
+<!--        </mat-header-cell>-->
+<!--        <mat-cell *matCellDef="let row" class="pl-2">-->
+<!--          <div class="employee-name">-->
+<!--            <h5 class="m-0"-->
+<!--                [ngStyle]="{'font-weight':'600'}">{{row.firstName}}  {{row.lastName}}</h5>-->
+<!--            <p>{{row?.userLogin ?? 'N/A'}}</p>-->
+<!--          </div>-->
+<!--        </mat-cell>-->
+<!--      </ng-container>-->
 
-      <!-- Level Definition -->
-      <ng-container matColumnDef="level">
-        <mat-header-cell *matHeaderCellDef>
-          Level
-          <app-menu size="md" class="ml-2 mt-n1" icon="filter_alt" [options]="['Junior','Middle','Senior']"
-                    [multiple]="true"
-                    [control]="levelControl"></app-menu>
-        </mat-header-cell>
-        <mat-cell *matCellDef="let row">
-          <ng-container *ngIf="row.competencesList.length > 1;else lessCompetence">
-            <div class="d-inline-block" *ngFor="let competence of row.competencesList.slice(0,1)">
+<!--      &lt;!&ndash; Level Definition &ndash;&gt;-->
+<!--      <ng-container matColumnDef="level">-->
+<!--        <mat-header-cell *matHeaderCellDef>-->
+<!--          Level-->
+<!--          <app-menu size="md" class="ml-2 mt-n1" icon="filter_alt" [options]="['Junior','Middle','Senior']"-->
+<!--                    [multiple]="true"-->
+<!--                    [control]="levelControl"></app-menu>-->
+<!--        </mat-header-cell>-->
+<!--        <mat-cell *matCellDef="let row">-->
+<!--          <ng-container *ngIf="row.competencesList.length > 1;else lessCompetence">-->
+<!--            <div class="d-inline-block" *ngFor="let competence of row.competencesList.slice(0,1)">-->
 
-              <ng-container *ngFor="let level of competence?.levelsList">
-                <p class="m-0">TypeScript</p>
-                <p class="m-0 text-muted">Middle 2</p>
-              </ng-container>
+<!--              <ng-container *ngFor="let level of competence?.levelsList">-->
+<!--                <p class="m-0">TypeScript</p>-->
+<!--                <p class="m-0 text-muted">Middle 2</p>-->
+<!--              </ng-container>-->
 
-            </div>
-            <div class="d-inline-block m-2">
-              +{{row.competencesList.length - 1}}
-            </div>
-          </ng-container>
-          <ng-template #lessCompetence>
-            <div class="d-inline-block m-2" *ngFor="let competence of row.competencesList">
-              <ng-container *ngFor="let level of competence?.levelsList">
-                <p class="m-0">JavaScript</p>
-                <p class="m-0 text-muted">Middle 1</p>
-              </ng-container>
-            </div>
-          </ng-template>
-        </mat-cell>
-      </ng-container>
+<!--            </div>-->
+<!--            <div class="d-inline-block m-2">-->
+<!--              +{{row.competencesList.length - 1}}-->
+<!--            </div>-->
+<!--          </ng-container>-->
+<!--          <ng-template #lessCompetence>-->
+<!--            <div class="d-inline-block m-2" *ngFor="let competence of row.competencesList">-->
+<!--              <ng-container *ngFor="let level of competence?.levelsList">-->
+<!--                <p class="m-0">JavaScript</p>-->
+<!--                <p class="m-0 text-muted">Middle 1</p>-->
+<!--              </ng-container>-->
+<!--            </div>-->
+<!--          </ng-template>-->
+<!--        </mat-cell>-->
+<!--      </ng-container>-->
 
-      <!-- Projects Definition -->
-      <ng-container matColumnDef="projects">
-        <mat-header-cell *matHeaderCellDef>
-          projects
-        </mat-header-cell>
-        <mat-cell *matCellDef="let row">
-          <div class="pr-2">
-            <ng-container *ngIf="row.projectsList.length < 3;else moreProject">
-              Assets,givee
-            </ng-container>
-            <ng-template #moreProject>
-              Assets,givee
-              <span class="ml-2">+2</span>
-            </ng-template>
+<!--      &lt;!&ndash; Projects Definition &ndash;&gt;-->
+<!--      <ng-container matColumnDef="projects">-->
+<!--        <mat-header-cell *matHeaderCellDef>-->
+<!--          projects-->
+<!--        </mat-header-cell>-->
+<!--        <mat-cell *matCellDef="let row">-->
+<!--          <div class="pr-2">-->
+<!--            <ng-container *ngIf="row.projectsList.length < 3;else moreProject">-->
+<!--              Assets,givee-->
+<!--            </ng-container>-->
+<!--            <ng-template #moreProject>-->
+<!--              Assets,givee-->
+<!--              <span class="ml-2">+2</span>-->
+<!--            </ng-template>-->
 
-          </div>
-        </mat-cell>
-      </ng-container>
+<!--          </div>-->
+<!--        </mat-cell>-->
+<!--      </ng-container>-->
 
-      <!-- Title Definition -->
-      <ng-container matColumnDef="isActive">
-        <mat-header-cell *matHeaderCellDef>
-          Status
-          <!--          <app-menu icon="filter_alt" [options]="dictionaryService.status" [multiple]="false"-->
-          <!--                    [control]="filterForm.isActive"></app-menu>-->
-        </mat-header-cell>
-        <mat-cell *matCellDef="let row"
-        >
-          <ng-container *ngIf="row.isActive;else notActive">
-            <mat-chip-list>
-              <mat-chip color="primary" class="assets-chip mat-chip-success">
-                active
-              </mat-chip>
-            </mat-chip-list>
-          </ng-container>
-          <ng-template #notActive>
-            <mat-chip class="mat-chip-danger">inactive</mat-chip>
-          </ng-template>
-        </mat-cell>
-      </ng-container>
+<!--      &lt;!&ndash; Title Definition &ndash;&gt;-->
+<!--      <ng-container matColumnDef="isActive">-->
+<!--        <mat-header-cell *matHeaderCellDef>-->
+<!--          Status-->
+<!--          &lt;!&ndash;          <app-menu icon="filter_alt" [options]="dictionaryService.status" [multiple]="false"&ndash;&gt;-->
+<!--          &lt;!&ndash;                    [control]="filterForm.isActive"></app-menu>&ndash;&gt;-->
+<!--        </mat-header-cell>-->
+<!--        <mat-cell *matCellDef="let row"-->
+<!--        >-->
+<!--          <ng-container *ngIf="row.isActive;else notActive">-->
+<!--            <mat-chip-list>-->
+<!--              <mat-chip color="primary" class="assets-chip mat-chip-success">-->
+<!--                active-->
+<!--              </mat-chip>-->
+<!--            </mat-chip-list>-->
+<!--          </ng-container>-->
+<!--          <ng-template #notActive>-->
+<!--            <mat-chip class="mat-chip-danger">inactive</mat-chip>-->
+<!--          </ng-template>-->
+<!--        </mat-cell>-->
+<!--      </ng-container>-->
 
-      <!-- DOB Definition -->
-      <ng-container matColumnDef="dateOfBirth">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>
-          Date Of Birth
-        </mat-header-cell>
-        <mat-cell *matCellDef="let row">
-          {{row.dateOfBirth |date:'shortDate'}}
-        </mat-cell>
-      </ng-container>
+<!--      &lt;!&ndash; DOB Definition &ndash;&gt;-->
+<!--      <ng-container matColumnDef="dateOfBirth">-->
+<!--        <mat-header-cell *matHeaderCellDef mat-sort-header>-->
+<!--          Date Of Birth-->
+<!--        </mat-header-cell>-->
+<!--        <mat-cell *matCellDef="let row">-->
+<!--          {{row.dateOfBirth |date:'shortDate'}}-->
+<!--        </mat-cell>-->
+<!--      </ng-container>-->
 
-      <!-- Positions Definition -->
-      <ng-container matColumnDef="positions">
-        <mat-header-cell *matHeaderCellDef>
-          Positions
-          <!--          <app-menu icon="filter_alt" [options]="dictionaryService.positions" [multiple]="true"-->
-          <!--                    [control]="filterForm.positionsList"></app-menu>-->
-        </mat-header-cell>
-        <mat-cell *matCellDef="let row"
-        >
-          <ng-container *ngIf="row?.positionsList?.length < 3;else morePosition">
-            <span *ngFor="let position of row.positionsList">
-             Frontend
-            </span>
-          </ng-container>
-          <ng-template #morePosition>
-               <span *ngFor="let position of row.positionsList.slice(0,2)">
-                 Frontend
-            </span>
-            <span> +2</span>
-          </ng-template>
-        </mat-cell>
-      </ng-container>
+<!--      &lt;!&ndash; Positions Definition &ndash;&gt;-->
+<!--      <ng-container matColumnDef="positions">-->
+<!--        <mat-header-cell *matHeaderCellDef>-->
+<!--          Positions-->
+<!--          &lt;!&ndash;          <app-menu icon="filter_alt" [options]="dictionaryService.positions" [multiple]="true"&ndash;&gt;-->
+<!--          &lt;!&ndash;                    [control]="filterForm.positionsList"></app-menu>&ndash;&gt;-->
+<!--        </mat-header-cell>-->
+<!--        <mat-cell *matCellDef="let row"-->
+<!--        >-->
+<!--          <ng-container *ngIf="row?.positionsList?.length < 3;else morePosition">-->
+<!--            <span *ngFor="let position of row.positionsList">-->
+<!--             Frontend-->
+<!--            </span>-->
+<!--          </ng-container>-->
+<!--          <ng-template #morePosition>-->
+<!--               <span *ngFor="let position of row.positionsList.slice(0,2)">-->
+<!--                 Frontend-->
+<!--            </span>-->
+<!--            <span> +2</span>-->
+<!--          </ng-template>-->
+<!--        </mat-cell>-->
+<!--      </ng-container>-->
 
-      <!-- Actions Definition -->
-      <ng-container matColumnDef="actions">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>
-        </mat-header-cell>
-        <mat-cell *matCellDef="let row">
-          <button
-            mat-icon-button class="icon-btn-md" [matMenuTriggerFor]="menu">
-            <mat-icon>more_vert</mat-icon>
-          </button>
+<!--      &lt;!&ndash; Actions Definition &ndash;&gt;-->
+<!--      <ng-container matColumnDef="actions">-->
+<!--        <mat-header-cell *matHeaderCellDef mat-sort-header>-->
+<!--        </mat-header-cell>-->
+<!--        <mat-cell *matCellDef="let row">-->
+<!--          <button-->
+<!--            mat-icon-button class="icon-btn-md" [matMenuTriggerFor]="menu">-->
+<!--            <mat-icon>more_vert</mat-icon>-->
+<!--          </button>-->
 
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item
-            >
-              <mat-icon color="primary" class="icon-sm"> edit</mat-icon>
-              edit
-            </button>
+<!--          <mat-menu #menu="matMenu">-->
+<!--            <button mat-menu-item-->
+<!--            >-->
+<!--              <mat-icon color="primary" class="icon-sm"> edit</mat-icon>-->
+<!--              edit-->
+<!--            </button>-->
 
-            <button mat-menu-item
-            >
-              <mat-icon color="warn" class="icon-sm">delete</mat-icon>
-              delete
-            </button>
+<!--            <button mat-menu-item-->
+<!--            >-->
+<!--              <mat-icon color="warn" class="icon-sm">delete</mat-icon>-->
+<!--              delete-->
+<!--            </button>-->
 
-          </mat-menu>
+<!--          </mat-menu>-->
 
-        </mat-cell>
-      </ng-container>
+<!--        </mat-cell>-->
+<!--      </ng-container>-->
 
 
-      <!-- Header and Row Declarations -->
-      <mat-header-row *matHeaderRowDef="displayedColumns;sticky:true"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
-    </mat-table>
+<!--      &lt;!&ndash; Header and Row Declarations &ndash;&gt;-->
+<!--      <mat-header-row *matHeaderRowDef="displayedColumns;sticky:true"></mat-header-row>-->
+<!--      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>-->
+<!--    </mat-table>-->
   </div>
   <div class="table__pagination">
     <mat-paginator [length]="10" [pageSize]="10"
