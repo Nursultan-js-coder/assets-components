@@ -1,9 +1,9 @@
-import {Component, Input, ViewChild} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {toggleAnimation2} from "@app/shared/common/animations";
 import {MatDrawer} from "@angular/material/sidenav";
 import {Router} from "@angular/router";
 
-export const adminSettingsRoute:any = [
+export const adminSettingsRoute: any = [
   {
     icon: "account_circle",
     path: "users",
@@ -21,17 +21,18 @@ export const adminSettingsRoute:any = [
     actionName: 'AllUsers',
   },
 ]
+
 @Component({
   selector: 'app-wrapper',
   templateUrl: './wrapper.component.html',
-  animations:[
+  animations: [
     toggleAnimation2
   ]
 })
 
 export class WrapperComponent {
 
-   routes: any = [
+  routes: any = [
     {
       icon: "dashboard",
       path: "dashboard",
@@ -58,8 +59,8 @@ export class WrapperComponent {
     },
     {
       icon: "insert_chart",
-      path: "projects",
-      name: "projects",
+      path: "tab",
+      name: "Tabs",
       disabled: false,
       moduleName: "Project",
       actionName: 'GetAllProjects',
@@ -72,7 +73,7 @@ export class WrapperComponent {
       moduleName: "Division",
       actionName: 'GetAllDivisions',
     },
-     {
+    {
       icon: "admin_panel_settings",
       path: `admin`,
       name: "admin",
@@ -85,9 +86,9 @@ export class WrapperComponent {
   panelOpenState = true;
   hasBackdrop: boolean;
   theme = "dark-theme"
-  @ViewChild(MatDrawer) matDrawer:MatDrawer; //TODO delete drawer toggler after you are finished with roles
+  @ViewChild(MatDrawer) matDrawer: MatDrawer; //TODO delete drawer toggler after you are finished with roles
 
-  constructor(public router:Router) {
+  constructor(public router: Router) {
   }
 
   get animationState() {

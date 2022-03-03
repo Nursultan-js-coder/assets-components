@@ -4,7 +4,6 @@ $br-color: rgb(235, 235, 235);
 
 .table {
   &-wrapper {
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
     font-size: $text-sm;
@@ -71,7 +70,6 @@ $br-color: rgb(235, 235, 235);
   }
 
   &__pagination {
-    border: 1px solid red;
     flex: 0 1 auto;
     //above is test
     max-height: min-content;

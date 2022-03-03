@@ -17,6 +17,7 @@ import { ProgressBarComponent } from './shared/components/progress-bar/progress-
 import { AddEmployeeComponent } from './pages/add-employee/add-employee.component';
 import {SelectModule} from "@app/shared/components/filters/form-filter-select/select.module";
 import {ButtonGroupModule} from "@app/shared/components/buttons/button-group/button-group.module";
+import { TabComponent } from './pages/tab/tab.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {ButtonGroupModule} from "@app/shared/components/buttons/button-group/but
     WrapperComponent,
     AvatarBarComponent,
     ProgressBarComponent,
-    AddEmployeeComponent
+    AddEmployeeComponent,
+    TabComponent
   ],
     imports: [
         BrowserModule,
