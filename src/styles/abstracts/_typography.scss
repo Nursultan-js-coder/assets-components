@@ -29,3 +29,10 @@
     font-size: 2rem;
   }
 }
+
+//colors
+.text {
+  &-main {
+    color: $main-text;
+  }
+}

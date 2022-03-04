@@ -86,7 +86,8 @@
 .assets-textarea {
   .mat-form-field {
     &-flex {
-      height: 120px !important;
+      min-height: 120px;
+      height: auto !important;
     }
   }
 }

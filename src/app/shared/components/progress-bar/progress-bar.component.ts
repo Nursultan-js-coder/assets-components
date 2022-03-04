@@ -40,4 +40,8 @@ export class ProgressBarComponent implements OnInit {
     get processPercentage() {
         return Math.max(1, this.selectedIndex + 1) / this.totalTabCount * 100;
     }
+
+    onSubmit() {
+        console.log("On submit:", this.form.value);
+    }
 }

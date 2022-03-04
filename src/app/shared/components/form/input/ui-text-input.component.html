@@ -2,10 +2,13 @@
   <mat-form-field appearance="fill">
     <mat-label>{{label}}
       <ng-template [ngIf]="hasRequiredField(control)">
-      <span [ngStyle]="{'color':'rgba(169, 57, 57, 1)','font-weight':'thin'}">*</span>
+        <span [ngStyle]="{'color':'rgba(169, 57, 57, 1)','font-weight':'thin'}">*</span>
       </ng-template>
     </mat-label>
     <input [type]="type" matInput [formControl]="control">
+
+    <!--    hint-->
+    <mat-hint *ngIf="hint">{{hint}}</mat-hint>
 
     <mat-icon *ngIf="suffix" matSuffix>{{iconName}}</mat-icon>
 

@@ -1,5 +1,19 @@
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 
+const educationFields = {
+  university: [''],
+  specialization: [''],
+  degree: [''],
+  dateOfGraduate: ['']
+}
+const positionFields = {
+  positionId: [''],
+  appointmentDate: [''],
+  finishDate: [''],
+  speciality: [''],
+  specialityLevel: [''],
+  certificationDate: [''],
+}
 
 export class EmployeeForm extends FormGroup {
   readonly main = this.get("main") as FormArray
@@ -12,6 +26,7 @@ export class EmployeeForm extends FormGroup {
   readonly genderId = this.personalInfo.get("genderId") as FormControl;
   readonly id = this.personalInfo.get("id") as FormControl;
   readonly emails = this.personalInfo.get('emails') as FormArray;
+  readonly educations = this.personalInfo.get('educations') as FormArray;
   readonly dateOfBirth = this.personalInfo.get("dateOfBirth") as FormControl;
   readonly userLogin = this.personalInfo.get("userLogin") as FormControl;
   readonly positionsList = this.careerInfo.get("positionsList") as FormArray;
@@ -21,14 +36,29 @@ export class EmployeeForm extends FormGroup {
   readonly isMol = this.personalInfo.get("isMol") as FormControl;
   readonly iNN = this.personalInfo.get("iNN") as FormControl;
   readonly address = this.personalInfo.get("address") as FormControl;
-  readonly passportNumber = this.personalInfo.get("passportNumber") as FormControl;
+  readonly passportInfo = this.personalInfo.get("passportInfo") as FormControl;
+  readonly passportNumber = this.passportInfo.get("passportNumber") as FormControl;
+  readonly INN = this.passportInfo.get("INN") as FormControl;
+  readonly citizenship = this.passportInfo.get("citizenship") as FormControl;
+  readonly issuanceAuthority = this.passportInfo.get("issuanceAuthority") as FormControl;
+  readonly issuanceDate = this.passportInfo.get("issuanceDate") as FormControl;
   readonly projectsList = this.careerInfo.get("projectsList") as FormControl;
   readonly devicesList = this.careerInfo.get("devicesList") as FormControl;
+  readonly personnelNumber = this.careerInfo.get('personnelNumber') as FormControl;
+  readonly corporateEmail = this.careerInfo.get('corporateEmail') as FormControl;
+  readonly corporatePhoneNumber = this.careerInfo.get('corporatePhoneNumber') as FormControl;
 
   constructor(readonly model: any | null, readonly fb: FormBuilder = new FormBuilder()) {
     super(fb.group({
       main: fb.array([
         fb.group({
+          passportInfo: fb.group({
+            INN: [model?.passportInfo.INN ?? ''],
+            passportNumber: [model?.passportInfo.passportNumber ?? ''],
+            citizenship: [model?.passportInfo.citizenship ?? ''],
+            issuanceAuthority: [model?.passportInfo.issueAuthority ?? ''],
+            issuanceDate: [model?.passportInfo.issuanceDate ?? ''],
+          }),
           id: [model?.id ?? 0],
           firstName: [model?.firstName,
             {
@@ -40,13 +70,13 @@ export class EmployeeForm extends FormGroup {
             updateOn: "blur",
           }],
           middleName: [model?.middleName, Validators.pattern("[a-z,A-Z,а-я,А-Я]*")],
-          emails: fb.array(model?.emails?.length ? [...model?.emails?.map((email:any) => fb.group({
+          emails: fb.array(model?.emails?.length ? [...model?.emails?.map((email: any) => fb.group({
               name: [email.name ?? '', Validators.email]
             })), fb.group({name: ['', Validators.email]})] : [fb.group({
               name: ['', Validators.email]
             })]
           ),
-          employeePhoneNumbers: fb.array(model?.employeePhoneNumbers?.length ? [...model?.employeePhoneNumbers?.map((p_number:any) => fb.group({
+          employeePhoneNumbers: fb.array(model?.employeePhoneNumbers?.length ? [...model?.employeePhoneNumbers?.map((p_number: any) => fb.group({
                 name: [p_number.name ?? '']
               })), fb.group({name: ['']})]
               :
@@ -62,21 +92,59 @@ export class EmployeeForm extends FormGroup {
           isMol: [model?.isMol, Validators.required],
           address: [model?.address],
           passportNumber: [model?.passportNumber, Validators.pattern("[a-z,A-Z]{2}[0-9]{7}")],
-          iNN: [model?.iNN, Validators.pattern("[0-9]{14}")]
+          iNN: [model?.iNN, Validators.pattern("[0-9]{14}")],
+          educations: fb.array(model?.educations?.length ?
+            [...model?.educations.map((edu: any) => fb.group({
+              university: [edu.university ?? ''],
+              specialization: [edu.specialization ?? ''],
+              degree: [edu.degree ?? ""],
+              dateOfGraduate: [edu.dateOfGraduate ?? ""]
+            })),
+              fb.group(educationFields)
+            ]
+            :
+            [fb.group(educationFields)],
+          ),
         }),
         fb.group({
-          positionsList: fb.array(model?.positionsList?.length ? [...model?.positionsList.map((pos: any) => fb.group({
-                positionId: [pos.positionId ?? ''],
-                appointmentDate: [pos.appointmentDate ?? '']
-              })), fb.group({
-                positionId: [''],
-                appointmentDate: ['']
-              })]
+          // positionsList: fb.array(model?.positionsList?.length ? [...model?.positionsList.map((pos: any) => fb.group({
+          //       positionId: [pos.positionId ?? ''],
+          //       appointmentDate: [pos.appointmentDate ?? '']
+          //     })), fb.group({
+          //       positionId: [''],
+          //       appointmentDate: ['']
+          //     })]
+          //     :
+          //     [fb.group({
+          //       positionId: [''],
+          //       appointmentDate: ['']
+          //     })],
+          // ),
+          personnelNumber: [model?.personnelNumber ?? ''],
+          corporateEmail: [model?.corporateEmail ?? ''],
+          corporatePhoneNumber: [model?.corporatePhoneNumber ?? ''],
+          skills: fb.array(model?.skills?.length ? [...model?.skills?.map((skill: any) => fb.group({
+                name: [skill.name ?? ''],
+                isSoft: [skill.isSoft ?? ''],
+              })), fb.group({name: ['']})]
               :
               [fb.group({
-                positionId: [''],
-                appointmentDate: ['']
-              })],
+                name: [''],
+                isSoft: [''],
+              })]
+          ),
+          positionsList: fb.array(model?.positionsList?.length ? [...model?.positionsList.map((pos: any) => fb.group({
+                positionId: [pos.positionId ?? ''],
+                appointmentDate: [pos.appointmentDate ?? ''],
+                finishDate: [pos.finishDate ?? ''],
+                speciality: [pos.speciality ?? ''],
+                specialityLevel: [pos.specialityLevel ?? ''],
+                certificationDate: [pos.certificationDate ?? ''],
+
+              })), fb.group(positionFields
+              )]
+              :
+              [fb.group(positionFields)],
           ),
           projectsList: fb.array(model?.projectsList?.length ? [...model?.projectsList.map((project: any) => fb.group({
                 projectId: [project?.projectId ?? ''],
@@ -161,25 +229,64 @@ export class EmployeeForm extends FormGroup {
     }, {updateOn: 'blur'}).controls)
   }
 
+  addControl(controlName: string) {
+    // @ts-ignore
+    const formArray = this[controlName] as FormArray;
+    const lastControl = this.getLastControl(formArray);
+    if (lastControl.valid) {
+      switch (controlName) {
+        case "emails": {
+          if (lastControl.value.name && lastControl.valid) {
+            if (formArray.controls.every((ctrl) => ctrl.valid && ctrl.value)) {
+              formArray.push(this.fb.group({name: ['', [Validators.email, Validators.required]]}));
+            }
+          }
+          break;
+        }
+        case "employeePhoneNumbers": {
+          if (lastControl.value.name && lastControl.valid) {
+            if (formArray.controls.every((ctrl) => ctrl.valid && ctrl.value)) {
+              formArray.push(this.fb.group({name: ['', [Validators.required]]}));
+            }
+          }
+          break;
+        }
+        case "educations": {
+          const controls = this.getControls(lastControl as FormGroup);
+          debugger;
+          lastControl.disable();
+          if (controls.every(control => control?.value)) {
+            formArray.push(this.fb.group({
+              university: ['', Validators.required],
+              specialization: ['', Validators.required],
+              degree: ['', Validators.required],
+              dateOfGraduate: ['', Validators.required]
+            }));
+          }
+          break;
+        }
 
-  addPhoneNumber() {
-    if (this.isControlValid(this.employeePhoneNumbers)) {
-      if (this.employeePhoneNumbers.controls.every((ctrl) => ctrl.value)) {
-        this.employeePhoneNumbers.push(this.fb.group({
-          name: [''],
-        }));
+        case "positionsList": {
+          const controls = this.getControls(lastControl as FormGroup);
+          if (controls.every(control => control?.value)) {
+            formArray.push(this.fb.group({
+              positionId: ['', Validators.required],
+              appointmentDate: ['', Validators.required],
+              finishDate: ['', Validators.required],
+              speciality: ['', Validators.required],
+              specialityLevel: ['', Validators.required],
+              certificationDate: ['', Validators.required],
+            }));
+          }
+          break;
+        }
+
+        default:
+          break;
       }
     }
   }
 
-  addEmail() {
-    if (this.isControlValid(this.emails)) {
-      if (this.emails.controls.every((ctrl) => ctrl.valid && ctrl.value)) {
-        this.emails.push(this.fb.group({name: ['', Validators.email]}));
-      }
-
-    }
-  }
 
   addPosition() {
     if (this.isControlValid(this.positionsList)) {
@@ -223,5 +330,15 @@ export class EmployeeForm extends FormGroup {
     // control.controls.forEach((ctrl)=>ctrl.markAsTouched());
     return !!lastControl.value;
   }
+
+  getLastControl(formArray: FormArray) {
+    return formArray.controls[formArray.controls.length - 1];
+  }
+
+  /** gets controls from FormGroup / returns array of FormControl*/
+  getControls(formGroup: FormGroup) {
+    return Object.keys(formGroup.controls).map(key => formGroup.get(key)) ?? []
+  }
+
 
 }
