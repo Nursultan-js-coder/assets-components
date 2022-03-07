@@ -220,10 +220,11 @@
                       <form-ui-date-picker [control]="$any(positionControl.get('appointmentDate'))"
                                            label="Дата принятия на дол-ть"></form-ui-date-picker>
                       <div class="pl-2 pb-3">
-                        <mat-checkbox #isEmployedCurrently>Работает в настоящее время на данной должности
+                        <mat-checkbox #currentlyWorking [checked]="true">Работает в настоящее время на данной должности
                         </mat-checkbox>
                       </div>
                       <form-ui-date-picker
+                        [disabled]="!currentlyWorking.checked"
                         [control]="$any(positionControl.get('finishDate'))"
                         label="Дата завершения"></form-ui-date-picker>
                       <form-ui-dropdown label="Специальность"
@@ -405,25 +406,63 @@
                   нескольких родственников</p>
               </div>
               <div>
-                <div class="block-control">
-                  <form-ui-text-input label="Степень родства" placeholder="Степень родства..."
-                                      [control]="control"></form-ui-text-input>
-                  <form-ui-date-picker label="Дата рождения" [control]="control"></form-ui-date-picker>
-                </div>
+                <ng-container *ngFor="let relativeControl of form.relatives.controls ;let i = index;">
+                  <ng-container *ngIf="i === 0;else withRemoveBtn">
+                    <div class="block-control">
+                      <form-ui-text-input label="Степень родства" placeholder="Степень родства..."
+                                          [control]="$any(relativeControl.get('relationDegree'))"></form-ui-text-input>
+                      <form-ui-date-picker label="Дата рождения"
+                                           [control]="$any(relativeControl.get('dob'))"></form-ui-date-picker>
+                    </div>
 
-                <div class="block-control">
-                  <form-ui-text-input label="Имя" placeholder="Имя..."
-                                      [control]="control"></form-ui-text-input>
-                  <form-ui-text-input label="Фамилия" placeholder="Фамилия..."
-                                      [control]="control"></form-ui-text-input>
-                </div>
-                <form-ui-text-input label="Отчество" placeholder="Отчество..."
-                                    [control]="control"></form-ui-text-input>
-                <form-ui-text-input label="Адрес (Место жительства)" placeholder="Адрес (Место жительства)..."
-                                    [control]="control"></form-ui-text-input>
-                <form-ui-text-input label="Телефон" placeholder="Телефон..." [prefix]="true" iconName="phone"
-                                    [control]="control"></form-ui-text-input>
-                <button mat-flat-button class="assets-btn ghost-btn-deep-1 w-100">Добавить родственника</button>
+                    <div class="block-control">
+                      <form-ui-text-input label="Имя" placeholder="Имя..."
+                                          [control]="$any(relativeControl.get('firstName'))"></form-ui-text-input>
+                      <form-ui-text-input label="Фамилия" placeholder="Фамилия..."
+                                          [control]="$any(relativeControl.get('lastName'))"></form-ui-text-input>
+                    </div>
+                    <form-ui-text-input label="Отчество" placeholder="Отчество..."
+                                        [control]="$any(relativeControl.get('middleName'))"></form-ui-text-input>
+                    <form-ui-text-input label="Адрес (Место жительства)" placeholder="Адрес (Место жительства)..."
+                                        [control]="$any(relativeControl.get('address'))"></form-ui-text-input>
+                    <form-ui-text-input label="Телефон" placeholder="Телефон..." [prefix]="true" iconName="phone"
+                                        [control]="$any(relativeControl.get('phoneNumber'))"></form-ui-text-input>
+
+                  </ng-container>
+                  <ng-template #withRemoveBtn>
+                    <div class="mb-3 locate-between">
+                      <p class="text-main text-lg m-0">Запись о родственниках </p>
+                      <button mat-flat-button class="assets-btn ghost-btn" (click)="form.remove(i,form.relatives)">
+                        Удалить
+                      </button>
+                    </div>
+                    <div class="block-control">
+                      <form-ui-text-input label="Степень родства" placeholder="Степень родства..."
+                                          [control]="$any(relativeControl.get('relationDegree'))"></form-ui-text-input>
+                      <form-ui-date-picker label="Дата рождения"
+                                           [control]="$any(relativeControl.get('dob'))"></form-ui-date-picker>
+                    </div>
+
+                    <div class="block-control">
+                      <form-ui-text-input label="Имя" placeholder="Имя..."
+                                          [control]="$any(relativeControl.get('firstName'))"></form-ui-text-input>
+                      <form-ui-text-input label="Фамилия" placeholder="Фамилия..."
+                                          [control]="$any(relativeControl.get('lastName'))"></form-ui-text-input>
+                    </div>
+                    <form-ui-text-input label="Отчество" placeholder="Отчество..."
+                                        [control]="$any(relativeControl.get('middleName'))"></form-ui-text-input>
+                    <form-ui-text-input label="Адрес (Место жительства)" placeholder="Адрес (Место жительства)..."
+                                        [control]="$any(relativeControl.get('address'))"></form-ui-text-input>
+                    <form-ui-text-input label="Телефон" placeholder="Телефон..." [prefix]="true" iconName="phone"
+                                        [control]="$any(relativeControl.get('phoneNumber'))"></form-ui-text-input>
+                  </ng-template>
+
+
+                </ng-container>
+                <button mat-flat-button class="assets-btn ghost-btn-deep-1 w-100"
+                        (click)="form.addControl('relatives')">Добавить родственника
+                </button>
+
               </div>
             </div>
             <mat-divider></mat-divider>
@@ -438,26 +477,12 @@
               </div>
               <div>
                 <ui-textarea label="Впишите информацию о сотруднике" placeholder="Впишите информацию о сотруднике"
-                             [control]="control"></ui-textarea>
-                <!--                <form-ui-dropdown label="Выберите хэштеги" [options]="['#лыжи','#футбол','#волейбол','#баскетбол']"-->
-                <!--                                  [multiple]="true"-->
-                <!--                                  [control]="control"></form-ui-dropdown>-->
-                <app-input-autosuggestion [chips]="true" [textarea]="true" [control]="control1" label="Выберите хэштеги"
-                                          placeholder="Выберите хэштеги..."></app-input-autosuggestion>
-                <!--                <mat-chip-list>-->
-                <!--                  <mat-chip color="primary">-->
-                <!--                    #настольные игры-->
-                <!--                    <button matChipRemove>-->
-                <!--                      <mat-icon>cancel</mat-icon>-->
-                <!--                    </button>-->
-                <!--                  </mat-chip>-->
-                <!--                  <mat-chip color="primary">-->
-                <!--                    #настольные игры-->
-                <!--                    <button matChipRemove>-->
-                <!--                      <mat-icon>cancel</mat-icon>-->
-                <!--                    </button>-->
-                <!--                  </mat-chip>-->
-                <!--                </mat-chip-list>-->
+                             [control]="$any(form.interests.get('generalInfo'))"></ui-textarea>
+                <form-select-search [control]="$any(form.interests.get('hashtags'))" label="Select hashtags"
+                                    [chips]="true"
+                                    [options]="[{label:'Ski',value:1},{label:'Singing',value:2}]" [multiple]="true">
+                  <button mat-flat-button class="assets-btn-sm primary-btn w-100">Add Hashtag</button>
+                </form-select-search>
               </div>
             </div>
           </div>

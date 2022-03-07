@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {MatTabChangeEvent} from "@angular/material/tabs";
 import {FormBuilder, FormControl, Validators} from "@angular/forms";
 import {EmployeeForm} from "@app/shared/components/progress-bar/EmployeeForm";
@@ -13,8 +13,9 @@ interface ITab {
   templateUrl: './progress-bar.component.html',
   styleUrls: ['./progress-bar.component.scss']
 })
-export class ProgressBarComponent implements OnInit {
-  selectedIndex = 1;
+export class ProgressBarComponent implements OnInit, AfterViewInit {
+  // @ViewChild('isEmployedCurrently') isEmployedCurrently: MatCheckbox;
+  selectedIndex = 2;
   totalTabCount = 3;
   control = new FormControl();
   control1 = new FormControl();
@@ -35,6 +36,9 @@ export class ProgressBarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  ngAfterViewInit() {
   }
 
 

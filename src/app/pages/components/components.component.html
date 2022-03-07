@@ -452,8 +452,9 @@
           <div class="component-row">
             <div class="component-column-wrapper">
               <h2>Single Select Search</h2>
-              <form-select-search
-                label="Select country" [options]="[
+              <div class="component-column">
+                <form-select-search
+                  label="Select country" [options]="[
     {value: 1, label: 'ItSolutionStuff.com'},
     {value: 2, label: 'HDTuto.com'},
     {value: 3, label: 'Nicesnippets.com'},
@@ -463,14 +464,16 @@
     {value: 7, label: 'yarnjs.com'},
     {value: 8, label: 'timelysoft.org'},
   ]"></form-select-search>
+              </div>
             </div>
             <div class="component-column-wrapper">
               <h2>Multiple Select Search</h2>
-              <form-select-search
-                [chips]="true"
-                [multiple]="true"
-                [control]="control"
-                label="Select country" [options]="[
+              <div class="component-column">
+                <form-select-search
+                  [chips]="true"
+                  [multiple]="true"
+                  [control]="control"
+                  label="Select country" [options]="[
     {value: 1, label: 'ItSolutionStuff.com'},
     {value: 2, label: 'HDTuto.com'},
     {value: 3, label: 'Nicesnippets.com'},
@@ -480,10 +483,23 @@
     {value: 7, label: 'yarnjs.com'},
     {value: 8, label: 'timelysoft.org'},
   ]">
-                <button mat-flat-button class="assets-btn-sm primary-btn w-100">Add
-                  Country
-                </button>
-              </form-select-search>
+                  <button mat-flat-button class="assets-btn-sm primary-btn w-100">Add
+                    Country
+                  </button>
+                </form-select-search>
+              </div>
+            </div>
+          </div>
+          <div class="component-row">
+            <div class="component-column-wrapper">
+              <h2>Input with chips inside</h2>
+              <div class="component-column w-100">
+                <app-input-autosuggestion
+                  class="w-100"
+                  [chips]="true" [textarea]="true"
+                  [control]="control" label="Выберите хэштеги"
+                  placeholder="Выберите хэштеги..."></app-input-autosuggestion>
+              </div>
             </div>
           </div>
         </div>

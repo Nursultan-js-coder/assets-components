@@ -17,6 +17,7 @@ import {ProgressBarComponent} from './shared/components/progress-bar/progress-ba
 import {AddEmployeeComponent} from './pages/add-employee/add-employee.component';
 import {ButtonGroupModule} from "@app/shared/components/buttons/button-group/button-group.module";
 import {TabComponent} from './pages/tab/tab.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -29,17 +30,18 @@ import {TabComponent} from './pages/tab/tab.component';
     AddEmployeeComponent,
     TabComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    FormModule,
-    FilterInputModule,
-    TableModule,
-    FilterDatePickerModule,
-    ButtonGroupModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MaterialModule,
+        FormModule,
+        FilterInputModule,
+        TableModule,
+        FilterDatePickerModule,
+        ButtonGroupModule,
+        ReactiveFormsModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

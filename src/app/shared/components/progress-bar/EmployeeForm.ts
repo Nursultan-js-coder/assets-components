@@ -14,11 +14,21 @@ const positionFields = {
   specialityLevel: [''],
   certificationDate: [''],
 }
+const relativeFields = {
+  relationDegree: [''],
+  dob: [''],
+  lastName: [''],
+  firstName: [''],
+  middleName: [''],
+  address: [''],
+  phoneNumber: ['']
+}
 
 export class EmployeeForm extends FormGroup {
   readonly main = this.get("main") as FormArray
   readonly personalInfo = this.main.controls[0] as FormGroup;
   readonly careerInfo = this.main.controls[1] as FormGroup;
+  readonly additionalInfo = this.main.controls[2] as FormGroup;
   readonly firstName = this.personalInfo.get("firstName") as FormControl;
   readonly lastName = this.personalInfo.get("lastName") as FormControl;
   readonly middleName = this.personalInfo.get("middleName") as FormControl;
@@ -47,6 +57,8 @@ export class EmployeeForm extends FormGroup {
   readonly personnelNumber = this.careerInfo.get('personnelNumber') as FormControl;
   readonly corporateEmail = this.careerInfo.get('corporateEmail') as FormControl;
   readonly corporatePhoneNumber = this.careerInfo.get('corporatePhoneNumber') as FormControl;
+  readonly relatives = this.additionalInfo.get('relatives') as FormArray;
+  readonly interests = this.additionalInfo.get('interests') as FormGroup;
 
   constructor(readonly model: any | null, readonly fb: FormBuilder = new FormBuilder()) {
     super(fb.group({
@@ -225,6 +237,26 @@ export class EmployeeForm extends FormGroup {
               ]
           ),
         }),
+        fb.group({
+          relatives: fb.array(model?.additionalInfo?.relatives?.length ? [...model?.additionalInfo?.relatives?.map((relative: any) => fb.group({
+                relationDegree: [relative?.relative ?? ''],
+                dob: [relative?.dob ?? ''],
+                lastName: [relative?.lastName ?? ''],
+                firstName: [relative?.firstName ?? ''],
+                middleName: [relative?.middleName ?? ''],
+                address: [relative?.address ?? ''],
+                phoneNumber: [relative?.phoneNumber ?? ''],
+
+              })), fb.group(relativeFields)]
+              :
+              [fb.group(relativeFields)]
+          ),
+          interests: fb.group({
+            generalInfo: [model?.additionalInfo?.generalInfo ?? ''],
+            hashtags: [model?.additionalInfo?.hashtags ?? []],
+          })
+
+        })
       ])
     }, {updateOn: 'blur'}).controls)
   }
@@ -278,6 +310,13 @@ export class EmployeeForm extends FormGroup {
               certificationDate: ['', Validators.required],
             }));
           }
+          break;
+        }
+        case "relatives": {
+          const controls = this.getControls(lastControl as FormGroup);
+          // if (controls.every(control => control?.value)) {
+            formArray.push(this.fb.group(relativeFields))
+          // }
           break;
         }
 
