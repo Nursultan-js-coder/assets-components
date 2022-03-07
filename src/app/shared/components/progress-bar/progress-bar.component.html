@@ -4,7 +4,11 @@
     <main>
       <div class="assets-progress">
         <mat-progress-bar mode="determinate" [value]="processPercentage"></mat-progress-bar>
-        <p class="text-gray text-right mt-2">{{selectedIndex + 1}}/{{totalTabCount}} шагов для создания сотрудника</p>
+        <p *ngIf="currentTab?.hint ;else noHint" class="main-text text-right mt-2">{{currentTab.hint}}</p>
+        <ng-template #noHint>
+          <p
+            class="text-gray text-right mt-2">{{selectedIndex + 1 + "/" + totalTabCount + "  шагов для создания сотрудника"}}</p>
+        </ng-template>
       </div>
       <mat-tab-group class="progress-tab-group" [selectedIndex]="selectedIndex"
                      (selectedTabChange)="onSelectedTabChange($event)">
@@ -220,7 +224,6 @@
                         </mat-checkbox>
                       </div>
                       <form-ui-date-picker
-                        [disabled]="!isEmployedCurrently.checked"
                         [control]="$any(positionControl.get('finishDate'))"
                         label="Дата завершения"></form-ui-date-picker>
                       <form-ui-dropdown label="Специальность"
