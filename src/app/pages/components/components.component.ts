@@ -12,7 +12,8 @@ export class ComponentsComponent implements OnInit {
   control3 = new FormControl();
   control4 = new FormControl();
   datepickerControl = new FormControl();
-  selectedTabIndex = 8;
+  selectedTabIndex = 1;
+  control = new FormControl();
 
   constructor() {
     this.control1.addValidators(Validators.required);

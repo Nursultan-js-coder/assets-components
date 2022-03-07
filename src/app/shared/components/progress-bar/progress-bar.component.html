@@ -319,54 +319,46 @@
                   Набор soft и hard skills определяется для каждого сотрудника</p>
               </div>
               <div>
-                <form-ui-dropdown label="Выберите hard skills"
-                                  [control]="control1"></form-ui-dropdown>
-                <div class="mb-5">
-                  <mat-chip-list>
-                    <mat-chip color="primary">
-                      Java
-                      <button matChipRemove>
-                        <mat-icon>cancel</mat-icon>
-                      </button>
-                    </mat-chip>
-                    <mat-chip color="primary">
-                      Python
-                      <button matChipRemove>
-                        <mat-icon>cancel</mat-icon>
-                      </button>
-                    </mat-chip>
-                    <mat-chip color="primary">
-                      JavaScript
-                      <button matChipRemove>
-                        <mat-icon>cancel</mat-icon>
-                      </button>
-                    </mat-chip>
-                  </mat-chip-list>
-                </div>
-                <form-ui-dropdown label="Выберите soft skills"
-                                  [control]="control"></form-ui-dropdown>
-                <div class="mb-5">
-                  <mat-chip-list>
-                    <mat-chip color="primary">
-                      Стрессоустойчивость
-                      <button matChipRemove>
-                        <mat-icon>cancel</mat-icon>
-                      </button>
-                    </mat-chip>
-                    <mat-chip color="primary">
-                      Тайм- менеджмент
-                      <button matChipRemove>
-                        <mat-icon>cancel</mat-icon>
-                      </button>
-                    </mat-chip>
-                    <mat-chip color="primary">
-                      Коммуникабельность
-                      <button matChipRemove>
-                        <mat-icon>cancel</mat-icon>
-                      </button>
-                    </mat-chip>
-                  </mat-chip-list>
-                </div>
+                <form-select-search
+                  [multiple]="true"
+                  [control]="control1"
+                  [chips]="true"
+                  label="Выберите hard skills"
+                  [options]="[
+    {value: 1, label: 'ItSolutionStuff.com'},
+    {value: 2, label: 'HDTuto.com'},
+    {value: 3, label: 'Nicesnippets.com'},
+    {value: 4, label: 'Google.com'},
+    {value: 5, label: 'laravel.com'},
+    {value: 6, label: 'npmjs.com'},
+    {value: 7, label: 'yarnjs.com'},
+    {value: 8, label: 'timelysoft.org'},
+  ]">
+                  <button mat-flat-button class="assets-btn-sm primary-btn w-100">Add
+                    Country
+                  </button>
+
+                </form-select-search>
+                <form-select-search
+                  [multiple]="true"
+                  [control]="control"
+                  [chips]="true"
+                  label="Выберите soft skills"
+                  [options]="[
+    {value: 1, label: 'ItSolutionStuff.com'},
+    {value: 2, label: 'HDTuto.com'},
+    {value: 3, label: 'Nicesnippets.com'},
+    {value: 4, label: 'Google.com'},
+    {value: 5, label: 'laravel.com'},
+    {value: 6, label: 'npmjs.com'},
+    {value: 7, label: 'yarnjs.com'},
+    {value: 8, label: 'timelysoft.org'},
+  ]">
+                  <button mat-flat-button class="assets-btn-sm primary-btn w-100">Add
+                    Country
+                  </button>
+
+                </form-select-search>
               </div>
             </div>
             <mat-divider></mat-divider>

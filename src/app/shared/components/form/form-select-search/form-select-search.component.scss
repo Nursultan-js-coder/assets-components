@@ -1,0 +1,28 @@
+.header-option {
+  height: auto !important;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: white;
+  z-index: 999;
+  padding: 5px 0 5px 5px;
+}
+
+.footer-option {
+  width: 100% !important;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  padding: 4px;
+  height: auto !important;
+  background-color: white;
+
+}
+
+::ng-deep .form-select-search .mat-option:last-child .mat-pseudo-checkbox, ::ng-deep .form-select-search .mat-option:first-child .mat-pseudo-checkbox {
+  display: none;
+}
+
+::ng-deep .form-select-search .mat-option-text {
+  display: grid !important;
+}

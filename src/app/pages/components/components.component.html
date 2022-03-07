@@ -431,12 +431,59 @@
                   <form-ui-dropdown [control]="control3"
                                     label="University"
                                     [multiple]="true"
-                                    [options]="[{name:'Manas',value:1},{name:'AUCA',value:2}]"
+                                    [options]="['Manas','AUCA','KRSU','UCA','KTMU','KGTU']"
                                     [hasTranslations]="true">
                     University
                   </form-ui-dropdown>
                 </div>
               </div>
+            </div>
+            <div class="component-column-wrapper">
+              <h2>Input with autosuggestion</h2>
+              <div class="component-column">
+                <div [ngStyle]="{'max-width':'300px'}">
+                  <app-input-autosuggestion [control]="control1" label="Select Country"
+                                            placeholder="Select Country"></app-input-autosuggestion>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="component-row">
+            <div class="component-column-wrapper">
+              <h2>Single Select Search</h2>
+              <form-select-search
+                label="Select country" [options]="[
+    {value: 1, label: 'ItSolutionStuff.com'},
+    {value: 2, label: 'HDTuto.com'},
+    {value: 3, label: 'Nicesnippets.com'},
+    {value: 4, label: 'Google.com'},
+    {value: 5, label: 'laravel.com'},
+    {value: 6, label: 'npmjs.com'},
+    {value: 7, label: 'yarnjs.com'},
+    {value: 8, label: 'timelysoft.org'},
+  ]"></form-select-search>
+            </div>
+            <div class="component-column-wrapper">
+              <h2>Multiple Select Search</h2>
+              <form-select-search
+                [chips]="true"
+                [multiple]="true"
+                [control]="control"
+                label="Select country" [options]="[
+    {value: 1, label: 'ItSolutionStuff.com'},
+    {value: 2, label: 'HDTuto.com'},
+    {value: 3, label: 'Nicesnippets.com'},
+    {value: 4, label: 'Google.com'},
+    {value: 5, label: 'laravel.com'},
+    {value: 6, label: 'npmjs.com'},
+    {value: 7, label: 'yarnjs.com'},
+    {value: 8, label: 'timelysoft.org'},
+  ]">
+                <button mat-flat-button class="assets-btn-sm primary-btn w-100">Add
+                  Country
+                </button>
+              </form-select-search>
             </div>
           </div>
         </div>

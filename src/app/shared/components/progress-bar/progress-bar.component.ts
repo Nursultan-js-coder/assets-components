@@ -29,14 +29,6 @@ export class ProgressBarComponent implements OnInit {
         this.selectedIndex = event.index;
     }
 
-    nextTab(event: MouseEvent) {
-        // this.selectedIndex = Math.floor((this.selectedIndex + 1) % this.totalTabCount);
-    }
-
-    prevTab() {
-
-    }
-
     get processPercentage() {
         return Math.max(1, this.selectedIndex + 1) / this.totalTabCount * 100;
     }

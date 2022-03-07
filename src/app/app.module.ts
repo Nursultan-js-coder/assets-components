@@ -13,11 +13,10 @@ import {WrapperComponent} from "@app/shared/components/content-wrapper/wrapper.c
 import {AvatarBarComponent} from "@app/shared/components/avatar-bar/avatar-bar.component";
 import {TableModule} from "@app/shared/components/table/table.module";
 import {FilterDatePickerModule} from "@app/shared/components/filters/filter-date-picker/filter-date-picker.module";
-import { ProgressBarComponent } from './shared/components/progress-bar/progress-bar.component';
-import { AddEmployeeComponent } from './pages/add-employee/add-employee.component';
-import {SelectModule} from "@app/shared/components/filters/form-filter-select/select.module";
+import {ProgressBarComponent} from './shared/components/progress-bar/progress-bar.component';
+import {AddEmployeeComponent} from './pages/add-employee/add-employee.component';
 import {ButtonGroupModule} from "@app/shared/components/buttons/button-group/button-group.module";
-import { TabComponent } from './pages/tab/tab.component';
+import {TabComponent} from './pages/tab/tab.component';
 
 @NgModule({
   declarations: [
@@ -30,18 +29,17 @@ import { TabComponent } from './pages/tab/tab.component';
     AddEmployeeComponent,
     TabComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MaterialModule,
-        FormModule,
-        FilterInputModule,
-        TableModule,
-        FilterDatePickerModule,
-        SelectModule,
-        ButtonGroupModule,
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    FormModule,
+    FilterInputModule,
+    TableModule,
+    FilterDatePickerModule,
+    ButtonGroupModule,
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

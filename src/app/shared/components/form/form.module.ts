@@ -13,6 +13,9 @@ import {PipesModule} from "@app/shared/pipes/pipes.module";
 import {OverlayModule} from "@angular/cdk/overlay";
 import {UITextareaComponent} from "@app/shared/components/form/textarea/ui-textarea";
 import {FormInputAutosuggestComponent} from "@app/shared/components/form/form-input-autosuggest/form-input-autosuggest.component";
+import {FormSelectSearchComponent} from "@app/shared/components/form/form-select-search/form-select-search.component";
+import {NgxMatSelectSearchModule} from "ngx-mat-select-search";
+import {FilterInputModule} from "@app/shared/components/filters/filter-input/filter-input.module";
 
 
 @NgModule({
@@ -24,16 +27,19 @@ import {FormInputAutosuggestComponent} from "@app/shared/components/form/form-in
     MenuComponent,
     SelectUtilComponent,
     UITextareaComponent,
-    FormInputAutosuggestComponent
+    FormInputAutosuggestComponent,
+    FormSelectSearchComponent
   ],
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    MaterialModule,
-    PipesModule,
-    OverlayModule,
-    MaterialModule,
-  ],
+    imports: [
+        CommonModule,
+        ReactiveFormsModule,
+        MaterialModule,
+        PipesModule,
+        OverlayModule,
+        MaterialModule,
+        NgxMatSelectSearchModule,
+        FilterInputModule,
+    ],
   exports: [
     UITextInputComponent,
     UIDropdownComponent,
@@ -42,7 +48,8 @@ import {FormInputAutosuggestComponent} from "@app/shared/components/form/form-in
     MenuComponent,
     SelectUtilComponent,
     UITextareaComponent,
-    FormInputAutosuggestComponent
+    FormInputAutosuggestComponent,
+    FormSelectSearchComponent
 
   ]
 })

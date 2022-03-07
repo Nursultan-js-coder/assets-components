@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {UITextInputComponent} from "@app/shared/components/form/input/ui-text-input";
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {FormControl} from '@angular/forms';
@@ -10,83 +10,17 @@ import {map, startWith} from 'rxjs/operators';
 
 @Component({
   selector: 'app-input-autosuggestion',
-  template: `
-    <div [class]="(textarea ? 'assets-textarea' : '' )+' assets-form'">
-      <mat-form-field appearance="fill">
-        <mat-label>{{label}}
-          <ng-template [ngIf]="hasRequiredField(control)">
-            <span [ngStyle]="{'color':'rgba(169, 57, 57, 1)','font-weight':'thin'}">*</span>
-          </ng-template>
-        </mat-label>
-        <ng-container *ngIf="chips;else noChip">
-          <mat-chip-list #chipList aria-label="Fruit selection">
-            <mat-chip
-              *ngFor="let fruit of fruits"
-              (removed)="remove(fruit)">
-              {{fruit}}
-              <button matChipRemove>
-                <mat-icon>cancel</mat-icon>
-              </button>
-            </mat-chip>
-            <input [type]="type" matInput [formControl]="control"
-                   placeholder="New fruit..."
-                   #fruitInput
-                   [matAutocomplete]="auto"
-                   [matChipInputFor]="chipList"
-                   [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-                   (matChipInputTokenEnd)="add($event)">
-          </mat-chip-list>
-        </ng-container>
-        <ng-template #noChip><input [type]="type" matInput [formControl]="control" [matAutocomplete]="auto"/>
-        </ng-template>
-        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
-          <mat-option *ngFor="let fruit of filteredFruits | async" [value]="fruit">
-            {{fruit}}
-          </mat-option>
-        </mat-autocomplete>
-
-        <!--    hint-->
-        <mat-hint *ngIf="hint">{{hint}}</mat-hint>
-
-        <mat-icon *ngIf="suffix" matSuffix>{{iconName}}</mat-icon>
-
-        <mat-icon *ngIf="prefix" matPrefix>{{iconName}}</mat-icon>
-
-        <mat-error *ngIf="control.hasError('required')">
-          this field is required
-        </mat-error>
-
-        <mat-error *ngIf="control.hasError('pattern')">
-          this field is required
-        </mat-error>
-
-        <mat-error *ngIf="control.hasError('email') && !control.hasError('required')">
-          this field is required
-        </mat-error>
-
-
-        <mat-error *ngFor="let validation of validationKeys">
-          <p *ngIf="control.hasError(validation.key)">
-            {{validation.label}}
-          </p>
-        </mat-error>
-
-      </mat-form-field>
-    </div>
-
-  `,
-  styles: [`input {
-    //overflow-x: scroll !important;
-  }`]
+  templateUrl: "form-input-autosuggest.component.html",
+  // styleUrls: ['form-input-autosuggest.component.scss']
 
 })
-export class FormInputAutosuggestComponent extends UITextInputComponent {
+export class FormInputAutosuggestComponent extends UITextInputComponent implements AfterViewInit {
   separatorKeysCodes: number[] = [ENTER, COMMA];
   fruitCtrl = new FormControl();
   filteredFruits: Observable<string[]>;
   fruits: string[] = ['Lemon'];
   allFruits: string[] = ['Apple', 'Lemon', 'Lime', 'Orange', 'Strawberry'];
-
+  fruitControl = new FormControl();
   @ViewChild('fruitInput') fruitInput: ElementRef<HTMLInputElement>;
   @Input() textarea = false;
   @Input() chips = false;
@@ -135,6 +69,15 @@ export class FormInputAutosuggestComponent extends UITextInputComponent {
   }
 
   ngOnInit(): void {
+    this.filteredFruits = this.fruitControl.valueChanges.pipe(
+      startWith(''),
+      map(value => this._filter(value)),
+    );
+  }
+
+  ngAfterViewInit() {
+    console.log("fruit input:", this.fruitInput);
+
   }
 
 }
