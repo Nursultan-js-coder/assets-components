@@ -1,5 +1,11 @@
 <div class="content">
-  <h2>Создать сотрудника</h2>
+  <div class="locate-between mb-2">
+    <h2 class="m-0">Создать сотрудника</h2>
+    <button mat-flat-button class="assets-btn-sm ghost-btn" routerLink="/employees">
+      <mat-icon>clear</mat-icon>
+      Отмена
+    </button>
+  </div>
   <section class="employee-form app-card">
     <main>
       <div class="assets-progress">
@@ -30,7 +36,7 @@
                 <form-ui-text-input placeholder="Отчество..." label="Отчество"
                                     [control]="form.middleName"></form-ui-text-input>
                 <div class="block-control">
-                  <form-ui-dropdown [options]="['Male','Female']" label="Выберите пол"
+                  <form-ui-dropdown [options]="['Мужской','Женский']" label="Выберите пол"
                                     [control]="form.genderId"></form-ui-dropdown>
                   <form-ui-date-picker [control]="form.dateOfBirth" label="Дата рождения"></form-ui-date-picker>
                 </div>
@@ -49,7 +55,7 @@
               </div>
               <div>
                 <form-ui-text-input placeholder="Гражданство..." label="Гражданство"
-                                    [control]="control"></form-ui-text-input>
+                                    [control]="form.citizenship"></form-ui-text-input>
                 <div class="block-control">
                   <form-ui-text-input placeholder="ИНН..." label="ИНН"
                                       [control]="form.INN"></form-ui-text-input>
@@ -329,17 +335,15 @@
                   [chips]="true"
                   label="Выберите hard skills"
                   [options]="[
-    {value: 1, label: 'ItSolutionStuff.com'},
-    {value: 2, label: 'HDTuto.com'},
-    {value: 3, label: 'Nicesnippets.com'},
-    {value: 4, label: 'Google.com'},
-    {value: 5, label: 'laravel.com'},
-    {value: 6, label: 'npmjs.com'},
-    {value: 7, label: 'yarnjs.com'},
-    {value: 8, label: 'timelysoft.org'},
+    {value: 1, label: 'TypeScript'},
+    {value: 2, label: 'JavaScript'},
+    {value: 3, label: 'Java'},
+    {value: 4, label: 'DataBase'},
+    {value: 5, label: 'Competitive Programming'},
+    {value: 6, label: 'Design Patterns'},
   ]">
-                  <button mat-flat-button class="assets-btn-sm primary-btn w-100">Add
-                    Country
+                  <button mat-flat-button class="assets-btn-sm primary-btn w-100">Добавить
+                    Hard Skill
                   </button>
 
                 </form-select-search>
@@ -349,17 +353,14 @@
                   [chips]="true"
                   label="Выберите soft skills"
                   [options]="[
-    {value: 1, label: 'ItSolutionStuff.com'},
-    {value: 2, label: 'HDTuto.com'},
-    {value: 3, label: 'Nicesnippets.com'},
-    {value: 4, label: 'Google.com'},
-    {value: 5, label: 'laravel.com'},
-    {value: 6, label: 'npmjs.com'},
-    {value: 7, label: 'yarnjs.com'},
-    {value: 8, label: 'timelysoft.org'},
+    {value: 1, label: 'Коммуникация'},
+    {value: 2, label: 'Критическое мышление'},
+    {value: 3, label: 'Сервисность/Клиентоориентированность'},
+    {value: 4, label: 'Управление проектами, людьми и собой'},
+    {value: 5, label: 'Наставничество и менторинг'},
+    {value: 6, label: 'Решение проблем'},
   ]">
-                  <button mat-flat-button class="assets-btn-sm primary-btn w-100">Add
-                    Country
+                  <button mat-flat-button class="assets-btn-sm primary-btn w-100">Добавить Soft Skill
                   </button>
 
                 </form-select-search>
@@ -370,7 +371,7 @@
           <div class="p-3 mt-3">
             <div class="block-group">
               <div>
-                <h4>1. Контактные данные</h4>
+                <h4>3. Контактные данные</h4>
                 <p>
                   Укажите рабочие контактные данные </p>
               </div>
@@ -478,10 +479,10 @@
               <div>
                 <ui-textarea label="Впишите информацию о сотруднике" placeholder="Впишите информацию о сотруднике"
                              [control]="$any(form.interests.get('generalInfo'))"></ui-textarea>
-                <form-select-search [control]="$any(form.interests.get('hashtags'))" label="Select hashtags"
+                <form-select-search [control]="$any(form.interests.get('hashtags'))" label="Выберите hashtag"
                                     [chips]="true"
                                     [options]="[{label:'Ski',value:1},{label:'Singing',value:2}]" [multiple]="true">
-                  <button mat-flat-button class="assets-btn-sm primary-btn w-100">Add Hashtag</button>
+                  <button mat-flat-button class="assets-btn-sm primary-btn w-100">Добавить Hashtag</button>
                 </form-select-search>
               </div>
             </div>
@@ -499,6 +500,7 @@
       </button>
       <button mat-flat-button class="assets-btn primary-btn ml-2"
               *ngIf="selectedIndex<totalTabCount-1;else submit"
+              [disabled]="!isFormValid"
               (click)="selectedIndex=selectedIndex+1">Далее
       </button>
       <ng-template #submit>
@@ -511,4 +513,3 @@
     </footer>
   </section>
 </div>
-<!--</section>-->

@@ -97,11 +97,9 @@ export class EmployeeForm extends FormGroup {
               })]
           ),
           genderId: [model?.genderId, Validators.required],
-          userLogin: [model?.userLogin, {
-            validators: [Validators.required],
-          }],
+          userLogin: [model?.userLogin],
           dateOfBirth: [model?.dateOfBirth, Validators.required],
-          isMol: [model?.isMol, Validators.required],
+          isMol: [model?.isMol],
           address: [model?.address],
           passportNumber: [model?.passportNumber, Validators.pattern("[a-z,A-Z]{2}[0-9]{7}")],
           iNN: [model?.iNN, Validators.pattern("[0-9]{14}")],
@@ -119,19 +117,6 @@ export class EmployeeForm extends FormGroup {
           ),
         }),
         fb.group({
-          // positionsList: fb.array(model?.positionsList?.length ? [...model?.positionsList.map((pos: any) => fb.group({
-          //       positionId: [pos.positionId ?? ''],
-          //       appointmentDate: [pos.appointmentDate ?? '']
-          //     })), fb.group({
-          //       positionId: [''],
-          //       appointmentDate: ['']
-          //     })]
-          //     :
-          //     [fb.group({
-          //       positionId: [''],
-          //       appointmentDate: ['']
-          //     })],
-          // ),
           personnelNumber: [model?.personnelNumber ?? ''],
           corporateEmail: [model?.corporateEmail ?? ''],
           corporatePhoneNumber: [model?.corporatePhoneNumber ?? ''],
@@ -315,7 +300,7 @@ export class EmployeeForm extends FormGroup {
         case "relatives": {
           const controls = this.getControls(lastControl as FormGroup);
           // if (controls.every(control => control?.value)) {
-            formArray.push(this.fb.group(relativeFields))
+          formArray.push(this.fb.group(relativeFields))
           // }
           break;
         }
