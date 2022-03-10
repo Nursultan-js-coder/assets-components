@@ -23,6 +23,10 @@ const routes: Routes = [
     path: "tab",
     component: TabComponent,
   },
+  {
+    path: "components",
+    component: ComponentsComponent,
+  },
 
 ];
 

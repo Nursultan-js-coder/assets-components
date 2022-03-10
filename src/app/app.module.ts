@@ -18,6 +18,7 @@ import {AddEmployeeComponent} from './pages/add-employee/add-employee.component'
 import {ButtonGroupModule} from "@app/shared/components/buttons/button-group/button-group.module";
 import {TabComponent} from './pages/tab/tab.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { TestComponent } from './pages/test/test.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     AvatarBarComponent,
     ProgressBarComponent,
     AddEmployeeComponent,
-    TabComponent
+    TabComponent,
+    TestComponent
   ],
     imports: [
         BrowserModule,

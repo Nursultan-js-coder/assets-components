@@ -33,14 +33,14 @@ export const adminSettingsRoute: any = [
 export class WrapperComponent {
 
   routes: any = [
-    {
-      icon: "dashboard",
-      path: "dashboard",
-      name: "Main",
-      disabled: false,
-      moduleName: "User",
-      actionName: 'GetUserById',
-    },
+    // {
+    //   icon: "dashboard",
+    //   path: "dashboard",
+    //   name: "Main",
+    //   disabled: false,
+    //   moduleName: "User",
+    //   actionName: 'GetUserById',
+    // },
     {
       icon: "people",
       path: "employees",
@@ -51,8 +51,8 @@ export class WrapperComponent {
     },
     {
       icon: "construction",
-      path: "devices",
-      name: "equipments",
+      path: "components",
+      name: "Components",
       disabled: false,
       moduleName: "Device",
       actionName: 'GetAllDevices',
@@ -65,23 +65,15 @@ export class WrapperComponent {
       moduleName: "Project",
       actionName: 'GetAllProjects',
     },
-    {
-      icon: "apps",
-      name: "references",
-      path: "references",
-      disabled: false,
-      moduleName: "Division",
-      actionName: 'GetAllDivisions',
-    },
-    {
-      icon: "admin_panel_settings",
-      path: `admin`,
-      name: "admin",
-      disabled: false,
-      moduleName: "User",
-      actionName: 'UpdateEmployeePermissions',
-      children: adminSettingsRoute
-    },
+    // {
+    //   icon: "admin_panel_settings",
+    //   path: `admin`,
+    //   name: "admin",
+    //   disabled: false,
+    //   moduleName: "User",
+    //   actionName: 'UpdateEmployeePermissions',
+    //   children: adminSettingsRoute
+    // },
   ]
   panelOpenState = true;
   hasBackdrop: boolean;
