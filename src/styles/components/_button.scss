@@ -31,15 +31,42 @@ $large-size-icon: 23px;
     padding: 0 2rem !important;
   }
 
+  &-xs {
+    @extend .assets-btn;
+    font-size: $text-sm;
+    height: $button-xs !important;
+    line-height: unset !important;
+    min-width: unset !important;
+    padding: 0 6px !important;
+
+    mat-icon {
+      font-size: $text-md !important;
+      height: $text-md;
+      width: $text-md;
+    }
+  }
+
 }
 
-// btn with icon
-button.icon-left > span mat-icon {
-  margin-right: 9px;
-}
 
-button.icon-right > span mat-icon {
-  margin-left: 9px;
+.assets-btn {
+  &.icon-left > span mat-icon {
+    margin-right: 9px;
+  }
+
+  &.icon-right > span mat-icon {
+    margin-left: 9px;
+  }
+
+  &-xs {
+    &.icon-left > span mat-icon {
+      margin-right: 3px;
+    }
+
+    &.icon-right > span mat-icon {
+      margin-left: 3px;
+    }
+  }
 }
 
 
@@ -162,9 +189,14 @@ button.icon-right > span mat-icon {
     @extend .ghost-btn-deep-1;
   }
 
+  &-dark {
+    @extend .ghost-btn;
+    color: $text-dark !important;
+  }
+
   &-deep-1 {
     @extend .ghost-btn;
-    background-color: rgba(0, 124, 217, 0.04) !important;;
+    background-color: rgba(0, 124, 217, 0.04) !important;
   }
 
   &-deep-2 {
@@ -179,10 +211,11 @@ button.icon-right > span mat-icon {
   min-width: 56px !important;
 
   mat-icon {
-    font-size: 1.7rem !important;
-    height: 1.7rem;
-    width: 1.7rem;
-    margin-top: -3px;
+    mat-icon {
+      font-size: 24px !important;
+      width: 24px;
+      height: 24px;
+    }
   }
 
   &-sm {
@@ -191,11 +224,30 @@ button.icon-right > span mat-icon {
     height: 3.33rem;
 
     mat-icon {
-      font-size: 1.5rem !important;
-      height: 1.5rem;
-      width: 1.5rem;
-      //margin-top: -3px;
+      font-size: 20px !important;
+      width: 20px;
+      height: 20px;
     }
+  }
+
+  &-xs {
+    mat-icon {
+      font-size: 16px !important;
+      width: 16px;
+    }
+
+    &.mat-flat-button, &.mat-stroked-button {
+      width: $button-xs !important;
+      padding: 2px 3px !important;
+    }
+  }
+}
+
+.icon-only-btn, .icon-only-btn-sm, .icon-only-btn-xs {
+  span.mat-button-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -204,6 +256,8 @@ button.icon-right > span mat-icon {
   $sm-size-width: 1.17rem;
   $md-size: 1.67rem;
   $md-size-width: 1.67rem;
+  $lg-size: 26px;
+  $lg-size-width: 28px;
 
   &-sm {
     font-size: $sm-size !important;
@@ -216,6 +270,12 @@ button.icon-right > span mat-icon {
     font-size: $md-size !important;
     width: $md-size-width !important;
     height: $md-size-width !important;
+  }
+
+  &-lg {
+
+    font-size: $lg-size !important;
+    width: $lg-size-width !important;
   }
 }
 
@@ -311,8 +371,8 @@ button.assets-btn-sm.ghost-btn.mat-button-disabled {
   opacity: 0.5;
 }
 
-.outline-btn{
-  color:$text-gray !important;
+.outline-btn {
+  color: $text-gray !important;
 }
 
 mat-button-toggle-group {
@@ -375,13 +435,11 @@ mat-button-toggle-group.primary * {
     padding: 0 !important;
     min-width: 48px !important;
     height: 41px !important;
-    //width: 4rem !important;
 
     mat-icon {
-      font-size: 1.7rem !important;
-      height: 1.7rem;
-      width: 1.7rem;
-      margin-top: -3px;
+      font-size: 24px !important;
+      width: 24px;
+      height: 24px;
     }
 
     &-sm {
@@ -390,10 +448,9 @@ mat-button-toggle-group.primary * {
       height: 34px !important;
 
       mat-icon {
-        font-size: 1.5rem !important;
-        height: 1.5rem;
-        width: 1.5rem;
-        //margin-top: -3px;
+        font-size: 20px !important;
+        width: 20px;
+        height: 20px;
       }
     }
   }

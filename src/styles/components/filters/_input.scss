@@ -9,24 +9,24 @@
     padding-bottom: 0 !important;
   }
 
+  &-datepicker * {
+    color: $main !important;
+  }
+
   &-datepicker {
     .mat-form-field-flex {
-      color: $text-gray;
-      background-color: transparent !important;
       outline-color: transparent !important;
-      border: 1px solid $main;
       font-weight: 600 !important;
+      background-color: $main-light !important;
 
       .mat-form-field-infix {
         padding: 0 0 0.75em 0 !important;
-        input{
-          font-weight:inherit !important;
+
+        input {
+          font-weight: inherit !important;
         }
       }
-      .mat-form-field-infix input.ng-dirty{
-        color:$main !important;
-      }
-      }
+    }
   }
 
   .mat-form-field-flex {
@@ -60,6 +60,7 @@
         margin-left: 4px;
       }
     }
+
     .mat-form-field-prefix .mat-datepicker-toggle {
       button {
         top: 2px !important;
@@ -77,6 +78,7 @@
 
         .mat-form-field-infix {
           padding: 0.10em 0 0.63em 0 !important;
+
           .mat-form-field-label-wrapper {
           }
         }

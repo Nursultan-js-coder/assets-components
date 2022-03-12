@@ -2,6 +2,7 @@
 color variables
  */
 $main: rgba(0, 124, 217, 1);
+$main-light: rgba(0, 124, 217, 0.04);
 $main-accent: rgba(0, 124, 217, 0.16);
 $main-deep-1: rgba(0, 96, 168, 1);
 $main-deep-2: rgba(0, 67, 117, 1);
@@ -16,6 +17,8 @@ $inactive: rgba(169, 57, 57, 1);
 $active-accent: rgba(239, 251, 246, 1);
 $inactive-accent: rgba(255, 238, 238, 1);
 $table-border: rgba(246, 246, 246, 1);
+//borders
+$dark-stroke: rgba(242, 242, 242, 1);
 //cards
 $card-bg: #fff;
 //forms
@@ -29,7 +32,7 @@ $border-rd-md: .67rem;
 $border-rd-lg: .83rem;
 $border-rd-xl: 1rem;
 //button height
-$button-xs: 2.89rem;
+$button-xs: 24px;
 $button-sm: 3.3333rem;
 $button-md: 4rem;
 

@@ -1,12 +1,15 @@
 @import "../abstracts/variables";
-
 mat-chip {
-  font-size: $text-sm !important;
+  font-size: 12px !important;
   padding: 2px 12px !important;
   border-radius: 10px !important;
-  min-height: 20px !important;
-  height: unset !important;
-  font-weight: 600 !important;
+  height: 27px !important;
+  min-height: unset !important;
+  font-weight: 500 !important;
+}
+
+.mat-chip-sm {
+  height: 22px !important;
 }
 
 .mat-chip-success {
@@ -16,7 +19,20 @@ mat-chip {
 
 .mat-chip-danger {
   background-color: $inactive-accent !important;;
-  color: $inactive !important;;
+  color: $inactive !important;
+}
+
+.mat-chip-primary {
+  outline: 1px solid $dark-stroke !important;
+  color: $main !important;
+  background-color: #fff !important;
+  box-sizing: border-box;
+
+  .mat-chip-remove {
+    color: $main !important;
+    opacity: 1 !important;
+  }
+
 }
 
 
@@ -76,7 +92,7 @@ mat-chip {
   opacity: 0.5;
   color: #ccc;
   pointer-events: none;
-  border:2px solid red;
+  border: 2px solid red;
 }
 
 .locate-between {

@@ -65,6 +65,14 @@ export class WrapperComponent {
       moduleName: "Project",
       actionName: 'GetAllProjects',
     },
+    {
+      icon: "info",
+      path: "profile",
+      name: "Employee Profile",
+      disabled: false,
+      moduleName: "Project",
+      actionName: 'GetAllProjects',
+    },
     // {
     //   icon: "admin_panel_settings",
     //   path: `admin`,

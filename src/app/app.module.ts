@@ -19,6 +19,10 @@ import {ButtonGroupModule} from "@app/shared/components/buttons/button-group/but
 import {TabComponent} from './pages/tab/tab.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { TestComponent } from './pages/test/test.component';
+import { AlertComponent } from './shared/components/progress-bar/alert/alert.component';
+import { CardRelativesComponent } from './shared/components/cards/card-relatives/card-relatives.component';
+import { EmployeeProfileComponent } from './pages/employee-profile/employee-profile.component';
+import { PartialEditEmployeeComponent } from './pages/partial-edit-employee/partial-edit-employee.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,11 @@ import { TestComponent } from './pages/test/test.component';
     ProgressBarComponent,
     AddEmployeeComponent,
     TabComponent,
-    TestComponent
+    TestComponent,
+    AlertComponent,
+    CardRelativesComponent,
+    EmployeeProfileComponent,
+    PartialEditEmployeeComponent
   ],
     imports: [
         BrowserModule,

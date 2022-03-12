@@ -3,6 +3,7 @@
   gap: 20px;
   border: 1px dashed #8025ed;
   padding: 10px;
+  margin-top: 10px;
 }
 
 .component-row {
@@ -11,11 +12,16 @@
 }
 
 .component-column {
+  &-wrapper {
+    margin-bottom: 10px;
+  }
+
   & > * {
     display: inline-block;
     margin: 10px;
   }
 }
+
 // test
 .example-card {
   max-width: 400px;

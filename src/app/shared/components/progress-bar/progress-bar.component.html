@@ -401,69 +401,100 @@
           <div class="p-3 mt-3">
             <div class="block-group">
               <div>
-                <h4>1. Сведения о близких родственниках</h4>
-                <p>
-                  Степень родства - муж, жена, брат, сестра или брат сотрудника. Вы можете добавить от одного до
-                  нескольких родственников</p>
+                <!--                <h4>1. Сведения о близких родственниках</h4>-->
+                <!--                <p>-->
+                <!--                  Степень родства - муж, жена, брат, сестра или брат сотрудника. Вы можете добавить от одного до-->
+                <!--                  нескольких родственников</p>-->
               </div>
+
               <div>
-                <ng-container *ngFor="let relativeControl of form.relatives.controls ;let i = index;">
-                  <ng-container *ngIf="i === 0;else withRemoveBtn">
-                    <div class="block-control">
-                      <form-ui-text-input label="Степень родства" placeholder="Степень родства..."
-                                          [control]="$any(relativeControl.get('relationDegree'))"></form-ui-text-input>
-                      <form-ui-date-picker label="Дата рождения"
-                                           [control]="$any(relativeControl.get('dob'))"></form-ui-date-picker>
-                    </div>
-
-                    <div class="block-control">
-                      <form-ui-text-input label="Имя" placeholder="Имя..."
-                                          [control]="$any(relativeControl.get('firstName'))"></form-ui-text-input>
-                      <form-ui-text-input label="Фамилия" placeholder="Фамилия..."
-                                          [control]="$any(relativeControl.get('lastName'))"></form-ui-text-input>
-                    </div>
-                    <form-ui-text-input label="Отчество" placeholder="Отчество..."
-                                        [control]="$any(relativeControl.get('middleName'))"></form-ui-text-input>
-                    <form-ui-text-input label="Адрес (Место жительства)" placeholder="Адрес (Место жительства)..."
-                                        [control]="$any(relativeControl.get('address'))"></form-ui-text-input>
-                    <form-ui-text-input label="Телефон" placeholder="Телефон..." [prefix]="true" iconName="phone"
-                                        [control]="$any(relativeControl.get('phoneNumber'))"></form-ui-text-input>
-
-                  </ng-container>
-                  <ng-template #withRemoveBtn>
-                    <div class="mb-3 locate-between">
-                      <p class="text-main text-lg m-0">Запись о родственниках </p>
-                      <button mat-flat-button class="assets-btn ghost-btn" (click)="form.remove(i,form.relatives)">
-                        Удалить
-                      </button>
-                    </div>
-                    <div class="block-control">
-                      <form-ui-text-input label="Степень родства" placeholder="Степень родства..."
-                                          [control]="$any(relativeControl.get('relationDegree'))"></form-ui-text-input>
-                      <form-ui-date-picker label="Дата рождения"
-                                           [control]="$any(relativeControl.get('dob'))"></form-ui-date-picker>
-                    </div>
-
-                    <div class="block-control">
-                      <form-ui-text-input label="Имя" placeholder="Имя..."
-                                          [control]="$any(relativeControl.get('firstName'))"></form-ui-text-input>
-                      <form-ui-text-input label="Фамилия" placeholder="Фамилия..."
-                                          [control]="$any(relativeControl.get('lastName'))"></form-ui-text-input>
-                    </div>
-                    <form-ui-text-input label="Отчество" placeholder="Отчество..."
-                                        [control]="$any(relativeControl.get('middleName'))"></form-ui-text-input>
-                    <form-ui-text-input label="Адрес (Место жительства)" placeholder="Адрес (Место жительства)..."
-                                        [control]="$any(relativeControl.get('address'))"></form-ui-text-input>
-                    <form-ui-text-input label="Телефон" placeholder="Телефон..." [prefix]="true" iconName="phone"
-                                        [control]="$any(relativeControl.get('phoneNumber'))"></form-ui-text-input>
-                  </ng-template>
 
 
-                </ng-container>
-                <button mat-flat-button class="assets-btn ghost-btn-deep-1 w-100"
-                        (click)="form.addControl('relatives')">Добавить родственника
-                </button>
+                <!--                <ng-container *ngFor="let relativeControl of form.relatives.controls ;let i = index;">-->
+                <!--                  <ng-container *ngIf="i === 0;else withRemoveBtn">-->
+                <!--                    <div class="block-control">-->
+                <!--                      <form-ui-text-input label="Степень родства" placeholder="Степень родства..."-->
+                <!--                                          [control]="$any(relativeControl.get('relationDegree'))"></form-ui-text-input>-->
+                <!--                      <form-ui-date-picker label="Дата рождения"-->
+                <!--                                           [control]="$any(relativeControl.get('dob'))"></form-ui-date-picker>-->
+                <!--                    </div>-->
 
+                <!--                    <div class="block-control">-->
+                <!--                      <form-ui-text-input label="Имя" placeholder="Имя..."-->
+                <!--                                          [control]="$any(relativeControl.get('firstName'))"></form-ui-text-input>-->
+                <!--                      <form-ui-text-input label="Фамилия" placeholder="Фамилия..."-->
+                <!--                                          [control]="$any(relativeControl.get('lastName'))"></form-ui-text-input>-->
+                <!--                    </div>-->
+                <!--                    <form-ui-text-input label="Отчество" placeholder="Отчество..."-->
+                <!--                                        [control]="$any(relativeControl.get('middleName'))"></form-ui-text-input>-->
+                <!--                    <form-ui-text-input label="Адрес (Место жительства)" placeholder="Адрес (Место жительства)..."-->
+                <!--                                        [control]="$any(relativeControl.get('address'))"></form-ui-text-input>-->
+                <!--                    <form-ui-text-input label="Телефон" placeholder="Телефон..." [prefix]="true" iconName="phone"-->
+                <!--                                        [control]="$any(relativeControl.get('phoneNumber'))"></form-ui-text-input>-->
+
+                <!--                  </ng-container>-->
+                <!--                  <ng-template #withRemoveBtn>-->
+                <!--                    <div class="mb-3 locate-between">-->
+                <!--                      <p class="text-main text-lg m-0">Запись о родственниках </p>-->
+                <!--                      <button mat-flat-button class="assets-btn ghost-btn" (click)="form.remove(i,form.relatives)">-->
+                <!--                        Удалить-->
+                <!--                      </button>-->
+                <!--                    </div>-->
+                <!--                    <div class="block-control">-->
+                <!--                      <form-ui-text-input label="Степень родства" placeholder="Степень родства..."-->
+                <!--                                          [control]="$any(relativeControl.get('relationDegree'))"></form-ui-text-input>-->
+                <!--                      <form-ui-date-picker label="Дата рождения"-->
+                <!--                                           [control]="$any(relativeControl.get('dob'))"></form-ui-date-picker>-->
+                <!--                    </div>-->
+
+                <!--                    <div class="block-control">-->
+                <!--                      <form-ui-text-input label="Имя" placeholder="Имя..."-->
+                <!--                                          [control]="$any(relativeControl.get('firstName'))"></form-ui-text-input>-->
+                <!--                      <form-ui-text-input label="Фамилия" placeholder="Фамилия..."-->
+                <!--                                          [control]="$any(relativeControl.get('lastName'))"></form-ui-text-input>-->
+                <!--                    </div>-->
+                <!--                    <form-ui-text-input label="Отчество" placeholder="Отчество..."-->
+                <!--                                        [control]="$any(relativeControl.get('middleName'))"></form-ui-text-input>-->
+                <!--                    <form-ui-text-input label="Адрес (Место жительства)" placeholder="Адрес (Место жительства)..."-->
+                <!--                                        [control]="$any(relativeControl.get('address'))"></form-ui-text-input>-->
+                <!--                    <form-ui-text-input label="Телефон" placeholder="Телефон..." [prefix]="true" iconName="phone"-->
+                <!--                                        [control]="$any(relativeControl.get('phoneNumber'))"></form-ui-text-input>-->
+                <!--                  </ng-template>-->
+
+
+                <!--                </ng-container>-->
+                <!--                <button mat-flat-button class="assets-btn ghost-btn-deep-1 w-100"-->
+                <!--                        (click)="form.addControl('relatives')">Добавить родственника-->
+                <!--                </button>-->
+
+              </div>
+            </div>
+            <!--            <div class="app-card relative-wrapper">-->
+            <!--              <img src="assets/images/relatives.svg" alt="relatives"/>-->
+            <!--              <h3 class="text-dark text-md mt-2">Нет сведений о родственниках</h3>-->
+            <!--              <button mat-flat-button class="assets-btn-sm ghost-btn-deep-1 icon-left">-->
+            <!--                <mat-icon>add</mat-icon>-->
+            <!--                Добавить родственника-->
+            <!--              </button>-->
+            <!--            </div>-->
+            <div class="locate-between form-group-title">
+              <h4 class="m-0">1. Сведения о близких родственниках</h4>
+              <button mat-flat-button class="assets-btn-sm ghost-btn-deep-1 icon-left">
+                <mat-icon>add</mat-icon>
+                Добавить родственник
+              </button>
+            </div>
+            <div class="container mt-4">
+              <div class="row">
+                <div class="col-4">
+                  <app-card-relatives [relative]="relative"></app-card-relatives>
+                </div>
+                <div class="col-4">
+                  <app-card-relatives [relative]="relative"></app-card-relatives>
+                </div>
+                <div class="col-4">
+                  <app-card-relatives [relative]="relative"></app-card-relatives>
+                </div>
               </div>
             </div>
             <mat-divider></mat-divider>
