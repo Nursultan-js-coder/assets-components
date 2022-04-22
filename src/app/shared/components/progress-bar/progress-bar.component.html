@@ -1,14 +1,20 @@
 <div class="content">
-  <div class="locate-between mb-2">
+  <div class="locate-between mb-3">
     <h2 class="m-0">Создать сотрудника</h2>
-    <button mat-flat-button class="assets-btn-sm ghost-btn" routerLink="/employees">
-      <mat-icon>clear</mat-icon>
-      Отмена
-    </button>
+    <div class="d-flex">
+      <button mat-flat-button class="assets-btn-sm ghost-btn" routerLink="/employees">
+        <mat-icon>clear</mat-icon>
+        Отмена
+      </button>
+      <button mat-flat-button class="assets-btn-sm primary-btn ml-2">
+        <mat-icon>save</mat-icon>
+        Сохранить
+      </button>
+    </div>
   </div>
   <section class="employee-form app-card">
     <main>
-      <div class="assets-progress">
+      <div *ngIf="!edit" class="assets-progress">
         <mat-progress-bar mode="determinate" [value]="processPercentage"></mat-progress-bar>
         <p *ngIf="currentTab?.hint ;else noHint" class="main-text text-right mt-2">{{currentTab.hint}}</p>
         <ng-template #noHint>
@@ -16,7 +22,7 @@
             class="text-gray text-right mt-2">{{selectedIndex + 1 + "/" + totalTabCount + "  шагов для создания сотрудника"}}</p>
         </ng-template>
       </div>
-      <mat-tab-group class="progress-tab-group" [selectedIndex]="selectedIndex"
+      <mat-tab-group [class]="'progress-tab-group '+(edit ? 'header-removed' : '')" [selectedIndex]="selectedIndex"
                      (selectedTabChange)="onSelectedTabChange($event)">
         <mat-tab label="Личная информация">
           <div class="p-3 mt-3">
@@ -208,7 +214,7 @@
 
         </mat-tab>
         <mat-tab label="Рабочая информация">
-          <div class="p-3 mt-3">
+          <div [class]="(edit ? '':'mt-3 p-3')">
             <div class="block-group">
               <div>
                 <h4>1. Карьера</h4>
@@ -284,43 +290,11 @@
                 <button mat-flat-button class="assets-btn ghost-btn-deep-1 w-100"
                         (click)="form.addControl('positionsList')">Добавить должность
                 </button>
-                <!--                <form-ui-dropdown label="Должность" [control]="control"></form-ui-dropdown>-->
-                <!--                &lt;!&ndash;                <div class="block-control">&ndash;&gt;-->
-                <!--                <form-ui-date-picker [control]="control1" label="Дата принятия на дол-ть"></form-ui-date-picker>-->
-                <!--                <div class="pl-2 pb-3">-->
-                <!--                  <mat-checkbox>Работает в настоящее время на данной должности</mat-checkbox>-->
-                <!--                </div>-->
-                <!--                <form-ui-date-picker [control]="control1" label="Дата завершения"></form-ui-date-picker>-->
-                <!--                &lt;!&ndash;                </div>&ndash;&gt;-->
-                <!--                <form-ui-dropdown label="Специальность"-->
-                <!--                                  [control]="control"></form-ui-dropdown>-->
-                <!--                <div class="block-control">-->
-                <!--                  <form-ui-dropdown [options]="['Male','Female']" label="Уровень специальности"-->
-                <!--                                    [control]="control"></form-ui-dropdown>-->
-                <!--                  <form-ui-date-picker [control]="control1" label="Дата аттестации"></form-ui-date-picker>-->
-                <!--                </div>-->
 
-                <!--                <button mat-flat-button class="assets-btn ghost-btn-deep-1 text-sm w-100">Добавить должность-->
-                <!--                </button>-->
               </div>
             </div>
             <mat-divider></mat-divider>
           </div>
-          <!--          <div class="p-3 mt-3">-->
-          <!--            <div class="block-group">-->
-          <!--              <div>-->
-          <!--                <h4>1. Статус</h4>-->
-          <!--                <p>-->
-          <!--                  Сотрудник может быть активен- доступен к работе, в отпуске-->
-          <!--                  или не активен - не доступен к работе, например, взял академический-->
-          <!--                  или бессрочный отпуск</p>-->
-          <!--              </div>-->
-          <!--              <div>-->
-          <!--                <app-button-group></app-button-group>-->
-          <!--              </div>-->
-          <!--            </div>-->
-          <!--            <mat-divider></mat-divider>-->
-          <!--          </div>-->
           <div class="p-3 mt-3">
             <div class="block-group">
               <div>
@@ -401,82 +375,11 @@
           <div class="p-3 mt-3">
             <div class="block-group">
               <div>
-                <!--                <h4>1. Сведения о близких родственниках</h4>-->
-                <!--                <p>-->
-                <!--                  Степень родства - муж, жена, брат, сестра или брат сотрудника. Вы можете добавить от одного до-->
-                <!--                  нескольких родственников</p>-->
               </div>
 
               <div>
-
-
-                <!--                <ng-container *ngFor="let relativeControl of form.relatives.controls ;let i = index;">-->
-                <!--                  <ng-container *ngIf="i === 0;else withRemoveBtn">-->
-                <!--                    <div class="block-control">-->
-                <!--                      <form-ui-text-input label="Степень родства" placeholder="Степень родства..."-->
-                <!--                                          [control]="$any(relativeControl.get('relationDegree'))"></form-ui-text-input>-->
-                <!--                      <form-ui-date-picker label="Дата рождения"-->
-                <!--                                           [control]="$any(relativeControl.get('dob'))"></form-ui-date-picker>-->
-                <!--                    </div>-->
-
-                <!--                    <div class="block-control">-->
-                <!--                      <form-ui-text-input label="Имя" placeholder="Имя..."-->
-                <!--                                          [control]="$any(relativeControl.get('firstName'))"></form-ui-text-input>-->
-                <!--                      <form-ui-text-input label="Фамилия" placeholder="Фамилия..."-->
-                <!--                                          [control]="$any(relativeControl.get('lastName'))"></form-ui-text-input>-->
-                <!--                    </div>-->
-                <!--                    <form-ui-text-input label="Отчество" placeholder="Отчество..."-->
-                <!--                                        [control]="$any(relativeControl.get('middleName'))"></form-ui-text-input>-->
-                <!--                    <form-ui-text-input label="Адрес (Место жительства)" placeholder="Адрес (Место жительства)..."-->
-                <!--                                        [control]="$any(relativeControl.get('address'))"></form-ui-text-input>-->
-                <!--                    <form-ui-text-input label="Телефон" placeholder="Телефон..." [prefix]="true" iconName="phone"-->
-                <!--                                        [control]="$any(relativeControl.get('phoneNumber'))"></form-ui-text-input>-->
-
-                <!--                  </ng-container>-->
-                <!--                  <ng-template #withRemoveBtn>-->
-                <!--                    <div class="mb-3 locate-between">-->
-                <!--                      <p class="text-main text-lg m-0">Запись о родственниках </p>-->
-                <!--                      <button mat-flat-button class="assets-btn ghost-btn" (click)="form.remove(i,form.relatives)">-->
-                <!--                        Удалить-->
-                <!--                      </button>-->
-                <!--                    </div>-->
-                <!--                    <div class="block-control">-->
-                <!--                      <form-ui-text-input label="Степень родства" placeholder="Степень родства..."-->
-                <!--                                          [control]="$any(relativeControl.get('relationDegree'))"></form-ui-text-input>-->
-                <!--                      <form-ui-date-picker label="Дата рождения"-->
-                <!--                                           [control]="$any(relativeControl.get('dob'))"></form-ui-date-picker>-->
-                <!--                    </div>-->
-
-                <!--                    <div class="block-control">-->
-                <!--                      <form-ui-text-input label="Имя" placeholder="Имя..."-->
-                <!--                                          [control]="$any(relativeControl.get('firstName'))"></form-ui-text-input>-->
-                <!--                      <form-ui-text-input label="Фамилия" placeholder="Фамилия..."-->
-                <!--                                          [control]="$any(relativeControl.get('lastName'))"></form-ui-text-input>-->
-                <!--                    </div>-->
-                <!--                    <form-ui-text-input label="Отчество" placeholder="Отчество..."-->
-                <!--                                        [control]="$any(relativeControl.get('middleName'))"></form-ui-text-input>-->
-                <!--                    <form-ui-text-input label="Адрес (Место жительства)" placeholder="Адрес (Место жительства)..."-->
-                <!--                                        [control]="$any(relativeControl.get('address'))"></form-ui-text-input>-->
-                <!--                    <form-ui-text-input label="Телефон" placeholder="Телефон..." [prefix]="true" iconName="phone"-->
-                <!--                                        [control]="$any(relativeControl.get('phoneNumber'))"></form-ui-text-input>-->
-                <!--                  </ng-template>-->
-
-
-                <!--                </ng-container>-->
-                <!--                <button mat-flat-button class="assets-btn ghost-btn-deep-1 w-100"-->
-                <!--                        (click)="form.addControl('relatives')">Добавить родственника-->
-                <!--                </button>-->
-
               </div>
             </div>
-            <!--            <div class="app-card relative-wrapper">-->
-            <!--              <img src="assets/images/relatives.svg" alt="relatives"/>-->
-            <!--              <h3 class="text-dark text-md mt-2">Нет сведений о родственниках</h3>-->
-            <!--              <button mat-flat-button class="assets-btn-sm ghost-btn-deep-1 icon-left">-->
-            <!--                <mat-icon>add</mat-icon>-->
-            <!--                Добавить родственника-->
-            <!--              </button>-->
-            <!--            </div>-->
             <div class="locate-between form-group-title">
               <h4 class="m-0">1. Сведения о близких родственниках</h4>
               <button mat-flat-button class="assets-btn-sm ghost-btn-deep-1 icon-left">
@@ -522,7 +425,7 @@
         </mat-tab>
       </mat-tab-group>
     </main>
-    <footer>
+    <footer *ngIf="!edit">
       <button mat-stroked-button class="assets-btn outline-btn"
               *ngIf="selectedIndex>0"
               (click)="selectedIndex=selectedIndex-1">

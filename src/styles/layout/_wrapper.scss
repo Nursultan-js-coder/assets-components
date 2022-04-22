@@ -2,9 +2,9 @@
 
 mat-drawer-container {
   background-color: $bg-main !important;
+  flex: 1 1 100%;
   max-height: 100vh;
   min-height: 100vh;
-
   mat-drawer {
     background-color: $bg-main !important;
     width: 270px;

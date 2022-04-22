@@ -1,4 +1,5 @@
-<div [class]="'light-theme h-100 w-100'">
+<div [class]="'light-theme h-100 w-100 assets-wrapper'">
+<!--  <div class="assets-header">Hello</div>-->
   <mat-drawer-container [hasBackdrop]="hasBackdrop" autosize>
     <mat-drawer [class]="panelOpenState ? 'opened':'collapsed'" mode="side" opened="true" position="start">
       <div [@inOutAnimation]="animationState" class="sidenav">

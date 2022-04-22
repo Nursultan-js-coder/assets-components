@@ -15,7 +15,7 @@ interface ITab {
 })
 export class ProgressBarComponent implements OnInit, AfterViewInit {
   // @ViewChild('isEmployedCurrently') isEmployedCurrently: MatCheckbox;
-  selectedIndex = 2;
+  selectedIndex = 1;
   totalTabCount = 3;
   control = new FormControl();
   control1 = new FormControl();
