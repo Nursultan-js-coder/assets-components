@@ -23,6 +23,7 @@ import { AlertComponent } from './shared/components/progress-bar/alert/alert.com
 import { CardRelativesComponent } from './shared/components/cards/card-relatives/card-relatives.component';
 import { EmployeeProfileComponent } from './pages/employee-profile/employee-profile.component';
 import { PartialEditEmployeeComponent } from './pages/partial-edit-employee/partial-edit-employee.component';
+import { UsersComponent } from './pages/users/users.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { PartialEditEmployeeComponent } from './pages/partial-edit-employee/part
     AlertComponent,
     CardRelativesComponent,
     EmployeeProfileComponent,
-    PartialEditEmployeeComponent
+    PartialEditEmployeeComponent,
+    UsersComponent
   ],
     imports: [
         BrowserModule,

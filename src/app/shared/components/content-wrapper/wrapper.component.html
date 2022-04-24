@@ -1,5 +1,5 @@
 <div [class]="'light-theme h-100 w-100 assets-wrapper'">
-<!--  <div class="assets-header">Hello</div>-->
+  <!--  <div class="assets-header">Hello</div>-->
   <mat-drawer-container [hasBackdrop]="hasBackdrop" autosize>
     <mat-drawer [class]="panelOpenState ? 'opened':'collapsed'" mode="side" opened="true" position="start">
       <div [@inOutAnimation]="animationState" class="sidenav">
@@ -27,30 +27,31 @@
                                matRipple [routerLink]="route.path"
                                routerLinkActive="mat-list-item-active"
                                [class]="(route.disabled ? 'disabled':'')+' cursor-pointer'">
+                  <span class="position-absolute" [ngStyle]="{'left':'0'}"></span>
                   <div class="nav-item">
                     <mat-icon class="material-icons-round icon-md">
                       {{route.icon}}
                     </mat-icon>
                     <p *ngIf="panelOpenState">{{route.name}}</p>
                   </div>
-                  <span class="position-absolute" [ngStyle]="{'right':'0'}"></span>
                 </mat-list-item>
               </ng-container>
 
               <ng-template #hasChildren>
                 <mat-accordion
                   class="mat-elevation-z0 nav-item-expansion-panel">
-                  <mat-expansion-panel disableRipple hideToggle>
-                    <mat-expansion-panel-header>
+                  <mat-expansion-panel>
+                    <mat-expansion-panel-header matRipple>
                       <mat-panel-title>
-                        <mat-list-item matRipple [class]="(route.disabled ? 'disabled':'')+' cursor-pointer'">
+                        <mat-list-item disableRipple class="expansion-header"
+                                       [class]="(route.disabled ? 'disabled':'')+' cursor-pointer'">
+                          <span class="position-absolute" [ngStyle]="{'right':'0'}"></span>
                           <div class="nav-item">
                             <mat-icon class="material-icons-round icon-md">
                               {{route.icon}}
                             </mat-icon>
                             <p *ngIf="panelOpenState">{{route.name}}</p>
                           </div>
-                          <span class="position-absolute" [ngStyle]="{'right':'0'}"></span>
                         </mat-list-item>
                       </mat-panel-title>
                     </mat-expansion-panel-header>
@@ -58,13 +59,13 @@
                       <mat-list-item matRipple [routerLink]="route.path+'/'+submenu.path"
                                      routerLinkActive="mat-list-item-active"
                                      [class]="(route.disabled ? 'disabled':'')+' cursor-pointer'">
+                        <span class="position-absolute" [ngStyle]="{'right':'0'}"></span>
                         <div class="nav-item">
                           <mat-icon class="material-icons-round icon-md">
                             {{submenu.icon}}
                           </mat-icon>
                           <p *ngIf="panelOpenState">{{submenu.name}}</p>
                         </div>
-                        <span class="position-absolute" [ngStyle]="{'right':'0'}"></span>
                       </mat-list-item>
                     </ng-container>
                   </mat-expansion-panel>

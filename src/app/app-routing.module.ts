@@ -6,6 +6,7 @@ import {ProgressBarComponent} from "@app/shared/components/progress-bar/progress
 import {TabComponent} from "@app/pages/tab/tab.component";
 import {EmployeeProfileComponent} from "@app/pages/employee-profile/employee-profile.component";
 import {PartialEditEmployeeComponent} from "@app/pages/partial-edit-employee/partial-edit-employee.component";
+import {UsersComponent} from "@app/pages/users/users.component";
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: "profile",
     component: EmployeeProfileComponent,
+  },
+  {
+    path: "users",
+    component: UsersComponent,
   },
 
 ];

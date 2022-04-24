@@ -73,15 +73,15 @@ export class WrapperComponent {
       moduleName: "Project",
       actionName: 'GetAllProjects',
     },
-    // {
-    //   icon: "admin_panel_settings",
-    //   path: `admin`,
-    //   name: "admin",
-    //   disabled: false,
-    //   moduleName: "User",
-    //   actionName: 'UpdateEmployeePermissions',
-    //   children: adminSettingsRoute
-    // },
+    {
+      icon: "admin_panel_settings",
+      path: `admin`,
+      name: "admin",
+      disabled: false,
+      moduleName: "User",
+      actionName: 'UpdateEmployeePermissions',
+      children: adminSettingsRoute
+    },
   ]
   panelOpenState = true;
   hasBackdrop: boolean;
