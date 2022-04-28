@@ -1,14 +1,50 @@
 @import "src/styles/abstracts/variables";
 
+//* {
+//  box-sizing: border-box;
+//}
+//
+//.page {
+//  overflow-y: hidden;
+//  height: 100vh;
+//  font-size: $text-sm;
+//  padding: 15px .58rem 10px 20px !important;
+//
+//  .content {
+//    height: 99.8%;
+//    width: 100%;
+//    display: flex;
+//    flex-direction: column;
+//
+//    &-scrollable {
+//      @extend .content;
+//      overflow-y: scroll;
+//    }
+//  }
+//
+//}
+//
+//.extendable {
+//  flex: 1 1 100%;
+//  overflow-y: hidden;
+//  flex-direction: column;
+//  //display: grid;
+//  display: flex;
+//  max-height: 100%;
+//}
+
+/*test*/
+
 * {
   box-sizing: border-box;
 }
 
 .page {
   overflow-y: hidden;
-  height: 100vh;
+  height: calc(100vh - 50px);
+  flex: 1 1 100%;
   font-size: $text-sm;
-  padding: 15px .58rem 10px 20px !important;
+  padding: 5px 5px 5px 10px !important;
 
   .content {
     height: 99.8%;

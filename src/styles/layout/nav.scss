@@ -1,0 +1,11 @@
+@import "src/styles/abstracts/_variables.scss";
+
+.assets-wrapper {
+  nav {
+    .navbar-brand {
+      color: $main !important;
+      font-weight: bolder !important;
+    }
+    border-bottom:1px solid #e6e6e6;
+  }
+}

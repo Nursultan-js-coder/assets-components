@@ -1,28 +1,44 @@
 <div [class]="'light-theme h-100 w-100 assets-wrapper'">
-  <!--  <div class="assets-header">Hello</div>-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <a class="navbar-brand" href="#"><img alt="logo" src="assets/images/logo.svg"/> Kanda AsseTS</a>
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+    </div>
+  </nav>
   <mat-drawer-container [hasBackdrop]="hasBackdrop" autosize>
     <mat-drawer [class]="panelOpenState ? 'opened':'collapsed'" mode="side" opened="true" position="start">
       <div [@inOutAnimation]="animationState" class="sidenav">
-        <header class="pt-4">
-          <ng-container *ngIf="panelOpenState;else logoOnCollapse">
-            <div class="ml-3 d-flex align-items-center" (click)="router.navigate([''])" role="button">
-              <img alt="logo" src="assets/images/logo.svg" [ngStyle]="{'height':'2.3rem'}">
-              <div class="ml-2 d-inline-block mt-2">
-                <p [ngStyle]="{'font-size':'1.5rem'}" class="m-0">Assets</p>
-                <p
-                  class="m-0 text-gray text-sm">Admin Dashboard</p>
-              </div>
-            </div>
-          </ng-container>
-          <ng-template #logoOnCollapse>
-            <img alt="logo" src="assets/images/logo.svg"/>
-          </ng-template>
-        </header>
+        <!--        <header class="pt-4">-->
+        <!--          <ng-container *ngIf="panelOpenState;else logoOnCollapse">-->
+        <!--            <div class="ml-3 d-flex align-items-center" (click)="router.navigate([''])" role="button">-->
+        <!--              <img alt="logo" src="assets/images/logo.svg" [ngStyle]="{'height':'2.3rem'}">-->
+        <!--              <div class="ml-2 d-inline-block mt-2">-->
+        <!--                <p [ngStyle]="{'font-size':'1.5rem'}" class="m-0">Assets</p>-->
+        <!--                &lt;!&ndash;                <p&ndash;&gt;-->
+        <!--                &lt;!&ndash;                  class="m-0 text-gray text-sm">{{authService.userSubject.value.role}}&ndash;&gt;-->
+        <!--                &lt;!&ndash;                  Dashboard</p>&ndash;&gt;-->
+        <!--              </div>-->
+        <!--            </div>-->
+        <!--          </ng-container>-->
+        <!--          <ng-template #logoOnCollapse>-->
+        <!--            <img alt="logo" src="assets/images/logo.svg"/>-->
+        <!--          </ng-template>-->
+        <!--        </header>-->
         <main>
           <mat-list class="nav-list">
             <ng-container *ngFor="let route of routes">
 
               <ng-container *ngIf="!route.children; else hasChildren ">
+                <!--                               *appPermissionIf="route.permission"-->
                 <mat-list-item class="mb-2"
                                matRipple [routerLink]="route.path"
                                routerLinkActive="mat-list-item-active"
@@ -38,6 +54,7 @@
               </ng-container>
 
               <ng-template #hasChildren>
+                <!--                  *appPermissionIf="route.permission"-->
                 <mat-accordion
                   class="mat-elevation-z0 nav-item-expansion-panel">
                   <mat-expansion-panel>
@@ -45,7 +62,6 @@
                       <mat-panel-title>
                         <mat-list-item disableRipple class="expansion-header"
                                        [class]="(route.disabled ? 'disabled':'')+' cursor-pointer'">
-                          <span class="position-absolute" [ngStyle]="{'right':'0'}"></span>
                           <div class="nav-item">
                             <mat-icon class="material-icons-round icon-md">
                               {{route.icon}}
@@ -56,10 +72,10 @@
                       </mat-panel-title>
                     </mat-expansion-panel-header>
                     <ng-container *ngFor="let submenu of route.children">
+                      <!--                                     *appPermissionIf="submenu.permission"-->
                       <mat-list-item matRipple [routerLink]="route.path+'/'+submenu.path"
                                      routerLinkActive="mat-list-item-active"
                                      [class]="(route.disabled ? 'disabled':'')+' cursor-pointer'">
-                        <span class="position-absolute" [ngStyle]="{'right':'0'}"></span>
                         <div class="nav-item">
                           <mat-icon class="material-icons-round icon-md">
                             {{submenu.icon}}
@@ -78,13 +94,20 @@
           </mat-list>
         </main>
         <footer class="m-2">
+          <!--          <app-i18n-dropdown></app-i18n-dropdown>-->
           <app-avatar-bar></app-avatar-bar>
         </footer>
       </div>
 
     </mat-drawer>
+
     <div class="page">
+      <!--      <app-breadcrumb></app-breadcrumb>-->
+      <!--      <ng-container *ngIf="!(loading$|async)">-->
       <router-outlet></router-outlet>
+      <!--      </ng-container>-->
+      <!--      <ngx-spinner name="root">-->
+      <!--      </ngx-spinner>-->
     </div>
   </mat-drawer-container>
 </div>
