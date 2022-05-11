@@ -28,13 +28,17 @@
 
     &-flex {
       background-color: $input-bg !important;
-      outline: .17rem solid $input-bg;
-      outline-offset: -.17rem;
-      border-radius: .5rem !important;
+      border-radius: $form-field-border-radius !important;
       height: 48px;
-      //height: 48px !important;
+      outline: .083rem solid $dark-border;
+      outline-offset: -.083rem;
+      //border:1px solid $dark-border;
       padding-left: 16px !important;
       padding-right: 16px !important;
+    }
+    &-flex:hover{
+      outline: 2px solid black;
+      outline-offset: -.083rem;
     }
 
     &-infix {
@@ -83,6 +87,7 @@
     .mat-form-field-flex {
       outline: .083rem solid $inactive;
       outline-offset: -.083rem;
+      //border-color: $inactive;
     }
   }
 }
@@ -90,7 +95,6 @@
 .assets-textarea {
   .mat-form-field {
     &-flex {
-      min-height: 120px;
       height: auto !important;
     }
   }
@@ -118,13 +122,6 @@ mat-error {
       &-flex {
         height: 41.6667px !important;
         padding: 0.4em 16px 0 16px !important;;
-      }
-    }
-  }
-  .assets-textarea {
-    .mat-form-field {
-      &-flex {
-        height: auto !important;
       }
     }
   }

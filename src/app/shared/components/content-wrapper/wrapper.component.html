@@ -8,10 +8,10 @@
       <a class="navbar-brand" href="#"><img alt="logo" src="assets/images/logo.svg"/> Kanda AsseTS</a>
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       </ul>
-            <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
     </div>
   </nav>
   <mat-drawer-container [hasBackdrop]="hasBackdrop" autosize>
@@ -94,7 +94,7 @@
           </mat-list>
         </main>
         <footer class="m-2">
-          <!--          <app-i18n-dropdown></app-i18n-dropdown>-->
+<!--                    <app-i18n-dropdown></app-i18n-dropdown>-->
           <app-avatar-bar></app-avatar-bar>
         </footer>
       </div>
@@ -109,6 +109,16 @@
       <!--      <ngx-spinner name="root">-->
       <!--      </ngx-spinner>-->
     </div>
+    <mat-drawer #rightSidenav
+                [class]="panelOpenState ? 'opened':'collapsed'" mode="over" opened="false" position="end">
+      <div [@inOutAnimation]="animationState" class="sidenav m-md-auto">
+        <div class="app-card p-2" id="content">
+        </div>
+      </div>
+    </mat-drawer>
+<!--    <mat-drawer-content>-->
+<!--      <h2>Hello</h2>-->
+<!--    </mat-drawer-content>-->
   </mat-drawer-container>
 </div>
 <!---->

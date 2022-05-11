@@ -1,0 +1,19 @@
+.table {
+  &-wrapper {
+    .employees-list {
+      background-color: inherit !important;
+      width: 100%;
+      //test
+      flex: 1 1 100%;
+      overflow-y: scroll;
+
+      .row {
+        div {
+          padding-right: 0 !important;
+          padding-left: 0 !important;
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
+}

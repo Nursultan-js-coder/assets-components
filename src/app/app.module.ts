@@ -24,6 +24,10 @@ import { CardRelativesComponent } from './shared/components/cards/card-relatives
 import { EmployeeProfileComponent } from './pages/employee-profile/employee-profile.component';
 import { PartialEditEmployeeComponent } from './pages/partial-edit-employee/partial-edit-employee.component';
 import { UsersComponent } from './pages/users/users.component';
+import { EmployeesNewComponent } from './pages/employees-new/employees-new.component';
+import { EmployeeCardComponent } from './pages/employees-new/employee-card/employee-card.component';
+import { EmployeesListComponent } from './pages/employees-new/employees-list/employees-list.component';
+import { EmployeeFormComponent } from './pages/employee-form/employee-form.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +44,11 @@ import { UsersComponent } from './pages/users/users.component';
     CardRelativesComponent,
     EmployeeProfileComponent,
     PartialEditEmployeeComponent,
-    UsersComponent
+    UsersComponent,
+    EmployeesNewComponent,
+    EmployeeCardComponent,
+    EmployeesListComponent,
+    EmployeeFormComponent
   ],
     imports: [
         BrowserModule,
