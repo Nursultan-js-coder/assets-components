@@ -16,9 +16,7 @@ type Validation = {
 })
 export class UITextInputComponent implements OnInit {
     @Input() label: string;
-    @Input() hasLoader?: boolean = false;
     @Input() control: FormControl;
-    @Input() iconClickHandler?: any;
     @Input() placeholder?: string;
     @Input() suffix? = false;
     @Input() iconName?: string;
@@ -27,8 +25,6 @@ export class UITextInputComponent implements OnInit {
     @Input() validationKeys: Validation[];
     @ViewChild('input') input: ElementRef<HTMLInputElement>;
     @ViewChild('spinner') spinner: MatSpinner;
-    available: Observable<boolean>;
-    isLoading: Observable<boolean> = of(false);
     hasRequiredField = hasRequiredField;
     customErrorMessage?: string;
     @Input() hint?: any;

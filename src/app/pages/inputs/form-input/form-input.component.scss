@@ -1,0 +1,49 @@
+@import "src/styles/abstracts/variables";
+
+.assets-form-field {
+  position: relative;
+
+  mat-label {
+    display: block;
+    font-size: 15px;
+    font-weight: normal;
+    color: $text-dark;
+  }
+
+  .mat-form-field-flex {
+    .mat-form-field-outline {
+      height: 100% !important;
+    }
+  }
+
+  &.label-top {
+    mat-label {
+      display: block;
+    }
+  }
+
+  &.label-left {
+    display: flex;
+    align-items: center;
+
+    mat-label {
+      display: block;
+      margin-right: 6px;
+      margin-top: -12px;
+    }
+  }
+
+  .mat-form-field-infix {
+    height: 41px;
+    padding: 7px 2px 0 2px !important;
+
+    input {
+      font-size: 15px;
+    }
+  }
+
+  .mat-form-field-outline-gap {
+    display: none;
+  }
+
+}

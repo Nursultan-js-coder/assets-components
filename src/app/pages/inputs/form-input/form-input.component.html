@@ -1,0 +1,18 @@
+<div [class]="'assets-form-field '+('label-'+labelPosition)">
+  <mat-label>
+    First Name
+    <span [ngStyle]="{'color':'rgba(169, 57, 57, 1)','font-weight':'thin'}">*</span>
+  </mat-label>
+
+  <mat-form-field appearance="outline"
+                  [hideRequiredMarker]="true"
+                  floatLabel="always">
+    <input matInput placeholder="Simple placeholder" required>
+  </mat-form-field>
+
+  <mat-error *ngFor="let validation of validationKeys">
+    <p *ngIf="control.hasError(validation.key)">
+      {{validation.label}}
+    </p>
+  </mat-error>
+</div>

@@ -3,6 +3,7 @@ import {FormControl} from "@angular/forms";
 import {ReplaySubject, Subject} from "rxjs";
 import {take, takeUntil} from "rxjs/operators";
 import {MatSelect} from "@angular/material/select";
+import {FormLabelEnum} from "@app/pages/inputs/form-input/form-input.component";
 
 @Component({
   selector: "form-select-search",
@@ -13,6 +14,7 @@ import {MatSelect} from "@angular/material/select";
 export class FormSelectSearchComponent implements OnInit, AfterViewInit, OnDestroy {
   title = 'app-material3';
   @Input() label: string;
+  @Input() placeholder: string;
   @Input() control: FormControl = new FormControl();
 
   @Input() options: any;
@@ -26,6 +28,7 @@ export class FormSelectSearchComponent implements OnInit, AfterViewInit, OnDestr
   @ViewChild('singleSelect', {static: true}) singleSelect: MatSelect;
 
   protected _onDestroy = new Subject();
+  @Input() labelPosition: FormLabelEnum = 'top';
 
   constructor() {
   }

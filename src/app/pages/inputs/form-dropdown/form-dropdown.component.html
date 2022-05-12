@@ -1,0 +1,22 @@
+<div [class]="'assets-form-dropdown '+('label-'+(labelPosition))">
+  <mat-label class="assets-form-dropdown-label">
+    {{label}}
+  </mat-label>
+  <mat-form-field appearance="fill">
+    <mat-label>{{placeholder}}
+      <!--    <ng-template [ngIf]="hasRequiredField(control)">-->
+      <!--    </ng-template>-->
+    </mat-label>
+
+    <mat-select [formControl]="control" disableOptionCentering panelClass="custom-mat-select-panel">
+      <ng-container *ngIf="options|selectOptions as SELECT_OPTIONS">
+        <mat-option *ngFor="let option of SELECT_OPTIONS" [value]="option?.id ?? option?.value">
+          {{option.name}}
+        </mat-option>
+      </ng-container>
+    </mat-select>
+    <mat-icon matSuffix>expand_more</mat-icon>
+
+  </mat-form-field>
+</div>
+

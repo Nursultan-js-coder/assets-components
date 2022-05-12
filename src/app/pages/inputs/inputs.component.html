@@ -1,0 +1,108 @@
+<div class="content">
+  <mat-tab-group class="extendable scrollable-tab-content tab-primary">
+    <mat-tab label="Form Inputs">
+      <h2>Form Inputs</h2>
+      <div class="component-container">
+        <div class="component-row">
+
+          <div class="component-column-wrapper">
+            <h2>Label top</h2>
+            <div class="component-column">
+              <assets-form-input></assets-form-input>
+            </div>
+          </div>
+
+          <div class="component-column-wrapper">
+            <h2>Label left</h2>
+            <div class="component-column">
+              <assets-form-input labelPosition="left"></assets-form-input>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <h2>Form Filters</h2>
+      <div class="component-container">
+        <div class="component-row">
+
+          <div class="component-column-wrapper">
+            <h2>Primary filter input</h2>
+            <div class="component-column">
+              <assets-filter-input></assets-filter-input>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <h2>Form Dropdowns</h2>
+      <div class="component-container">
+        <div class="component-row">
+
+          <div class="component-column-wrapper">
+            <h2>Form dropdown label left</h2>
+            <div class="component-column">
+              <assets-form-dropdown [control]="dropdownControl"
+                                    placeholder="Select choice"
+                                    label="Skill"
+                                    labelPosition="left"
+                                    [options]="['some','option']">
+              </assets-form-dropdown>
+            </div>
+          </div>
+
+          <div class="component-column-wrapper">
+            <h2>Form dropdown label top</h2>
+            <div class="component-column">
+              <assets-form-dropdown [control]="dropdownControl"
+                                    placeholder="Select choice"
+                                    label="Skill"
+                                    labelPosition="top"
+                                    [options]="['some','option']">
+              </assets-form-dropdown>
+            </div>
+          </div>
+          <div class="component-column-wrapper">
+            <h2>Form dropdown search label top</h2>
+            <div class="component-column">
+              <form-select-search [control]="dropdownControl"
+                                  labelPosition="top"
+                                  label="Skill"
+                                  placeholder="Select Skill"
+                                  [options]="[{id:1,name:'Option-1'},{id:2,name:'value-2'}]">
+              </form-select-search>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2>Filter Dropdowns</h2>
+      <div class="component-container">
+        <div class="component-row">
+
+          <div class="component-column-wrapper">
+            <h2>Filter dropdown label left</h2>
+            <div class="component-column">
+              <assets-filter-dropdown [control]="dropdownControl"
+                                      placeholder="Select choice"
+                                      label="Skill"
+                                      labelPosition="left"
+                                      [options]="['some','option']">
+              </assets-filter-dropdown>
+            </div>
+          </div>
+
+          <div class="component-column-wrapper">
+            <h2>Filter dropdown label top</h2>
+            <div class="component-column">
+              <assets-filter-dropdown [control]="dropdownControl"
+                                      placeholder="Select choice"
+                                      label="Skill"
+                                      labelPosition="top"
+                                      [options]="['some','option']">
+              </assets-filter-dropdown>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

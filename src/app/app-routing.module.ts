@@ -7,6 +7,7 @@ import {EmployeeProfileComponent} from "@app/pages/employee-profile/employee-pro
 import {PartialEditEmployeeComponent} from "@app/pages/partial-edit-employee/partial-edit-employee.component";
 import {UsersComponent} from "@app/pages/users/users.component";
 import {EmployeesNewComponent} from "@app/pages/employees-new/employees-new.component";
+import {InputsComponent} from "@app/pages/inputs/inputs.component";
 
 const routes: Routes = [
   {
@@ -45,6 +46,10 @@ const routes: Routes = [
   {
     path: "employees",
     component: EmployeesNewComponent,
+  },
+  {
+    path: "inputs",
+    component: InputsComponent,
   },
 
 ];

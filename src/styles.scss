@@ -31,3 +31,28 @@ body {
 .h2, h3, h4, h5, h6 {
   margin-bottom: 0;
 }
+//
+//utils
+.component-container {
+  display: grid;
+  gap: 20px;
+  border: 1px dashed #8025ed !important;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.component-row {
+  display: grid;
+  grid-template-columns:1fr 1fr;
+}
+
+.component-column {
+  &-wrapper {
+    margin-bottom: 10px;
+  }
+
+  & > * {
+    display: inline-block;
+    margin: 10px;
+  }
+}

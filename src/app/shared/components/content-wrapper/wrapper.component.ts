@@ -33,14 +33,6 @@ export const adminSettingsRoute: any = [
 export class WrapperComponent {
 
   routes: any = [
-    // {
-    //   icon: "dashboard",
-    //   path: "dashboard",
-    //   name: "Main",
-    //   disabled: false,
-    //   moduleName: "User",
-    //   actionName: 'GetUserById',
-    // },
     {
       icon: "people",
       path: "employees",
@@ -48,6 +40,11 @@ export class WrapperComponent {
       disabled: false,
       moduleName: "Employee",
       actionName: 'GetAllEmployees',
+    },
+    {
+      icon: "admin_panel_settings",
+      path: `inputs`,
+      name: "inputs",
     },
     {
       icon: "construction",
@@ -66,83 +63,6 @@ export class WrapperComponent {
       actionName: 'GetAllProjects',
     },
     {
-      icon: "info",
-      path: "profile",
-      name: "Employee Profile",
-      disabled: false,
-      moduleName: "Project",
-      actionName: 'GetAllProjects',
-    },    {
-      icon: "info",
-      path: "profile",
-      name: "Employee Profile",
-      disabled: false,
-      moduleName: "Project",
-      actionName: 'GetAllProjects',
-    },    {
-      icon: "info",
-      path: "profile",
-      name: "Employee Profile",
-      disabled: false,
-      moduleName: "Project",
-      actionName: 'GetAllProjects',
-    },    {
-      icon: "info",
-      path: "profile",
-      name: "Employee Profile",
-      disabled: false,
-      moduleName: "Project",
-      actionName: 'GetAllProjects',
-    },    {
-      icon: "info",
-      path: "profile",
-      name: "Employee Profile",
-      disabled: false,
-      moduleName: "Project",
-      actionName: 'GetAllProjects',
-    },    {
-      icon: "info",
-      path: "profile",
-      name: "Employee Profile",
-      disabled: false,
-      moduleName: "Project",
-      actionName: 'GetAllProjects',
-    },    {
-      icon: "info",
-      path: "profile",
-      name: "Employee Profile",
-      disabled: false,
-      moduleName: "Project",
-      actionName: 'GetAllProjects',
-    },    {
-      icon: "info",
-      path: "profile",
-      name: "Employee Profile",
-      disabled: false,
-      moduleName: "Project",
-      actionName: 'GetAllProjects',
-    },    {
-      icon: "info",
-      path: "profile",
-      name: "Employee Profile",
-      disabled: false,
-      moduleName: "Project",
-      actionName: 'GetAllProjects',
-    },    {
-      icon: "info",
-      path: "profile",
-      name: "Employee Profile",
-      disabled: false,
-      moduleName: "Project",
-      actionName: 'GetAllProjects',
-    },    {
-      icon: "info",
-      path: "profile",
-      name: "Employee Profile",
-      disabled: false,
-      moduleName: "Project",
-      actionName: 'GetAllProjects',
-    }, {
       icon: "info",
       path: "profile",
       name: "Employee Profile",
